@@ -1,0 +1,353 @@
+/* ==========================================================================
+   TEMA COMÚN DE LA APLICACIÓN
+   Lleva el estilo del Test Diagnóstico (encuesta.css: azul marino tecnológico
+   con degradado cian → índigo → morado) a todas las pantallas, app y encuesta. Se carga al final, después del CSS de cada página.
+   ========================================================================== */
+
+/* ---------- Logo: búho morado + "StudentMind / Connect" en dos líneas ---------- */
+.plat-mini-brand,
+.rp-brand-logo,
+.plat-hero-brand {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.plat-mini-brand .brand-text,
+.rp-brand-logo .brand-text,
+.plat-hero-brand .brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.05;
+  text-align: left;
+}
+
+.brand-owl-svg.brand-owl-lg { width: 46px; height: 40px; }
+
+/* ---------- Títulos: mismo peso y acento morado que la encuesta ---------- */
+.screen-body h1 {
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.18;
+  color: var(--text-dark);
+}
+
+.screen-body h1 span,
+.welcome-title span,
+.com-hero-split h1 span {
+  color: var(--primary-purple);
+  background: var(--smc-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.com-hero-split h1 { color: var(--text-dark); }
+
+/* ---------- Mascotas: búho flotando sobre un halo lavanda ---------- */
+.dash-guide-owl,
+.bib-owl-reader,
+.bib-owl-laptop,
+.mr-owl-trophy,
+.mr-owl-medal,
+.plan-owl-cal,
+.nt-owl-svg,
+.prog-owl-arrow,
+.ruta-grad-owl,
+.rp-owl-checklist,
+.done-grad-owl,
+.share-owl-svg,
+.invite-owl-svg,
+.sp-owl-phone,
+.ls-owl-svg,
+.reg-owl-svg,
+.peers-trio-svg,
+.group-students-svg {
+  background: radial-gradient(circle at 50% 58%, rgba(224, 231, 255, 0.95) 0 52%, rgba(238, 242, 255, 0) 53%);
+  border-radius: 50%;
+  animation: floatOwl 3.4s ease-in-out infinite;
+}
+
+/* ---------- Tarjetas y opciones: bordes suaves, toque lavanda al pasar ---------- */
+.module-tile,
+.feed-post-card,
+.week-task-row,
+.square-choice-card,
+.reward-item-card,
+.modality-card,
+.stage-choice-card {
+  border-radius: 16px;
+}
+
+a.module-tile:hover,
+button.module-tile:hover {
+  border-color: var(--soft-lavender-border);
+  background: var(--soft-lavender-bg);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(99, 102, 241, 0.12);
+}
+
+/* ---------- Botones principales: degradado azul → morado tecnológico ---------- */
+.btn-primary {
+  background: var(--smc-grad);
+  background-size: 200% 200%;
+  border-radius: 999px;
+  box-shadow: 0 10px 24px rgba(99, 102, 241, 0.40);
+  transition: transform .2s, box-shadow .2s, background-position .5s;
+}
+
+.btn-primary:hover {
+  background: var(--smc-grad);
+  background-size: 200% 200%;
+  background-position: 100% 0;
+  box-shadow: 0 14px 30px rgba(139, 92, 246, 0.45);
+}
+
+/* ---------- Etiqueta tipo "Etapa 1 de 7" reutilizable ---------- */
+.stage-pill {
+  background: var(--smc-grad-soft);
+  border: 1px solid rgba(99, 102, 241, 0.18);
+  color: #4338CA;
+  font-weight: 700;
+  border-radius: 999px;
+}
+
+/* ==========================================================================
+   ESTILO TECNOLÓGICO AZUL + MORADO (como encuesta.css)
+   ========================================================================== */
+
+/* Stepper de etapas */
+.step-node.active {
+  background: var(--smc-grad);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.20), 0 0 14px rgba(56, 189, 248, 0.55);
+}
+.step-node.completed {
+  background: rgba(56, 189, 248, 0.15);
+  color: #0369A1;
+  box-shadow: inset 0 0 0 2px #38BDF8;
+}
+.step-line.completed,
+.step-line.active,
+.step-line.done { background: linear-gradient(90deg, #38BDF8, #6366F1); }
+
+/* Opciones seleccionadas: brillo azul-morado */
+.radio-card.selected,
+.checkbox-row.checked,
+.square-choice-card.selected,
+.modality-card.selected,
+.stage-choice-card.selected {
+  border-color: var(--smc-indigo);
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.08), rgba(99, 102, 241, 0.08), rgba(139, 92, 246, 0.08));
+  box-shadow: 0 6px 18px rgba(99, 102, 241, 0.15);
+}
+.radio-card.selected .radio-indicator,
+.checkbox-row.checked .custom-checkbox {
+  background: var(--smc-grad);
+  border-color: transparent;
+}
+
+/* Barras de progreso con el degradado de la plataforma */
+.ach-mini-fill, .area-fill, .ch-mini-fill, .habit-fill, .h-c-fill,
+.mm-fill, .mr-bar-fill, .pt-fill, .score-progress-fill, .wp-fill {
+  background: var(--smc-grad);
+}
+
+/* Iconos destacados y avatares */
+.q-icon-badge,
+.benefit-icon {
+  background: var(--smc-grad-soft);
+  color: var(--smc-indigo);
+}
+.session-avatar { background: var(--smc-grad); }
+
+/* Tarjetas con borde suave índigo */
+a.module-tile:hover,
+button.module-tile:hover {
+  background: var(--smc-grad-soft);
+  border-color: rgba(99, 102, 241, 0.35);
+}
+
+/* ==========================================================================
+   DENTRO DE LA PANTALLA: MISMO DISEÑO QUE encuesta.css
+   Fondo azul marino tecnológico con luces cian/morado, cabecera clara sobre
+   oscuro y el contenido en una tarjeta blanca con línea de degradado.
+   ========================================================================== */
+
+/* ---------- Escenario oscuro (.sv-stage) ---------- */
+.app-screen {
+  background:
+    radial-gradient(circle at 12% 10%, rgba(56, 189, 248, 0.32), transparent 45%),
+    radial-gradient(circle at 90% 92%, rgba(139, 92, 246, 0.34), transparent 45%),
+    linear-gradient(135deg, #0B1120, #111A33 60%, #1E1B4B);
+}
+
+/* ---------- Barra de estado y cabeceras: transparentes, texto claro ---------- */
+.status-bar,
+.app-header,
+.bib-top-header,
+.com-top-header,
+.mr-top-header,
+.plan-top-header,
+.prog-top-header,
+.ruta-top-header,
+.rp-header,
+.rp-top-bar,
+.reg-top-bar,
+.dash-header {
+  background: transparent !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+  color: #FFFFFF;
+}
+
+.status-bar .status-icon { color: #FFFFFF; }
+.camera-punch { background: #000; box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.08); }
+
+.app-screen .brand-title,
+.app-screen .rp-b1,
+.app-screen .plat-mini-brand strong { color: #FFFFFF; }
+.app-screen .brand-subtitle,
+.app-screen .rp-b2 { color: #7DD3FC; }
+
+/* El logo dentro de la tarjeta blanca (bienvenida) conserva su color oscuro */
+.screen-body .brand-title { color: var(--text-dark); }
+.screen-body .brand-subtitle { color: var(--primary-purple); }
+
+.test-header-label { color: #CBD5E1; }
+
+/* Botones de icono en la cabecera */
+.app-header .icon-btn,
+.bib-top-header .icon-btn,
+.com-top-header .icon-btn,
+.mr-top-header .icon-btn,
+.plan-top-header .icon-btn,
+.prog-top-header .icon-btn,
+.ruta-top-header .icon-btn,
+.rp-top-bar .icon-btn,
+.reg-top-bar .icon-btn,
+.dash-header .icon-btn,
+.app-screen .user-pill-btn,
+.dash-header .dash-avatar-btn,
+.com-top-header .dash-avatar-btn {
+  color: #E2E8F0;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.app-header .icon-btn:hover,
+.bib-top-header .icon-btn:hover,
+.com-top-header .icon-btn:hover,
+.mr-top-header .icon-btn:hover,
+.plan-top-header .icon-btn:hover,
+.prog-top-header .icon-btn:hover,
+.ruta-top-header .icon-btn:hover,
+.rp-top-bar .icon-btn:hover,
+.reg-top-bar .icon-btn:hover,
+.dash-header .icon-btn:hover,
+.app-screen .user-pill-btn:hover {
+  color: #FFFFFF;
+  background: rgba(56, 189, 248, 0.18);
+  border-color: #38BDF8;
+}
+
+/* ---------- Stepper (.sv-stepper) ---------- */
+.step-node,
+.rp-node {
+  color: #94A3B8;
+  background: rgba(255, 255, 255, 0.06);
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  box-shadow: none;
+}
+.step-node.completed,
+.rp-step-item.completed .rp-node {
+  color: #FFFFFF;
+  background: rgba(56, 189, 248, 0.18);
+  border-color: #38BDF8;
+  box-shadow: none;
+}
+.step-node.active,
+.rp-step-item.active .rp-node {
+  color: #FFFFFF;
+  border-color: transparent;
+  background: var(--smc-grad);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25), 0 0 16px rgba(56, 189, 248, 0.6);
+}
+.step-line,
+.rp-connector { background: rgba(255, 255, 255, 0.15); }
+.step-line.completed,
+.step-line.active,
+.step-line.done,
+.rp-connector.active { background: linear-gradient(90deg, #38BDF8, #6366F1); }
+.rp-step-item span { color: #64748B; }
+.rp-step-item.active span { color: #FFFFFF; }
+.rp-step-item.completed span { color: #7DD3FC; }
+
+/* ---------- Tarjeta blanca (.sv-card) ---------- */
+.screen {
+  background: transparent;
+  padding: 6px 12px 10px;
+}
+
+.screen-body {
+  background:
+    linear-gradient(90deg, #38BDF8, #6366F1, #8B5CF6) top center / calc(100% - 48px) 4px no-repeat,
+    #FFFFFF;
+  border-radius: 24px;
+  box-shadow: 0 24px 50px rgba(2, 6, 23, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.12);
+  padding-top: 22px;
+}
+
+/* Si hay botones abajo, la tarjeta continúa en el pie */
+.screen-body:has(+ .screen-footer) {
+  border-radius: 24px 24px 0 0;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12);
+}
+
+.screen-footer {
+  background: #FFFFFF;
+  border-top: 1px solid #F1F5F9;
+  border-radius: 0 0 24px 24px;
+  box-shadow: 0 24px 50px rgba(2, 6, 23, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.12);
+  padding-bottom: 14px;
+}
+
+/* Títulos dentro de la tarjeta, como .sv-content */
+.screen-body h1 { color: #0F172A; font-weight: 900; letter-spacing: -0.03em; }
+
+/* Botón secundario "Atrás" (.sv-btn-prev) */
+.btn-secondary {
+  background: transparent;
+  color: #64748B;
+}
+.btn-secondary:hover {
+  color: #4338CA;
+  background: #EEF2FF;
+}
+
+/* Barra de gestos sobre fondo oscuro */
+.gesture-bar-container { background: transparent; }
+.gesture-pill { background: rgba(255, 255, 255, 0.55); }
+
+/* ---------- Barra de navegación inferior: vidrio oscuro ---------- */
+.bottom-tab-bar.app-nav {
+  margin-top: 10px;
+  background: rgba(15, 23, 42, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 22px;
+  box-shadow: 0 12px 30px rgba(2, 6, 23, 0.5);
+  backdrop-filter: blur(10px);
+}
+.app-nav .tab-item { color: #94A3B8; }
+.app-nav .tab-item:hover { color: #FFFFFF; }
+.app-nav .tab-item.active {
+  color: #FFFFFF;
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.25), rgba(139, 92, 246, 0.30));
+  box-shadow: inset 0 0 0 1px rgba(125, 211, 252, 0.35);
+}
+.app-nav .lumen-owl-btn {
+  border: 3px solid transparent;
+  background:
+    radial-gradient(circle at 50% 40%, #FFFFFF 0%, #E0E7FF 70%) padding-box,
+    var(--smc-grad) border-box;
+  box-shadow: 0 0 0 4px #111A33, 0 0 22px rgba(56, 189, 248, 0.55);
+}

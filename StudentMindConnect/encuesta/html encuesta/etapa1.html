@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>StudentMind Connect — Test de Diagnóstico Académico</title>
+  <!-- Tipografía Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Iconografía profesional Lucide Icons (sin frameworks) -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="../css%20encuesta/etapa1.css" />
+  <link rel="stylesheet" href="../../aplicacion/css%20aplicacion/tema.css" />
+  <link rel="stylesheet" href="../../aplicacion/css%20aplicacion/planes.css" />
+  <script src="../../aplicacion/js%20aplicacion/planes.js"></script>
+</head>
+<body>
+
+  <!-- Contenedor externo para centrar el marco Android en PC -->
+  <main class="desktop-stage">
+    
+    <!-- Marco de Smartphone Android Moderno (se oculta en móviles reales) -->
+    <div class="phone-frame" id="phoneFrame">
+      <!-- Botones físicos laterales decorativos del marco -->
+      <div class="hardware-btn volume-up"></div>
+      <div class="hardware-btn volume-down"></div>
+      <div class="hardware-btn power-btn"></div>
+
+      <!-- Pantalla interna de la App -->
+      <div class="app-screen" id="appScreen">
+        
+        <!-- Barra de estado superior tipo Android/Modern Mobile -->
+        <header class="status-bar">
+          <span class="status-time" id="statusTime">9:41</span>
+          <div class="camera-punch"></div>
+          <div class="status-icons">
+            <i data-lucide="signal" class="status-icon"></i>
+            <i data-lucide="wifi" class="status-icon"></i>
+            <i data-lucide="battery-full" class="status-icon"></i>
+          </div>
+        </header>
+
+        <!-- Encabezado de la Aplicación (Fijo en las 5 pantallas) -->
+        <div class="app-header">
+          <div class="header-top-row">
+            <button class="icon-btn" id="openMenuBtn" aria-label="Abrir menú">
+              <i data-lucide="menu"></i>
+            </button>
+
+            <div class="brand-logo" id="brandHomeBtn" title="Volver al inicio">
+              <!-- Mini Avatar Búho Logo -->
+              <svg class="brand-owl-svg" viewBox="0 0 64 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="6" y="8" width="52" height="42" rx="20" fill="#5B21B6"/>
+                <path d="M12 10L6 2L20 8Z" fill="#5B21B6"/>
+                <path d="M52 10L58 2L44 8Z" fill="#5B21B6"/>
+                <circle cx="23" cy="28" r="11" fill="#F3E8FF" stroke="#3B0764" stroke-width="2.5"/>
+                <circle cx="41" cy="28" r="11" fill="#F3E8FF" stroke="#3B0764" stroke-width="2.5"/>
+                <circle cx="23" cy="28" r="6" fill="#1E1B4B"/>
+                <circle cx="41" cy="28" r="6" fill="#1E1B4B"/>
+                <path d="M23 26.5C22.2 25.5 20.5 25.8 20.5 27.3C20.5 28.8 23 30.5 23 30.5C23 30.5 25.5 28.8 25.5 27.3C25.5 25.8 23.8 25.5 23 26.5Z" fill="#F43F5E"/>
+                <path d="M38.5 28.5C39.8 27 42.2 27 43.5 28.5" stroke="#38BDF8" stroke-width="2" stroke-linecap="round"/>
+                <path d="M29 34L32 39L35 34H29Z" fill="#F59E0B"/>
+              </svg>
+              <div class="brand-text">
+                <span class="brand-title">StudentMind</span>
+                <span class="brand-subtitle">Connect</span>
+              </div>
+            </div>
+
+            <button class="user-pill-btn" id="headerProfileBtn" title="Perfil de estudiante">
+              <i data-lucide="user"></i>
+            </button>
+          </div>
+
+          <p class="test-header-label">Test de Diagnóstico Académico</p>
+
+          <!-- Stepper de 7 Etapas -->
+          <nav class="stepper-container" aria-label="Progreso de etapas">
+            <div class="stepper-track">
+              <div class="step-node active" data-stage="1">1</div>
+              <div class="step-line"></div>
+              <div class="step-node" data-stage="2">2</div>
+              <div class="step-line"></div>
+              <div class="step-node" data-stage="3">3</div>
+              <div class="step-line"></div>
+              <div class="step-node" data-stage="4">4</div>
+              <div class="step-line"></div>
+              <div class="step-node" data-stage="5">5</div>
+              <div class="step-line"></div>
+              <div class="step-node" data-stage="6">6</div>
+              <div class="step-line"></div>
+              <div class="step-node" data-stage="7">7</div>
+            </div>
+          </nav>
+        </div>
+
+        <!-- Contenedor dinámico de pantallas del flujo -->
+        <div class="screens-viewport">
+
+          <!-- ==========================================
+               PANTALLA 1: BIENVENIDA ETAPA 1 DE 7
+               ========================================== -->
+          <section class="screen active" id="screen-1" data-step="1">
+            <div class="screen-body welcome-body">
+              <span class="stage-pill">Etapa 1 de 7</span>
+
+              <h1 class="welcome-title">
+                Conozcamos tu<br>
+                <span>perfil académico</span>
+              </h1>
+
+              <p class="welcome-desc">
+                Cuéntanos sobre tu vida universitaria. Esta información nos ayudará a personalizar tu diagnóstico y recomendaciones.
+              </p>
+
+              <!-- Ilustración Mascota Búho con Laptop y Ondas -->
+              <div class="hero-mascot-wrapper">
+                <div class="wave-bg"></div>
+                <svg class="owl-hero-svg" viewBox="0 0 260 210" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Destellos amarillos -->
+                  <path d="M52 58L40 50M48 70L34 68M60 48L54 36" stroke="#FBBF24" stroke-width="3.5" stroke-linecap="round"/>
+                  <!-- Cuerpo Búho -->
+                  <ellipse cx="130" cy="138" rx="64" ry="54" fill="#6D28D9"/>
+                  <ellipse cx="130" cy="144" rx="46" ry="40" fill="#EDE9FE"/>
+                  <!-- Plumas del pecho -->
+                  <path d="M112 132Q118 138 124 132M136 132Q142 138 148 132M124 144Q130 150 136 144" stroke="#C4B5FD" stroke-width="2.5" stroke-linecap="round"/>
+                  <!-- Alas -->
+                  <path d="M68 118C52 132 54 162 74 170C80 154 78 134 68 118Z" fill="#5B21B6"/>
+                  <path d="M192 118C208 132 206 162 186 170C180 154 182 134 192 118Z" fill="#5B21B6"/>
+                  <!-- Cabeza Búho -->
+                  <rect x="66" y="34" width="128" height="94" rx="46" fill="#7C3AED"/>
+                  <!-- Orejas / Penachos -->
+                  <path d="M78 44L62 20L98 36Z" fill="#6D28D9"/>
+                  <path d="M182 44L198 20L162 36Z" fill="#6D28D9"/>
+                  <!-- Antifaz facial crema/lila -->
+                  <circle cx="104" cy="82" r="28" fill="#FAF5FF" stroke="#4C1D95" stroke-width="4"/>
+                  <circle cx="156" cy="82" r="28" fill="#FAF5FF" stroke="#4C1D95" stroke-width="4"/>
+                  <rect x="124" y="78" width="12" height="8" fill="#4C1D95"/>
+                  <!-- Ojos expresivos -->
+                  <circle cx="104" cy="82" r="17" fill="#1E1B4B"/>
+                  <circle cx="156" cy="82" r="17" fill="#1E1B4B"/>
+                  <!-- Ojo izquierdo corazón -->
+                  <path d="M104 78.5C101.8 75.5 96.5 76.5 96.5 81C96.5 85.5 104 90.5 104 90.5C104 90.5 111.5 85.5 111.5 81C111.5 76.5 106.2 75.5 104 78.5Z" fill="#F43F5E"/>
+                  <circle cx="99" cy="77" r="2.2" fill="#FFFFFF"/>
+                  <!-- Ojo derecho guiño feliz cyan -->
+                  <path d="M148 83C151.5 78.5 160.5 78.5 164 83" stroke="#38BDF8" stroke-width="3.5" stroke-linecap="round"/>
+                  <circle cx="161" cy="76" r="2.5" fill="#FFFFFF"/>
+                  <!-- Pico -->
+                  <path d="M123 96L130 108L137 96H123Z" fill="#F59E0B"/>
+                  <!-- Laptop Morada -->
+                  <path d="M84 146L92 188H168L176 146H84Z" fill="#8B5CF6" stroke="#4C1D95" stroke-width="3" stroke-linejoin="round"/>
+                  <rect x="76" y="186" width="108" height="8" rx="4" fill="#6D28D9"/>
+                  <!-- Logo en laptop -->
+                  <circle cx="130" cy="167" r="7" fill="#EDE9FE"/>
+                </svg>
+              </div>
+
+              <!-- 3 Tarjetas de Beneficios -->
+              <div class="benefits-grid">
+                <div class="benefit-card">
+                  <div class="benefit-icon">
+                    <i data-lucide="target"></i>
+                  </div>
+                  <span class="benefit-text">Es rápido<br>(2-3 min)</span>
+                </div>
+                <div class="benefit-card">
+                  <div class="benefit-icon">
+                    <i data-lucide="shield-check"></i>
+                  </div>
+                  <span class="benefit-text">Confidencial</span>
+                </div>
+                <div class="benefit-card">
+                  <div class="benefit-icon">
+                    <i data-lucide="zap"></i>
+                  </div>
+                  <span class="benefit-text">Resultado<br>personalizado</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="screen-footer single-btn">
+              <button class="btn-primary full-width" id="btnStartTest">
+                <span>¡Comencemos!</span>
+                <i data-lucide="arrow-right"></i>
+              </button>
+            </div>
+          </section>
+
+          <!-- ==========================================
+               PANTALLA 2: SELECCIÓN DE CARRERA
+               ========================================== -->
+          <section class="screen" id="screen-2" data-step="2">
+            <div class="screen-body question-body">
+              <div class="question-header">
+                <div class="q-icon-badge">
+                  <i data-lucide="graduation-cap"></i>
+                </div>
+                <h2 class="question-title">¿Cuál es tu carrera?</h2>
+              </div>
+
+              <!-- Selector Desplegable Personalizado -->
+              <div class="custom-select-wrapper" id="careerSelectWrapper">
+                <button type="button" class="custom-select-trigger" id="careerSelectTrigger" aria-expanded="false">
+                  <span id="careerSelectedLabel" class="placeholder">Selecciona tu carrera</span>
+                  <i data-lucide="chevron-down" class="select-arrow"></i>
+                </button>
+                <ul class="custom-select-options" id="careerOptionsList" role="listbox">
+                  <li role="option" data-value="Ingeniería de Sistemas de Información">Ingeniería de Sistemas de Información</li>
+                  <li role="option" data-value="Ingeniería de Software">Ingeniería de Software</li>
+                  <li role="option" data-value="Administración y Negocios Internacionales">Administración y Negocios Internacionales</li>
+                  <li role="option" data-value="Psicología">Psicología</li>
+                  <li role="option" data-value="Derecho">Derecho</li>
+                  <li role="option" data-value="Ingeniería Industrial">Ingeniería Industrial</li>
+                  <li role="option" data-value="Contabilidad y Finanzas">Contabilidad y Finanzas</li>
+                  <li role="option" data-value="Medicina Humana">Medicina Humana</li>
+                  <li role="option" data-value="Arquitectura">Arquitectura</li>
+                  <li role="option" data-value="Comunicación y Marketing">Comunicación y Marketing</li>
+                </ul>
+              </div>
+
+              <p class="field-hint" id="careerHint">Selecciona la carrera universitaria que cursas actualmente.</p>
+
+              <!-- Búho asomándose en la parte inferior derecha -->
+              <div class="peeking-owl-container">
+                <svg class="peeking-owl-svg" viewBox="0 0 180 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M26 42L12 34M22 54L8 52M34 32L28 20" stroke="#FBBF24" stroke-width="3.5" stroke-linecap="round"/>
+                  <rect x="44" y="28" width="114" height="96" rx="42" fill="#7C3AED"/>
+                  <path d="M54 38L40 16L74 30Z" fill="#6D28D9"/>
+                  <path d="M148 38L162 16L128 30Z" fill="#6D28D9"/>
+                  <circle cx="78" cy="72" r="24" fill="#FAF5FF" stroke="#4C1D95" stroke-width="3.5"/>
+                  <circle cx="124" cy="72" r="24" fill="#FAF5FF" stroke="#4C1D95" stroke-width="3.5"/>
+                  <rect x="96" y="68" width="10" height="7" fill="#4C1D95"/>
+                  <circle cx="78" cy="72" r="14" fill="#1E1B4B"/>
+                  <circle cx="124" cy="72" r="14" fill="#1E1B4B"/>
+                  <path d="M78 69C76.2 66.5 72 67.3 72 71C72 74.7 78 79 78 79C78 79 84 74.7 84 71C84 67.3 79.8 66.5 78 69Z" fill="#F43F5E"/>
+                  <path d="M117 73C120 69 128 69 131 73" stroke="#38BDF8" stroke-width="3" stroke-linecap="round"/>
+                  <path d="M95 85L101 95L107 85H95Z" fill="#F59E0B"/>
+                </svg>
+              </div>
+            </div>
+
+            <div class="screen-footer dual-btns">
+              <button class="btn-secondary" data-prev="1">
+                <i data-lucide="arrow-left"></i>
+                <span>Anterior</span>
+              </button>
+              <button class="btn-primary" id="btnNext2" data-next="3">
+                <span>Siguiente</span>
+                <i data-lucide="arrow-right"></i>
+              </button>
+            </div>
+          </section>
+
+          <!-- ==========================================
+               PANTALLA 3: CICLO ACADÉMICO
+               ========================================== -->
+          <section class="screen" id="screen-3" data-step="3">
+            <div class="screen-body question-body">
+              <div class="question-header">
+                <div class="q-icon-badge">
+                  <i data-lucide="layers"></i>
+                </div>
+                <h2 class="question-title">¿En qué ciclo te<br>encuentras?</h2>
+              </div>
+
+              <div class="radio-cards-list" id="cycleOptionsList">
+                <button type="button" class="radio-card" data-cycle="1° - 2° ciclo">
+                  <span class="radio-card-text">1° - 2° ciclo</span>
+                  <span class="radio-indicator"><i data-lucide="check"></i></span>
+                </button>
+                <button type="button" class="radio-card selected" data-cycle="3° - 4° ciclo">
+                  <span class="radio-card-text">3° - 4° ciclo</span>
+                  <span class="radio-indicator"><i data-lucide="check"></i></span>
+                </button>
+                <button type="button" class="radio-card" data-cycle="5° - 6° ciclo">
+                  <span class="radio-card-text">5° - 6° ciclo</span>
+                  <span class="radio-indicator"><i data-lucide="check"></i></span>
+                </button>
+                <button type="button" class="radio-card" data-cycle="7° - 8° ciclo">
+                  <span class="radio-card-text">7° - 8° ciclo</span>
+                  <span class="radio-indicator"><i data-lucide="check"></i></span>
+                </button>
+                <button type="button" class="radio-card" data-cycle="9° ciclo o más">
+                  <span class="radio-card-text">9° ciclo o más</span>
+                  <span class="radio-indicator"><i data-lucide="check"></i></span>
+                </button>
+              </div>
+            </div>
+
+            <div class="screen-footer dual-btns">
+              <button class="btn-secondary" data-prev="2">
+                <i data-lucide="arrow-left"></i>
+                <span>Anterior</span>
+              </button>
+              <button class="btn-primary" id="btnNext3" data-next="4">
+                <span>Siguiente</span>
+                <i data-lucide="arrow-right"></i>
+              </button>
+            </div>
+          </section>
+
+          <!-- ==========================================
+               PANTALLA 4: CURSOS ACTUALES (MÚLTIPLE)
+               ========================================== -->
+          <section class="screen" id="screen-4" data-step="4">
+            <div class="screen-body question-body">
+              <div class="question-header">
+                <div class="q-icon-badge">
+                  <i data-lucide="book-open"></i>
+                </div>
+                <div class="question-title-group">
+                  <h2 class="question-title">¿Qué cursos estás<br>llevando actualmente?</h2>
+                  <p class="question-subtitle">Puedes seleccionar varios.</p>
+                </div>
+              </div>
+
+              <div class="checkbox-list" id="coursesList">
+                <label class="checkbox-row checked">
+                  <input type="checkbox" value="Matemáticas" checked />
+                  <span class="custom-checkbox"><i data-lucide="check"></i></span>
+                  <span class="checkbox-label">Matemáticas</span>
+                </label>
+
+                <label class="checkbox-row">
+                  <input type="checkbox" value="Programación" />
+                  <span class="custom-checkbox"><i data-lucide="check"></i></span>
+                  <span class="checkbox-label">Programación</span>
+                </label>
+
+                <label class="checkbox-row">
+                  <input type="checkbox" value="Estadística" />
+                  <span class="custom-checkbox"><i data-lucide="check"></i></span>
+                  <span class="checkbox-label">Estadística</span>
+                </label>
+
+                <label class="checkbox-row">
+                  <input type="checkbox" value="Administración" />
+                  <span class="custom-checkbox"><i data-lucide="check"></i></span>
+                  <span class="checkbox-label">Administración</span>
+                </label>
+
+                <label class="checkbox-row">
+                  <input type="checkbox" value="Inglés" />
+                  <span class="custom-checkbox"><i data-lucide="check"></i></span>
+                  <span class="checkbox-label">Inglés</span>
+                </label>
+
+                <label class="checkbox-row checked">
+                  <input type="checkbox" value="Bases de datos" checked />
+                  <span class="custom-checkbox"><i data-lucide="check"></i></span>
+                  <span class="checkbox-label">Bases de datos</span>
+                </label>
+
+                <label class="checkbox-row">
+                  <input type="checkbox" value="Economía" />
+                  <span class="custom-checkbox"><i data-lucide="check"></i></span>
+                  <span class="checkbox-label">Economía</span>
+                </label>
+
+                <label class="checkbox-row" id="otherCourseRow">
+                  <input type="checkbox" value="Otros" id="otherCourseCheck" />
+                  <span class="custom-checkbox"><i data-lucide="check"></i></span>
+                  <span class="checkbox-label">Otros</span>
+                </label>
+              </div>
+
+              <!-- Input dinámico cuando se marca "Otros" -->
+              <div class="other-input-box hidden" id="otherCourseInputBox">
+                <input type="text" id="otherCourseText" placeholder="Escribe tus otros cursos (ej. Física, Cálculo)..." maxlength="60" />
+              </div>
+            </div>
+
+            <div class="screen-footer dual-btns">
+              <button class="btn-secondary" data-prev="3">
+                <i data-lucide="arrow-left"></i>
+                <span>Anterior</span>
+              </button>
+              <button class="btn-primary" id="btnNext4" data-next="5">
+                <span>Siguiente</span>
+                <i data-lucide="arrow-right"></i>
+              </button>
+            </div>
+          </section>
+
+          <!-- ==========================================
+               PANTALLA 5: OBJETIVOS ACADÉMICOS (MÁX. 3)
+               ========================================== -->
+          <section class="screen" id="screen-5" data-step="5">
+            <div class="screen-body question-body">
+              <div class="question-header">
+                <div class="q-icon-badge">
+                  <i data-lucide="target"></i>
+                </div>
+                <div class="question-title-group">
+                  <h2 class="question-title">¿Cuáles son tus principales<br>objetivos académicos?</h2>
+                  <p class="question-subtitle">Puedes seleccionar hasta 3. <span class="counter-badge" id="goalsCounter">3/3</span></p>
+                </div>
+              </div>
+
+              <div class="checkbox-list" id="goalsList">
+                <label class="checkbox-row checked">
+                  <input type="checkbox" value="Aprobar mis cursos" checked />
+                  <span class="custom-checkbox"><i data-lucide="check"></i></span>
+                  <span class="checkbox-label">Aprobar mis cursos</span>
+                </label>
+
+                <label class="checkbox-row">
+                  <input type="checkbox" value="Mejorar mis notas" />
+                  <span class="custom-checkbox"><i data-lucide="check"></i></span>
+                  <span class="checkbox-label">Mejorar mis notas</span>
+                </label>
+
+                <label class="checkbox-row checked">
+                  <input type="checkbox" value="Comprender mejor los temas" checked />
+                  <span class="custom-checkbox"><i data-lucide="check"></i></span>
+                  <span class="checkbox-label">Comprender mejor los temas</span>
+                </label>
+
+                <label class="checkbox-row checked">
+                  <input type="checkbox" value="Desarrollar habilidades para mi carrera" checked />
+                  <span class="custom-checkbox"><i data-lucide="check"></i></span>
+                  <span class="checkbox-label">Desarrollar habilidades para mi carrera</span>
+                </label>
+
+                <label class="checkbox-row">
+                  <input type="checkbox" value="Tener más tiempo libre" />
+                  <span class="custom-checkbox"><i data-lucide="check"></i></span>
+                  <span class="checkbox-label">Tener más tiempo libre</span>
+                </label>
+
+                <label class="checkbox-row" id="otherGoalRow">
+                  <input type="checkbox" value="Otros" id="otherGoalCheck" />
+                  <span class="custom-checkbox"><i data-lucide="check"></i></span>
+                  <span class="checkbox-label">Otros</span>
+                </label>
+              </div>
+
+              <!-- Input dinámico cuando se marca "Otros" en objetivos -->
+              <div class="other-input-box hidden" id="otherGoalInputBox">
+                <input type="text" id="otherGoalText" placeholder="Especifica otro objetivo académico..." maxlength="60" />
+              </div>
+            </div>
+
+            <div class="screen-footer dual-btns compact-footer">
+              <button class="btn-secondary" data-prev="4">
+                <i data-lucide="arrow-left"></i>
+                <span>Anterior</span>
+              </button>
+              <button class="btn-primary btn-finish" id="btnFinishStage1">
+                <span>Continuar a la Etapa 2</span>
+                <i data-lucide="arrow-right"></i>
+              </button>
+            </div>
+          </section>
+
+        </div>
+
+        <!-- Barra de gestos inferior tipo Android -->
+        <div class="gesture-bar-container">
+          <div class="gesture-pill" id="gestureHomeBtn" title="Ir al inicio"></div>
+        </div>
+
+        <!-- Toast de Retroalimentación / Alertas -->
+        <div class="toast-notification" id="toastNotification" role="alert">
+          <i data-lucide="alert-circle" id="toastIcon"></i>
+          <span id="toastMessage">Mensaje de alerta</span>
+        </div>
+
+        <!-- ==========================================
+             MENÚ LATERAL (DRAWER): AUTH + PROGRESO
+             ========================================== -->
+        <div class="drawer-overlay" id="drawerOverlay">
+          <aside class="side-drawer" id="sideDrawer">
+            <div class="drawer-header">
+              <div class="drawer-brand">
+                <span class="brand-title">StudentMind</span>
+                <span class="brand-subtitle">Connect</span>
+              </div>
+              <button class="icon-btn" id="closeMenuBtn" aria-label="Cerrar menú">
+                <i data-lucide="x"></i>
+              </button>
+            </div>
+
+            <!-- Estado del usuario (Simulación Login / Registro) -->
+            <div class="user-session-card" id="userSessionCard">
+              <!-- Se renderiza dinámicamente desde app.js -->
+            </div>
+
+            <div class="drawer-section">
+              <p class="drawer-section-title">Navegación Rápida (Etapa 1)</p>
+              <ul class="drawer-nav-list">
+                <li><button class="drawer-nav-item" data-jump="1"><i data-lucide="sparkles"></i> 1. Bienvenida Etapa 1</button></li>
+                <li><button class="drawer-nav-item" data-jump="2"><i data-lucide="graduation-cap"></i> 2. Selección de Carrera</button></li>
+                <li><button class="drawer-nav-item" data-jump="3"><i data-lucide="layers"></i> 3. Ciclo Académico</button></li>
+                <li><button class="drawer-nav-item" data-jump="4"><i data-lucide="book-open"></i> 4. Cursos Actuales</button></li>
+                <li><button class="drawer-nav-item" data-jump="5"><i data-lucide="target"></i> 5. Objetivos Académicos</button></li>
+              </ul>
+            </div>
+
+            <div class="drawer-footer">
+              <button class="btn-outline-danger" id="resetProgressBtn">
+                <i data-lucide="rotate-ccw"></i>
+                <span>Reiniciar Diagnóstico</span>
+              </button>
+            </div>
+          </aside>
+        </div>
+
+        <!-- ==========================================
+             MODAL DE AUTENTICACIÓN (LOGIN / REGISTRO)
+             ========================================== -->
+        <div class="modal-overlay" id="authModal">
+          <div class="modal-card">
+            <div class="modal-header">
+              <h3 id="authModalTitle">Iniciar Sesión</h3>
+              <button class="icon-btn small" id="closeAuthModalBtn"><i data-lucide="x"></i></button>
+            </div>
+
+            <div class="auth-tabs">
+              <button class="auth-tab active" data-auth-mode="login">Ingresar</button>
+              <button class="auth-tab" data-auth-mode="register">Crear cuenta</button>
+            </div>
+
+            <form id="authForm" class="auth-form" novalidate>
+              <div class="form-group hidden" id="registerNameGroup">
+                <label for="authName">Nombre completo</label>
+                <input type="text" id="authName" placeholder="Ej. Camila Torres" />
+              </div>
+
+              <div class="form-group">
+                <label for="authEmail">Correo universitario</label>
+                <input type="email" id="authEmail" placeholder="estudiante@universidad.edu.pe" required />
+              </div>
+
+              <div class="form-group">
+                <label for="authPassword">Contraseña</label>
+                <input type="password" id="authPassword" placeholder="Mínimo 6 caracteres" required />
+              </div>
+
+              <button type="submit" class="btn-primary full-width" id="authSubmitBtn">
+                <span>Continuar</span>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- ==========================================
+             MODAL RESUMEN ETAPA 1 COMPLETADA
+             ========================================== -->
+        <div class="modal-overlay" id="summaryModal">
+          <div class="modal-card summary-modal-card">
+            <div class="summary-badge-icon">
+              <i data-lucide="check-circle-2"></i>
+            </div>
+            <h3>¡Etapa 1 Completada!</h3>
+            <p class="summary-subtitle">Tu perfil académico ha sido guardado localmente para personalizar tu diagnóstico.</p>
+
+            <div class="summary-details-box" id="summaryDetailsBox">
+              <!-- Se llena dinámicamente con las respuestas del usuario -->
+            </div>
+
+            <div class="summary-actions">
+              <button class="btn-primary full-width" id="proceedStage2Btn">
+                <span>Avanzar a Etapa 2: Hábitos de Estudio</span>
+                <i data-lucide="arrow-right"></i>
+              </button>
+              <button class="btn-secondary full-width" id="editStage1Btn">
+                <span>Editar mis respuestas</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <script src="../js%20encuesta/etapa1.js"></script>
+</body>
+</html>

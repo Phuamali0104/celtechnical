@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>StudentMind Connect — Completar Perfil Académico</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="../../encuesta/css%20encuesta/etapa1.css" />
+  <link rel="stylesheet" href="../css%20aplicacion/registro-perfil.css" />
+  <link rel="stylesheet" href="../css%20aplicacion/tema.css" />
+  <link rel="stylesheet" href="../css%20aplicacion/planes.css" />
+  <script src="../js%20aplicacion/planes.js"></script>
+</head>
+<body>
+
+  <main class="desktop-stage">
+    <div class="phone-frame" id="phoneFrame">
+      <div class="hardware-btn volume-up"></div>
+      <div class="hardware-btn volume-down"></div>
+      <div class="hardware-btn power-btn"></div>
+
+      <div class="app-screen" id="appScreen">
+
+        <!-- Barra de estado superior -->
+        <header class="status-bar">
+          <span class="status-time" id="statusTime">9:41</span>
+          <div class="camera-punch"></div>
+          <div class="status-icons">
+            <i data-lucide="signal" class="status-icon"></i>
+            <i data-lucide="wifi" class="status-icon"></i>
+            <i data-lucide="battery-full" class="status-icon"></i>
+          </div>
+        </header>
+
+        <!-- Header Compartido con Stepper de 4 Pasos -->
+        <div class="rp-header">
+          <div class="rp-top-bar">
+            <button type="button" class="icon-btn" id="rpBackBtn" aria-label="Volver">
+              <i data-lucide="chevron-left"></i>
+            </button>
+
+            <div class="rp-brand-logo">
+              <svg class="brand-owl-svg" viewBox="0 0 64 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="6" y="8" width="52" height="42" rx="20" fill="#5B21B6"/>
+              <path d="M12 10L6 2L20 8Z" fill="#5B21B6"/>
+              <path d="M52 10L58 2L44 8Z" fill="#5B21B6"/>
+              <circle cx="23" cy="28" r="11" fill="#F3E8FF" stroke="#3B0764" stroke-width="2.5"/>
+              <circle cx="41" cy="28" r="11" fill="#F3E8FF" stroke="#3B0764" stroke-width="2.5"/>
+              <circle cx="23" cy="28" r="6" fill="#1E1B4B"/>
+              <circle cx="41" cy="28" r="6" fill="#1E1B4B"/>
+              <path d="M23 26.5C22.2 25.5 20.5 25.8 20.5 27.3C20.5 28.8 23 30.5 23 30.5C23 30.5 25.5 28.8 25.5 27.3C25.5 25.8 23.8 25.5 23 26.5Z" fill="#F43F5E"/>
+              <path d="M38.5 28.5C39.8 27 42.2 27 43.5 28.5" stroke="#38BDF8" stroke-width="2" stroke-linecap="round"/>
+              <path d="M29 34L32 39L35 34H29Z" fill="#F59E0B"/>
+            </svg>
+              <div class="rp-brand-words">
+                <span class="rp-b1">StudentMind</span>
+                <span class="rp-b2">Connect</span>
+              </div>
+            </div>
+
+            <div style="width: 36px;"></div>
+          </div>
+
+          <!-- Stepper de 4 Pasos (Cuenta -> Perfil académico -> Hábitos -> ¡Listo!) -->
+          <nav class="rp-stepper" aria-label="Progreso de registro">
+            <div class="rp-step-item completed" data-rp-step="1">
+              <div class="rp-node"><i data-lucide="check"></i></div>
+              <span>Cuenta</span>
+            </div>
+            <div class="rp-connector active"></div>
+
+            <div class="rp-step-item active" data-rp-step="2">
+              <div class="rp-node">2</div>
+              <span>Perfil<br>académico</span>
+            </div>
+            <div class="rp-connector" id="conn-2-3"></div>
+
+            <div class="rp-step-item" data-rp-step="3">
+              <div class="rp-node">3</div>
+              <span>Hábitos</span>
+            </div>
+            <div class="rp-connector" id="conn-3-4"></div>
+
+            <div class="rp-step-item" data-rp-step="4">
+              <div class="rp-node">4</div>
+              <span>¡Listo!</span>
+            </div>
+          </nav>
+        </div>
+
+        <!-- Viewport de las 3 Pantallas del Flujo -->
+        <div class="screens-viewport">
+
+          <!-- ==========================================
+               PANTALLA 1 (PASO 2): PERFIL ACADÉMICO
+               ========================================== -->
+          <section class="screen active" id="rp-screen-2" data-step="2">
+            <div class="screen-body rp-body">
+              <div class="rp-hero-row">
+                <div class="rp-hero-copy">
+                  <h1>Perfil <span>académico</span></h1>
+                  <p>Cuéntanos sobre ti para personalizar tu experiencia en StudentMind Connect.</p>
+                </div>
+
+                <!-- Búho con mochila azul y checklist -->
+                <svg class="rp-owl-checklist" viewBox="0 0 130 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18 32L8 24M16 44L4 42" stroke="#FACC15" stroke-width="2.8" stroke-linecap="round"/>
+                  <ellipse cx="66" cy="84" rx="34" ry="28" fill="#6D28D9"/>
+                  <ellipse cx="66" cy="88" rx="24" ry="20" fill="#EDE9FE"/>
+                  <rect x="94" y="68" width="24" height="36" rx="9" fill="#2563EB" stroke="#1E3A8A" stroke-width="2"/>
+                  <rect x="32" y="20" width="68" height="52" rx="25" fill="#7C3AED"/>
+                  <path d="M40 26L30 10L54 20Z" fill="#6D28D9"/>
+                  <path d="M92 26L102 10L78 20Z" fill="#6D28D9"/>
+                  <circle cx="54" cy="46" r="14" fill="#FAF5FF" stroke="#4C1D95" stroke-width="2.5"/>
+                  <circle cx="78" cy="46" r="14" fill="#FAF5FF" stroke="#4C1D95" stroke-width="2.5"/>
+                  <circle cx="54" cy="46" r="9" fill="#0F172A"/>
+                  <circle cx="78" cy="46" r="9" fill="#0F172A"/>
+                  <path d="M54 44C52.8 42.5 50 43 50 45.2C50 47.4 54 50 54 50C54 50 58 47.4 58 45.2C58 43 55.2 42.5 54 44Z" fill="#F43F5E"/>
+                  <path d="M74 47C76 44.5 80 44.5 82 47" stroke="#38BDF8" stroke-width="2.2" stroke-linecap="round"/>
+                  <path d="M62 55L66 61L70 55H62Z" fill="#F59E0B"/>
+                  <!-- Checklist a la izquierda -->
+                  <rect x="14" y="54" width="38" height="48" rx="7" fill="#FFFFFF" stroke="#6D28D9" stroke-width="2.2"/>
+                  <path d="M22 68L25 71L31 65M22 79L25 82L31 76M22 90L25 93L31 87" stroke="#10B981" stroke-width="2.2" stroke-linecap="round"/>
+                </svg>
+              </div>
+
+              <!-- Foto de perfil + Nombre del estudiante -->
+              <div class="avatar-name-row">
+                <label class="avatar-upload-circle" title="Cambiar foto de perfil">
+                  <input type="file" id="avatarFileInput" accept="image/*" hidden />
+                  <img id="studentAvatarImg" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23DBEAFE'/><circle cx='50' cy='38' r='18' fill='%232563EB'/><path d='M20 88c0-18 14-28 30-28s30 10 30 28' fill='%231D4ED8'/></svg>" alt="Foto del estudiante" />
+                  <span class="cam-mini-badge"><i data-lucide="camera"></i></span>
+                </label>
+
+                <div class="rp-field-group flex-1">
+                  <label for="rpStudentName">Nombre del estudiante <span class="req">*</span></label>
+                  <input type="text" id="rpStudentName" value="Valeria" placeholder="Tu nombre" />
+                </div>
+              </div>
+
+              <!-- Universidad y Carrera en 2 columnas -->
+              <div class="rp-two-cols">
+                <div class="rp-field-group">
+                  <label for="rpUniversity">Universidad / instituto <span class="req">*</span></label>
+                  <div class="icon-select-box">
+                    <i data-lucide="landmark"></i>
+                    <select id="rpUniversity">
+                      <option value="UPC" selected>UPC</option>
+                      <option value="PUCP">PUCP</option>
+                      <option value="UNMSM">UNMSM</option>
+                      <option value="UTEC">UTEC</option>
+                      <option value="Universidad Nacional del Sur">Univ. Nacional del Sur</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="rp-field-group">
+                  <label for="rpCareer">Carrera <span class="req">*</span></label>
+                  <div class="icon-select-box">
+                    <i data-lucide="graduation-cap"></i>
+                    <select id="rpCareer">
+                      <option value="Ingeniería Industrial" selected>Ingeniería Industrial</option>
+                      <option value="Ingeniería de Sistemas de Información">Ing. de Sistemas</option>
+                      <option value="Ingeniería de Software">Ing. de Software</option>
+                      <option value="Psicología">Psicología</option>
+                      <option value="Administración">Administración</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Ciclo -->
+              <div class="rp-field-group">
+                <label for="rpCycle">Ciclo <span class="req">*</span></label>
+                <div class="icon-select-box">
+                  <i data-lucide="layers"></i>
+                  <select id="rpCycle">
+                    <option value="1er - 2do ciclo">1er - 2do ciclo</option>
+                    <option value="3er - 4to ciclo">3er - 4to ciclo</option>
+                    <option value="5to - 6to ciclo">5to - 6to ciclo</option>
+                    <option value="7mo ciclo" selected>7mo ciclo</option>
+                    <option value="8vo ciclo o más">8vo ciclo o más</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Modalidad de estudio (3 tarjetas) -->
+              <div class="rp-section-block">
+                <div class="rp-label-with-icon">
+                  <i data-lucide="school"></i>
+                  <span>Modalidad de estudio <span class="req">*</span></span>
+                </div>
+                <div class="modality-grid-3" id="modalityGrid">
+                  <button type="button" class="modality-card selected" data-modality="Presencial">
+                    <div class="mod-icon"><i data-lucide="users"></i></div>
+                    <span>Presencial</span>
+                    <span class="bottom-radio-dot"></span>
+                  </button>
+
+                  <button type="button" class="modality-card" data-modality="Virtual">
+                    <div class="mod-icon"><i data-lucide="monitor"></i></div>
+                    <span>Virtual</span>
+                    <span class="bottom-radio-dot"></span>
+                  </button>
+
+                  <button type="button" class="modality-card" data-modality="Mixta">
+                    <div class="mod-icon"><i data-lucide="laptop"></i></div>
+                    <span>Mixta</span>
+                    <span class="bottom-radio-dot"></span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Meta principal (Radio list) -->
+              <div class="rp-section-block">
+                <div class="rp-label-with-icon">
+                  <i data-lucide="target" class="pink-icon"></i>
+                  <span>Meta principal <span class="req">*</span></span>
+                </div>
+                <div class="meta-radio-list" id="mainGoalList">
+                  <button type="button" class="meta-radio-row" data-goal="Mejorar notas">
+                    <span class="blue-radio-circle"></span>
+                    <span>Mejorar notas</span>
+                  </button>
+
+                  <button type="button" class="meta-radio-row selected" data-goal="Organizarme mejor">
+                    <span class="blue-radio-circle"></span>
+                    <span>Organizarme mejor</span>
+                  </button>
+
+                  <button type="button" class="meta-radio-row" data-goal="Reducir estrés académico">
+                    <span class="blue-radio-circle"></span>
+                    <span>Reducir estrés académico</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="screen-footer single-btn">
+              <button type="button" class="btn-blue-primary full-width" id="btnNextStep2">
+                <span>Continuar</span>
+                <i data-lucide="arrow-right"></i>
+              </button>
+            </div>
+          </section>
+
+          <!-- ==========================================
+               PANTALLA 2 (PASO 3): HÁBITOS Y NECESIDADES
+               ========================================== -->
+          <section class="screen" id="rp-screen-3" data-step="3">
+            <div class="screen-body rp-body">
+              <div class="rp-hero-row">
+                <div class="rp-hero-copy">
+                  <h1>Hábitos y <span>necesidades</span></h1>
+                  <p>Ayúdanos a entender cómo estudias para darte recomendaciones personalizadas.</p>
+                </div>
+
+                <!-- Búho con lápiz -->
+                <svg class="rp-owl-checklist" viewBox="0 0 130 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18 32L8 24M110 24L120 16" stroke="#FACC15" stroke-width="2.8" stroke-linecap="round"/>
+                  <ellipse cx="68" cy="82" rx="34" ry="27" fill="#6D28D9"/>
+                  <ellipse cx="68" cy="86" rx="24" ry="19" fill="#EDE9FE"/>
+                  <rect x="34" y="18" width="68" height="52" rx="25" fill="#7C3AED"/>
+                  <circle cx="56" cy="44" r="14" fill="#FAF5FF" stroke="#4C1D95" stroke-width="2.5"/>
+                  <circle cx="80" cy="44" r="14" fill="#FAF5FF" stroke="#4C1D95" stroke-width="2.5"/>
+                  <circle cx="56" cy="44" r="9" fill="#0F172A"/>
+                  <circle cx="80" cy="44" r="9" fill="#0F172A"/>
+                  <path d="M56 42C54.8 40.5 52 41 52 43.2C52 45.4 56 48 56 48C56 48 60 45.4 60 43.2C60 41 57.2 40.5 56 42Z" fill="#F43F5E"/>
+                  <path d="M76 45C78 42.5 82 42.5 84 45" stroke="#38BDF8" stroke-width="2.2" stroke-linecap="round"/>
+                  <path d="M64 53L68 59L72 53H64Z" fill="#F59E0B"/>
+                  <!-- Lápiz -->
+                  <g transform="rotate(-25 22 72)">
+                    <rect x="16" y="45" width="10" height="46" rx="3" fill="#6D28D9" stroke="#4C1D95" stroke-width="1.8"/>
+                    <path d="M16 91L21 102L26 91H16Z" fill="#EDE9FE"/>
+                  </g>
+                </svg>
+              </div>
+
+              <!-- Pregunta 1: Horas de estudio por semana (4 tarjetas) -->
+              <div class="rp-section-block">
+                <div class="rp-label-with-icon">
+                  <i data-lucide="clock"></i>
+                  <span>¿Cuántas horas estudias por semana? <span class="req">*</span></span>
+                </div>
+                <div class="four-cards-grid" id="studyHoursGrid">
+                  <button type="button" class="square-choice-card" data-hours="Menos de 5">
+                    <i data-lucide="hourglass"></i>
+                    <span>Menos<br>de 5</span>
+                    <span class="bottom-radio-dot"></span>
+                  </button>
+
+                  <button type="button" class="square-choice-card selected" data-hours="5 a 10">
+                    <i data-lucide="layers"></i>
+                    <span>5 a 10</span>
+                    <span class="bottom-radio-dot"></span>
+                  </button>
+
+                  <button type="button" class="square-choice-card" data-hours="11 a 15">
+                    <i data-lucide="laptop"></i>
+                    <span>11 a 15</span>
+                    <span class="bottom-radio-dot"></span>
+                  </button>
+
+                  <button type="button" class="square-choice-card" data-hours="Más de 15">
+                    <i data-lucide="rocket"></i>
+                    <span>Más de 15</span>
+                    <span class="bottom-radio-dot"></span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Pregunta 2: Qué te cuesta más actualmente (4 tarjetas) -->
+              <div class="rp-section-block">
+                <div class="rp-label-with-icon">
+                  <i data-lucide="target" class="pink-icon"></i>
+                  <span>¿Qué te cuesta más actualmente? <span class="req">*</span></span>
+                </div>
+                <div class="four-cards-grid" id="struggleGrid">
+                  <button type="button" class="square-choice-card selected" data-struggle="Gestionar mi tiempo">
+                    <i data-lucide="calendar-clock"></i>
+                    <span>Gestionar<br>mi tiempo</span>
+                    <span class="bottom-radio-dot"></span>
+                  </button>
+
+                  <button type="button" class="square-choice-card" data-struggle="Concentrarme">
+                    <i data-lucide="brain"></i>
+                    <span>Concentrarme</span>
+                    <span class="bottom-radio-dot"></span>
+                  </button>
+
+                  <button type="button" class="square-choice-card" data-struggle="Priorizar cursos">
+                    <i data-lucide="list-checks"></i>
+                    <span>Priorizar<br>cursos</span>
+                    <span class="bottom-radio-dot"></span>
+                  </button>
+
+                  <button type="button" class="square-choice-card" data-struggle="Evitar la procrastinación">
+                    <i data-lucide="timer-off"></i>
+                    <span>Evitar la<br>procrastinación</span>
+                    <span class="bottom-radio-dot"></span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Pregunta 3: Qué te gustaría mejorar primero (Checkboxes múltiples) -->
+              <div class="rp-section-block">
+                <div class="rp-label-with-icon">
+                  <i data-lucide="bar-chart-2"></i>
+                  <div>
+                    <span>¿Qué te gustaría mejorar primero? <span class="req">*</span></span>
+                    <small class="sub-hint">(Puedes elegir más de una opción)</small>
+                  </div>
+                </div>
+
+                <div class="multi-pills-grid" id="firstImproveGrid">
+                  <label class="blue-check-pill checked">
+                    <input type="checkbox" value="Plan de estudio" checked />
+                    <span class="b-cb"><i data-lucide="check"></i></span>
+                    <span>Plan de estudio</span>
+                  </label>
+
+                  <label class="blue-check-pill">
+                    <input type="checkbox" value="Técnicas de estudio" />
+                    <span class="b-cb"><i data-lucide="check"></i></span>
+                    <span>Técnicas de estudio</span>
+                  </label>
+
+                  <label class="blue-check-pill checked">
+                    <input type="checkbox" value="Bienestar y enfoque" checked />
+                    <span class="b-cb"><i data-lucide="check"></i></span>
+                    <span>Bienestar y enfoque</span>
+                  </label>
+
+                  <label class="blue-check-pill">
+                    <input type="checkbox" value="Apoyo entre pares" />
+                    <span class="b-cb"><i data-lucide="check"></i></span>
+                    <span>Apoyo entre pares</span>
+                  </label>
+
+                  <label class="blue-check-pill">
+                    <input type="checkbox" value="Comprensión" />
+                    <span class="b-cb"><i data-lucide="check"></i></span>
+                    <span>Comprensión</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="screen-footer single-btn">
+              <button type="button" class="btn-blue-primary full-width" id="btnNextStep3">
+                <span>Continuar</span>
+                <i data-lucide="arrow-right"></i>
+              </button>
+            </div>
+          </section>
+
+          <!-- ==========================================
+               PANTALLA 3 (PASO 4): ¡REGISTRO COMPLETADO!
+               ========================================== -->
+          <section class="screen" id="rp-screen-4" data-step="4">
+            <div class="screen-body rp-done-body">
+              <!-- Búho con birrete + Título Registro completado -->
+              <div class="done-owl-banner">
+                <svg class="done-grad-owl" viewBox="0 0 135 125" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M110 26L122 18M114 40L128 38" stroke="#FACC15" stroke-width="3" stroke-linecap="round"/>
+                  <ellipse cx="64" cy="88" rx="36" ry="30" fill="#6D28D9"/>
+                  <ellipse cx="64" cy="92" rx="25" ry="21" fill="#EDE9FE"/>
+                  <rect x="28" y="30" width="72" height="54" rx="26" fill="#7C3AED"/>
+                  <circle cx="51" cy="56" r="15" fill="#FAF5FF" stroke="#4C1D95" stroke-width="2.6"/>
+                  <circle cx="77" cy="56" r="15" fill="#FAF5FF" stroke="#4C1D95" stroke-width="2.6"/>
+                  <circle cx="51" cy="56" r="9.5" fill="#0F172A"/>
+                  <circle cx="77" cy="56" r="9.5" fill="#0F172A"/>
+                  <path d="M51 54C49.7 52.5 47 53 47 55.2C47 57.4 51 60 51 60C51 60 55 57.4 55 55.2C55 53 52.3 52.5 51 54Z" fill="#F43F5E"/>
+                  <path d="M73 57C75 54.5 79 54.5 81 57" stroke="#38BDF8" stroke-width="2.2" stroke-linecap="round"/>
+                  <path d="M60 65L64 72L68 65H60Z" fill="#F59E0B"/>
+                  <!-- Birrete -->
+                  <path d="M24 26L64 12L104 26L64 40L24 26Z" fill="#3B0764" stroke="#4C1D95" stroke-width="2"/>
+                  <path d="M94 28V44" stroke="#FACC15" stroke-width="2.4" stroke-linecap="round"/>
+                </svg>
+
+                <div class="done-heading-copy">
+                  <h1>¡Registro<br><span>completado!</span></h1>
+                  <p>Bienvenida a<br>StudentMind Connect 💜</p>
+                </div>
+              </div>
+
+              <!-- Tarjeta Resumen del Estudiante -->
+              <div class="student-summary-card">
+                <img id="summaryAvatarImg" src="" alt="Avatar" class="summary-avatar-photo" />
+                <div class="summary-student-meta">
+                  <strong id="summaryStudentName">Valeria</strong>
+                  <span><i data-lucide="landmark"></i> <em id="summaryUni">UPC</em></span>
+                  <span><i data-lucide="graduation-cap"></i> <em id="summaryCareer">Ingeniería Industrial</em></span>
+                  <span><i data-lucide="layers"></i> <em id="summaryCycle">7mo ciclo</em></span>
+                </div>
+                <button type="button" class="edit-pencil-btn" id="btnEditProfile" title="Editar perfil">
+                  <i data-lucide="pencil"></i>
+                </button>
+              </div>
+
+              <!-- Badge Plan Freemium -->
+              <div class="freemium-plan-banner">
+                <div class="crown-plan-pill">
+                  <i data-lucide="crown"></i>
+                  <span>Estás en el <strong>Plan Freemium</strong></span>
+                </div>
+                <p>Disfruta de estas funcionalidades principales:</p>
+              </div>
+
+              <!-- Cuadrícula 3x2 de Funcionalidades Incluidas -->
+              <div class="freemium-features-grid">
+                <a href="../../encuesta/html%20encuesta/etapa1.html" class="f-feature-tile">
+                  <i data-lucide="file-text"></i>
+                  <span>Test<br>diagnóstico</span>
+                </a>
+                <a href="../../encuesta/html%20encuesta/etapa7.html" class="f-feature-tile">
+                  <i data-lucide="route"></i>
+                  <span>Ruta<br>personalizada</span>
+                </a>
+                <div class="f-feature-tile">
+                  <i data-lucide="calendar-days"></i>
+                  <span>Planificador<br>semanal</span>
+                </div>
+                <div class="f-feature-tile">
+                  <i data-lucide="bot"></i>
+                  <span>IA Lumen</span>
+                </div>
+                <div class="f-feature-tile">
+                  <i data-lucide="users"></i>
+                  <span>Comunidad<br>P2P</span>
+                </div>
+                <div class="f-feature-tile">
+                  <i data-lucide="book-open"></i>
+                  <span>Biblioteca</span>
+                </div>
+              </div>
+
+              <!-- Banner Desbloquear Plan PRO -->
+              <button type="button" class="unlock-pro-banner" id="btnOpenProModal">
+                <div class="lock-pro-icon"><i data-lucide="lock"></i></div>
+                <div class="pro-banner-text">
+                  <strong>¿Quieres más beneficios?</strong>
+                  <span>Desbloquea el <b>Plan PRO</b> para acceder a más acompañamiento y seguimiento avanzado.</span>
+                </div>
+                <i data-lucide="chevron-right" class="pro-arrow"></i>
+              </button>
+            </div>
+
+            <div class="screen-footer rp-done-footer">
+              <button type="button" class="btn-blue-primary full-width" id="btnStartNow">
+                <span>Comenzar ahora</span>
+                <i data-lucide="arrow-right"></i>
+              </button>
+              <a href="plataforma.html" class="go-home-link">Ir al inicio</a>
+            </div>
+          </section>
+
+        </div>
+
+        <!-- Barra de gestos inferior -->
+        <div class="gesture-bar-container">
+          <div class="gesture-pill" id="gestureHomeBtn"></div>
+        </div>
+
+        <!-- Toast -->
+        <div class="toast-notification" id="toastNotification" role="alert">
+          <i data-lucide="alert-circle"></i>
+          <span id="toastMessage">Mensaje</span>
+        </div>
+
+        <!-- Modal Plan PRO -->
+        <div class="modal-overlay" id="proPlanModal">
+          <div class="modal-card summary-modal-card">
+            <div class="summary-badge-icon" style="background: #EDE9FE; color: #6D28D9;">
+              <i data-lucide="crown"></i>
+            </div>
+            <h3>StudentMind Connect PRO</h3>
+            <p class="summary-subtitle">Potencia tu rendimiento con tutorías ilimitadas de IA Lumen y analítica predictiva.</p>
+            <div class="summary-details-box">
+              <div class="summary-item"><strong>Plan Freemium (Actual)</strong><span>Diagnóstico completo, ruta base y comunidad P2P.</span></div>
+              <div class="summary-item"><strong>Plan PRO Estudiantil</strong><span>Consultas ilimitadas a IA Lumen, simulacros de examen y seguimiento semanal avanzado.</span></div>
+            </div>
+            <div class="summary-actions">
+              <button type="button" class="btn-blue-primary full-width" id="closeProModalBtn">
+                <span>Continuar con mi Plan Freemium</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <script src="../js%20aplicacion/registro-perfil.js"></script>
+</body>
+</html>

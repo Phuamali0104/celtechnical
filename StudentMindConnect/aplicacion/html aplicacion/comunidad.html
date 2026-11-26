@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>StudentMind Connect — Comunidad P2P y Estudio Colaborativo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="../../encuesta/css%20encuesta/etapa1.css" />
+  <link rel="stylesheet" href="../css%20aplicacion/comunidad.css" />
+  <link rel="stylesheet" href="../css%20aplicacion/navegacion.css" />
+  <link rel="stylesheet" href="../css%20aplicacion/tema.css" />
+  <link rel="stylesheet" href="../css%20aplicacion/planes.css" />
+  <script src="../js%20aplicacion/planes.js"></script>
+</head>
+<body>
+
+  <main class="desktop-stage">
+    <div class="phone-frame" id="phoneFrame">
+      <div class="hardware-btn volume-up"></div>
+      <div class="hardware-btn volume-down"></div>
+      <div class="hardware-btn power-btn"></div>
+
+      <div class="app-screen" id="appScreen">
+
+        <!-- Barra de estado superior -->
+        <header class="status-bar">
+          <span class="status-time" id="statusTime">9:41</span>
+          <div class="camera-punch"></div>
+          <div class="status-icons">
+            <i data-lucide="signal" class="status-icon"></i>
+            <i data-lucide="wifi" class="status-icon"></i>
+            <i data-lucide="battery-full" class="status-icon"></i>
+          </div>
+        </header>
+
+        <!-- Header Dinámico (Cambia entre Feed Principal y Vistas Internas) -->
+        <div class="com-top-header">
+          <button type="button" class="icon-btn" id="comLeftNavBtn" aria-label="Menú o Volver">
+            <i data-lucide="menu" id="comLeftNavIcon"></i>
+          </button>
+
+          <div class="plat-mini-brand">
+            <span id="comBrandRays" class="hidden" hidden></span>
+            <svg class="brand-owl-svg" viewBox="0 0 64 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="6" y="8" width="52" height="42" rx="20" fill="#5B21B6"/>
+              <path d="M12 10L6 2L20 8Z" fill="#5B21B6"/>
+              <path d="M52 10L58 2L44 8Z" fill="#5B21B6"/>
+              <circle cx="23" cy="28" r="11" fill="#F3E8FF" stroke="#3B0764" stroke-width="2.5"/>
+              <circle cx="41" cy="28" r="11" fill="#F3E8FF" stroke="#3B0764" stroke-width="2.5"/>
+              <circle cx="23" cy="28" r="6" fill="#1E1B4B"/>
+              <circle cx="41" cy="28" r="6" fill="#1E1B4B"/>
+              <path d="M23 26.5C22.2 25.5 20.5 25.8 20.5 27.3C20.5 28.8 23 30.5 23 30.5C23 30.5 25.5 28.8 25.5 27.3C25.5 25.8 23.8 25.5 23 26.5Z" fill="#F43F5E"/>
+              <path d="M38.5 28.5C39.8 27 42.2 27 43.5 28.5" stroke="#38BDF8" stroke-width="2" stroke-linecap="round"/>
+              <path d="M29 34L32 39L35 34H29Z" fill="#F59E0B"/>
+            </svg>
+            <div class="brand-text"><span class="brand-title">StudentMind</span><span class="brand-subtitle">Connect</span></div>
+          </div>
+
+          <div class="com-header-right" id="comHeaderRightBox">
+            <button type="button" class="icon-btn notif-btn" id="comBellBtn">
+              <i data-lucide="bell"></i>
+              <span class="notif-dot purple"></span>
+            </button>
+            <button type="button" class="dash-avatar-btn" id="comProfileBtn">
+              <i data-lucide="user"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Viewport de las 6 Pantallas de Comunidad -->
+        <div class="screens-viewport">
+
+          <!-- ==========================================
+               PANTALLA 1: COMUNIDAD P2P (FEED PRINCIPAL)
+               ========================================== -->
+          <section class="screen active" id="com-screen-1" data-step="1">
+            <div class="screen-body com-feed-body">
+              <div class="com-hero-split">
+                <div>
+                  <h1>Comunidad <span>P2P</span></h1>
+                  <p>Conecta, colabora y crece<br>con compañeros de estudio.</p>
+                </div>
+
+                <!-- Ilustración 3 compañeros colaborando -->
+                <svg class="peers-trio-svg" viewBox="0 0 130 95" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M26 24L18 14M34 18L30 8" stroke="#6D28D9" stroke-width="2.5" stroke-linecap="round"/>
+                  <!-- Compañero izq -->
+                  <circle cx="34" cy="44" r="14" fill="#FDBA74"/>
+                  <path d="M20 40C20 28 48 28 48 40" fill="#1E1B4B"/>
+                  <rect x="16" y="58" width="36" height="32" rx="14" fill="#6366F1"/>
+                  <!-- Compañero der -->
+                  <circle cx="96" cy="44" r="14" fill="#FDE68A"/>
+                  <path d="M82 40C82 28 110 28 110 40" fill="#7C3AED"/>
+                  <rect x="78" y="58" width="36" height="32" rx="14" fill="#A78BFA"/>
+                  <!-- Compañera centro -->
+                  <circle cx="65" cy="36" r="15" fill="#FED7AA"/>
+                  <path d="M50 34C50 20 80 20 80 34" fill="#F472B6"/>
+                  <rect x="46" y="52" width="38" height="38" rx="15" fill="#8B5CF6"/>
+                  <!-- Cuaderno blanco al frente -->
+                  <rect x="52" y="64" width="26" height="22" rx="4" fill="#FFFFFF" stroke="#4C1D95" stroke-width="1.8"/>
+                </svg>
+              </div>
+
+              <!-- Post 1: Ana G. -->
+              <article class="feed-post-card">
+                <div class="fp-header">
+                  <div class="fp-avatar pink">AG</div>
+                  <div class="fp-author">
+                    <strong>Ana G.</strong>
+                    <span>4 minutos ago</span>
+                  </div>
+                  <i data-lucide="more-horizontal" class="fp-dots"></i>
+                </div>
+                <h2 class="fp-title">Resumen de Bioquímica – Ciclo de Krebs</h2>
+                <p class="fp-text">Comparto mis apuntes claros para el examen final. ¡Espero que les sirva!</p>
+                <div class="fp-footer">
+                  <div class="fp-actions">
+                    <button type="button" class="fp-stat-btn" id="likePostAna">
+                      <i data-lucide="thumbs-up"></i> <span id="anaLikesCount">12</span>
+                    </button>
+                    <button type="button" class="fp-stat-btn" data-open-screen="3">
+                      <i data-lucide="message-square"></i> <span>4</span>
+                    </button>
+                  </div>
+                  <button type="button" class="fp-bookmark-btn"><i data-lucide="bookmark"></i></button>
+                </div>
+              </article>
+
+              <!-- Post 2: Carlos R. -->
+              <article class="feed-post-card">
+                <div class="fp-header">
+                  <div class="fp-avatar blue">CR</div>
+                  <div class="fp-author">
+                    <strong>Carlos R.</strong>
+                    <span>3 months ago</span>
+                  </div>
+                  <i data-lucide="more-horizontal" class="fp-dots"></i>
+                </div>
+                <h2 class="fp-title">Duda sobre el Teorema de Bayes</h2>
+                <p class="fp-text">¿Alguien puede explicarme cómo aplicar la fórmula en este problema? Adjunto foto.</p>
+                <div class="fp-footer">
+                  <div class="fp-actions">
+                    <button type="button" class="fp-stat-btn" data-open-screen="3">
+                      <i data-lucide="message-square"></i> <span>3</span>
+                    </button>
+                  </div>
+                  <button type="button" class="fp-bookmark-btn"><i data-lucide="bookmark"></i></button>
+                </div>
+              </article>
+
+              <!-- Post 3: Grupo de Estudio IA -->
+              <article class="feed-post-card group-highlight">
+                <div class="fp-header">
+                  <div class="fp-avatar purple"><i data-lucide="users"></i></div>
+                  <div class="fp-author">
+                    <strong>Grupo de Estudio IA</strong>
+                    <span>5 members ago</span>
+                  </div>
+                  <i data-lucide="more-horizontal" class="fp-dots"></i>
+                </div>
+                <h2 class="fp-title">Nuevo grupo: Machine Learning Avanzado</h2>
+                <p class="fp-text">Buscamos 2 personas más para repasar los temas de la semana.</p>
+                <div class="fp-footer">
+                  <div class="fp-actions">
+                    <span class="fp-meta-pill"><i data-lucide="eye"></i> 8</span>
+                    <span class="fp-meta-pill"><i data-lucide="message-square"></i> 2</span>
+                    <span class="fp-meta-pill"><i data-lucide="users"></i> 3 • 2h left</span>
+                  </div>
+                  <button type="button" class="btn-join-group-sm" id="btnJoinGroupCard">
+                    Unirse
+                  </button>
+                </div>
+              </article>
+
+              <!-- Banner Naranja: ¡Invita a un amigo! -->
+              <div class="coral-invite-banner">
+                <div class="cib-left">
+                  <div class="cib-icon"><i data-lucide="users"></i></div>
+                  <div>
+                    <strong>¡Invita a un amigo!</strong>
+                    <span>Que se una a la comunidad y estudien juntos</span>
+                  </div>
+                </div>
+                <a href="microretos.html" class="btn-white-share-sm">
+                  Compartir <i data-lucide="share-2"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Barra Inferior -->
+            <nav class="bottom-tab-bar">
+              <a href="plataforma.html" class="tab-item">
+                <i data-lucide="home"></i>
+                <span></span>
+              </a>
+              <a href="planificador.html" class="tab-item">
+                <i data-lucide="calendar-days"></i>
+                <span></span>
+              </a>
+              <a href="progreso.html" class="tab-item">
+                <i data-lucide="bar-chart-2"></i>
+                <span></span>
+              </a>
+              <a href="biblioteca.html" class="tab-item">
+                <i data-lucide="book-open"></i>
+                <span></span>
+              </a>
+              <button type="button" class="tab-item active">
+                <i data-lucide="users"></i>
+                <span>Comunidad</span>
+              </button>
+            </nav>
+          </section>
+
+          <!-- ==========================================
+               PANTALLA 2: GRUPO DE ESTUDIO IA (DETALLE)
+               ========================================== -->
+          <section class="screen" id="com-screen-2" data-step="2">
+            <div class="screen-body group-detail-body">
+              <!-- Banner Ilustrado Grupo -->
+              <div class="group-hero-banner">
+                <svg class="group-students-svg" viewBox="0 0 240 125" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M36 46L22 38M32 62L18 62M204 34L218 24M208 50L224 46" stroke="#FACC15" stroke-width="3.5" stroke-linecap="round"/>
+                  <!-- Chico Izquierda -->
+                  <circle cx="72" cy="46" r="20" fill="#FDBA74"/>
+                  <path d="M52 42C52 24 92 24 92 42" fill="#1E1B4B"/>
+                  <rect x="46" y="66" width="52" height="52" rx="20" fill="#4338CA"/>
+                  <!-- Chico Derecha -->
+                  <circle cx="168" cy="46" r="20" fill="#FDE68A"/>
+                  <path d="M148 42C148 24 188 24 188 42" fill="#78350F"/>
+                  <circle cx="161" cy="46" r="5" stroke="#1E1B4B" stroke-width="2"/>
+                  <circle cx="175" cy="46" r="5" stroke="#1E1B4B" stroke-width="2"/>
+                  <rect x="142" y="66" width="52" height="52" rx="20" fill="#7C3AED"/>
+                  <!-- Chica Centro con Laptop -->
+                  <circle cx="120" cy="54" r="19" fill="#FED7AA"/>
+                  <path d="M101 52C101 34 139 34 139 52" fill="#1F2937"/>
+                  <rect x="92" y="76" width="56" height="42" rx="14" fill="#8B5CF6" stroke="#4C1D95" stroke-width="2.5"/>
+                </svg>
+                <div class="group-purple-pill-title">Grupo de Estudio IA</div>
+              </div>
+
+              <!-- 3 Tarjetas KPI del Grupo -->
+              <div class="group-kpi-grid-3">
+                <div class="g-kpi-card">
+                  <i data-lucide="users"></i>
+                  <strong id="groupMembersCount">5</strong>
+                  <span>miembros</span>
+                </div>
+
+                <div class="g-kpi-card">
+                  <i data-lucide="layers"></i>
+                  <strong>Machine<br>Learning</strong>
+                </div>
+
+                <div class="g-kpi-card">
+                  <i data-lucide="calendar-check"></i>
+                  <strong id="groupSpotsCount">2</strong>
+                  <span>cupos<br>disponibles</span>
+                </div>
+              </div>
+
+              <!-- Sobre el grupo -->
+              <div class="about-group-box">
+                <h2>Sobre el grupo</h2>
+                <p>Repasamos los temas de la semana, resolvemos dudas y compartimos recursos de Machine Learning.</p>
+              </div>
+
+              <!-- 3 Accesos Directos a Herramientas del Grupo -->
+              <div class="group-tools-list">
+                <button type="button" class="group-tool-row" data-open-screen="3">
+                  <span class="gt-icon green"><i data-lucide="check-circle-2"></i></span>
+                  <span>Estudio colaborativo</span>
+                  <i data-lucide="chevron-right" class="gt-arrow"></i>
+                </button>
+
+                <button type="button" class="group-tool-row" data-open-screen="5">
+                  <span class="gt-icon purple"><i data-lucide="notebook-pen"></i></span>
+                  <span>Intercambio de apuntes</span>
+                  <i data-lucide="chevron-right" class="gt-arrow"></i>
+                </button>
+
+                <button type="button" class="group-tool-row" data-open-screen="4">
+                  <span class="gt-icon indigo"><i data-lucide="calendar-days"></i></span>
+                  <span>Sesiones de repaso</span>
+                  <i data-lucide="chevron-right" class="gt-arrow"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="screen-footer single-btn">
+              <button type="button" class="btn-primary full-width" id="btnConfirmJoinGroup">
+                <span>Unirme al grupo</span>
+                <i data-lucide="arrow-right"></i>
+              </button>
+            </div>
+          </section>
+
+          <!-- ==========================================
+               PANTALLA 3: ESTUDIO COLABORATIVO DEL GRUPO
+               ========================================== -->
+          <section class="screen" id="com-screen-3" data-step="3">
+            <div class="screen-body collab-room-body">
+              <!-- Banner Búho + Compañeros -->
+              <div class="collab-banner-card">
+                <div class="cb-avatars-top">
+                  🦉 👨‍🎓 👩‍💻 🧑‍🎓
+                </div>
+                <div class="group-purple-pill-title sm">Estudio colaborativo</div>
+                <p>Estudia en equipo en tiempo real, comparte avances y mantén el enfoque con tu grupo.</p>
+              </div>
+
+              <!-- Meta de estudio -->
+              <div class="study-goal-card">
+                <div class="sg-icon"><i data-lucide="target"></i></div>
+                <div class="sg-text">
+                  <strong>Meta de estudio</strong>
+                  <span id="groupStudyGoalText">Repasar Machine Learning (Temas 1–4) antes del viernes</span>
+                </div>
+                <button type="button" class="sg-edit-btn" id="btnEditGroupGoal" title="Editar meta">
+                  <i data-lucide="pencil"></i>
+                </button>
+              </div>
+
+              <!-- Miembros activos -->
+              <div class="active-members-row">
+                <span class="am-title"><i class="online-dot"></i> Miembros activos ahora (3)</span>
+                <div class="am-avatars-strip">
+                  <span class="mini-av a1">AG</span>
+                  <span class="mini-av a2">CR</span>
+                  <span class="mini-av a3">MT</span>
+                  <span class="mini-av a4">VL</span>
+                  <span class="mini-av plus">+2</span>
+                </div>
+              </div>
+
+              <!-- Tablero compartido -->
+              <div class="shared-board-card">
+                <div class="sb-header">
+                  <span><i data-lucide="clipboard-list"></i> Tablero compartido</span>
+                  <i data-lucide="more-horizontal"></i>
+                </div>
+                <div class="sb-tasks-list" id="sharedBoardTasks">
+                  <label class="sb-task-row checked">
+                    <input type="checkbox" checked />
+                    <span class="sb-check"><i data-lucide="check"></i></span>
+                    <span>Repasar modelos de ML</span>
+                  </label>
+                  <label class="sb-task-row">
+                    <input type="checkbox" />
+                    <span class="sb-check"><i data-lucide="check"></i></span>
+                    <span>Resolver ejercicios (Tema 3)</span>
+                  </label>
+                  <label class="sb-task-row">
+                    <input type="checkbox" />
+                    <span class="sb-check"><i data-lucide="check"></i></span>
+                    <span>Preparar dudas para la sesión</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Chat del grupo -->
+              <div class="group-chat-card">
+                <div class="gc-header">
+                  <span><i data-lucide="message-circle"></i> Chat del grupo</span>
+                  <button type="button" class="see-all-link" id="btnQuickChatReply">Responder</button>
+                </div>
+                <div class="gc-msg-row">
+                  <div class="fp-avatar pink sm">AG</div>
+                  <div class="gc-bubble">
+                    <strong>Ana G. <em>• 5 min ago</em></strong>
+                    <p id="latestGroupMsg">¿Repasamos juntos los ejemplos del Tema 3 en la sesión?</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="screen-footer single-btn">
+              <button type="button" class="btn-primary full-width" data-open-screen="4">
+                <i data-lucide="video"></i>
+                <span>Iniciar sesión colaborativa</span>
+              </button>
+            </div>
+          </section>
+
+          <!-- ==========================================
+               PANTALLA 4: SESIÓN DE ESTUDIO COLABORATIVA
+               ========================================== -->
+          <section class="screen" id="com-screen-4" data-step="4">
+            <div class="screen-body live-session-body">
+              <div class="ls-hero-split">
+                <div>
+                  <div class="ls-title-row">
+                    <span class="ls-cam-badge"><i data-lucide="video"></i></span>
+                    <h1>Sesión de estudio<br><span>colaborativa</span></h1>
+                  </div>
+                  <p>Estudia en tiempo real con<br>tus compañeros.</p>
+                </div>
+
+                <!-- Búho con audífonos y laptop -->
+                <svg class="ls-owl-svg" viewBox="0 0 130 105" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <ellipse cx="70" cy="74" rx="30" ry="24" fill="#6D28D9"/>
+                  <rect x="40" y="18" width="60" height="45" rx="22" fill="#7C3AED"/>
+                  <path d="M36 42C36 18 104 18 104 42" stroke="#7C3AED" stroke-width="4.5" stroke-linecap="round"/>
+                  <circle cx="58" cy="40" r="12" fill="#FAF5FF" stroke="#4C1D95" stroke-width="2.2"/>
+                  <circle cx="82" cy="40" r="12" fill="#FAF5FF" stroke="#4C1D95" stroke-width="2.2"/>
+                  <circle cx="58" cy="40" r="7.5" fill="#0F172A"/>
+                  <circle cx="82" cy="40" r="7.5" fill="#0F172A"/>
+                  <path d="M58 38C57 36.8 54.5 37.2 54.5 39C54.5 40.8 58 43 58 43C58 43 61.5 40.8 61.5 39C61.5 37.2 59 36.8 58 38Z" fill="#F43F5E"/>
+                  <path d="M78 41C80 38.8 84 38.8 86 41" stroke="#38BDF8" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M46 65L51 92H89L94 65H46Z" fill="#8B5CF6" stroke="#4C1D95" stroke-width="2"/>
+                </svg>
+              </div>
+
+              <!-- Tarjeta Próxima sesión (En vivo pronto) -->
+              <div class="live-next-card">
+                <div class="lnc-top">
+                  <div class="lnc-cal"><i data-lucide="calendar-clock"></i></div>
+                  <div class="lnc-info">
+                    <span>Próxima sesión</span>
+                    <strong>Repaso: Machine Learning</strong>
+                  </div>
+                  <span class="live-soon-pill">En vivo pronto</span>
+                </div>
+                <div class="lnc-meta">
+                  <span><i data-lucide="calendar"></i> Hoy, 7:00 p. m.</span>
+                  <span><i data-lucide="users"></i> 12 inscritos</span>
+                </div>
+                <button type="button" class="btn-primary full-width sm-live-btn" id="btnStartLiveRoom">
+                  <i data-lucide="video"></i>
+                  <span>Iniciar sesión colaborativa</span>
+                </button>
+              </div>
+
+              <!-- Próximas sesiones -->
+              <div class="upcoming-sessions-section">
+                <div class="us-head">
+                  <h2>Próximas sesiones</h2>
+                  <a href="planificador.html" class="see-all-link">Ver calendario &gt;</a>
+                </div>
+
+                <div class="us-cards-list">
+                  <div class="us-item-card">
+                    <div class="us-icon purple"><i data-lucide="book-open"></i></div>
+                    <div class="us-copy">
+                      <strong>Álgebra Lineal</strong>
+                      <span>📅 Mañana, 6:00 p. m. • 👥 8</span>
+                    </div>
+                    <button type="button" class="btn-join-outline" data-session="Álgebra Lineal">Unirme</button>
+                  </div>
+
+                  <div class="us-item-card">
+                    <div class="us-icon blue"><i data-lucide="code-2"></i></div>
+                    <div class="us-copy">
+                      <strong>Python para ML</strong>
+                      <span>📅 Vie. 5:00 p. m. • 👥 15</span>
+                    </div>
+                    <button type="button" class="btn-join-outline" data-session="Python para ML">Unirme</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Consejo inferior -->
+              <div class="tip-collab-footer">
+                <div class="tc-icon"><i data-lucide="users"></i></div>
+                <p><strong>Consejo:</strong> Activa tu cámara, participa y aprovecha el estudio en grupo.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- ==========================================
+               PANTALLA 5: INTERCAMBIO DE APUNTES
+               ========================================== -->
+          <section class="screen" id="com-screen-5" data-step="5">
+            <div class="screen-body notes-exchange-body">
+              <div class="ne-hero-banner">
+                <div class="ne-owl-books">🦉🎓 📚</div>
+                <div class="group-purple-pill-title sm">Intercambio de apuntes</div>
+                <p>Comparte y accede a apuntes, resúmenes y recursos académicos del grupo.</p>
+              </div>
+
+              <!-- Píldoras filtro apuntes -->
+              <div class="ne-filter-pills" id="notesFilterPills">
+                <button type="button" class="n-pill active" data-n-type="Todos">Todos</button>
+                <button type="button" class="n-pill" data-n-type="PDF">📄 PDF</button>
+                <button type="button" class="n-pill" data-n-type="Notas">📝 Notas</button>
+                <button type="button" class="n-pill" data-n-type="Otros">📁 Otros</button>
+              </div>
+
+              <!-- Lista de Apuntes Compartidos -->
+              <div class="shared-notes-list" id="sharedNotesList">
+                <!-- Renderizado dinámicamente desde comunidad.js -->
+              </div>
+            </div>
+
+            <div class="screen-footer single-btn">
+              <button type="button" class="btn-primary full-width" id="btnOpenUploadNoteModal">
+                <i data-lucide="upload-cloud"></i>
+                <span>Subir apuntes</span>
+              </button>
+            </div>
+          </section>
+
+          <!-- ==========================================
+               PANTALLA 6: RECURSOS DE ESTUDIO DEL GRUPO
+               ========================================== -->
+          <section class="screen" id="com-screen-6" data-step="6">
+            <div class="screen-body group-resources-body">
+              <div class="gr-hero-split">
+                <div>
+                  <div class="gr-title-row">
+                    <span class="gr-stack-icon"><i data-lucide="layers"></i></span>
+                    <h1>Recursos de <span>estudio</span></h1>
+                  </div>
+                  <p>Materiales curados por la<br>comunidad y el equipo de IA.</p>
+                </div>
+                <div class="gr-mini-owl">🦉📖</div>
+              </div>
+
+              <!-- Buscador -->
+              <div class="bib-search-bar">
+                <i data-lucide="search"></i>
+                <input type="text" id="groupResSearch" placeholder="Buscar recursos (tema, curso, autor...)" />
+              </div>
+
+              <!-- Píldoras filtro -->
+              <div class="ne-filter-pills" id="groupResFilterPills">
+                <button type="button" class="gr-pill active" data-gr-cat="Todos">Todos</button>
+                <button type="button" class="gr-pill" data-gr-cat="Apuntes">Apuntes</button>
+                <button type="button" class="gr-pill" data-gr-cat="Presentaciones">Presentaciones</button>
+                <button type="button" class="gr-pill" data-gr-cat="Ejercicios">Ejercicios</button>
+              </div>
+
+              <!-- Lista de Recursos Descargables -->
+              <div class="gr-files-list" id="groupFilesList">
+                <div class="gr-file-card" data-cat="Apuntes">
+                  <div class="file-badge pdf">PDF</div>
+                  <div class="file-info">
+                    <strong>Resumen: Machine Learning</strong>
+                    <span>Apuntes de la comunidad • 2.4 MB</span>
+                  </div>
+                  <button type="button" class="file-dl-btn" data-file="Resumen: Machine Learning.pdf"><i data-lucide="download"></i></button>
+                </div>
+
+                <div class="gr-file-card" data-cat="Presentaciones">
+                  <div class="file-badge ppt">PPT</div>
+                  <div class="file-info">
+                    <strong>Algoritmos de Clasificación</strong>
+                    <span>Presentación • 5.1 MB</span>
+                  </div>
+                  <button type="button" class="file-dl-btn" data-file="Algoritmos de Clasificación.pptx"><i data-lucide="download"></i></button>
+                </div>
+
+                <div class="gr-file-card" data-cat="Ejercicios">
+                  <div class="file-badge xls">XLS</div>
+                  <div class="file-info">
+                    <strong>Dataset de Práctica</strong>
+                    <span>Ejercicio guiado • 1.2 MB</span>
+                  </div>
+                  <button type="button" class="file-dl-btn" data-file="Dataset de Práctica.xlsx"><i data-lucide="download"></i></button>
+                </div>
+
+                <div class="gr-file-card" data-cat="Apuntes">
+                  <div class="file-badge link"><i data-lucide="link"></i></div>
+                  <div class="file-info">
+                    <strong>Guía de Estudio (oficial)</strong>
+                    <span>Enlace externo confiable</span>
+                  </div>
+                  <button type="button" class="file-dl-btn" data-file="Guía Oficial ML"><i data-lucide="external-link"></i></button>
+                </div>
+              </div>
+
+              <!-- Banner solicitar recurso -->
+              <button type="button" class="request-res-banner" id="btnRequestResource">
+                <div class="rr-star"><i data-lucide="star"></i></div>
+                <div>
+                  <strong>¿No encuentras un recurso?</strong>
+                  <span>Solicítalo a la comunidad o al Copiloto IA.</span>
+                </div>
+                <i data-lucide="chevron-right" class="rr-arrow"></i>
+              </button>
+            </div>
+          </section>
+
+        </div>
+
+        <!-- Barra de gestos inferior -->
+        <div class="gesture-bar-container">
+          <div class="gesture-pill" id="gestureHomeBtn" title="Inicio Comunidad"></div>
+        </div>
+
+        <!-- Toast -->
+        <div class="toast-notification" id="toastNotification" role="alert">
+          <i data-lucide="check-circle-2"></i>
+          <span id="toastMessage">Mensaje</span>
+        </div>
+
+        <!-- Modal Subir Apuntes -->
+        <div class="modal-overlay" id="uploadNoteModal">
+          <div class="modal-card summary-modal-card">
+            <div class="modal-header">
+              <h3>Subir apunte al grupo</h3>
+              <button type="button" class="icon-btn small" id="closeUploadModalBtn"><i data-lucide="x"></i></button>
+            </div>
+            <form id="uploadNoteForm" class="auth-form">
+              <div class="form-group" style="text-align: left;">
+                <label for="noteTitleInput">Título del apunte</label>
+                <input type="text" id="noteTitleInput" placeholder="Ej. Resumen Redes Neuronales" required />
+              </div>
+              <div class="form-group" style="text-align: left;">
+                <label for="noteFormatSelect">Formato</label>
+                <select id="noteFormatSelect" style="height: 40px; border-radius: 10px; border: 1.5px solid #E5E7EB; padding: 0 10px;">
+                  <option value="PDF">PDF</option>
+                  <option value="Notas">Notas</option>
+                  <option value="Otros">Otros</option>
+                </select>
+              </div>
+              <button type="submit" class="btn-primary full-width">
+                <span>Publicar en el grupo</span>
+              </button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <script src="../js%20aplicacion/navegacion.js"></script>
+  <script src="../js%20aplicacion/comunidad.js"></script>
+</body>
+</html>

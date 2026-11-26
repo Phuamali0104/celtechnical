@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>StudentMind Connect — Etapa 7: Resultados y Ruta de Mejora</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="../css%20encuesta/etapa1.css" />
+  <link rel="stylesheet" href="../css%20encuesta/etapa7.css" />
+  <link rel="stylesheet" href="../../aplicacion/css%20aplicacion/tema.css" />
+  <link rel="stylesheet" href="../../aplicacion/css%20aplicacion/planes.css" />
+  <script src="../../aplicacion/js%20aplicacion/planes.js"></script>
+</head>
+<body>
+
+  <main class="desktop-stage">
+    <div class="phone-frame" id="phoneFrame">
+      <div class="hardware-btn volume-up"></div>
+      <div class="hardware-btn volume-down"></div>
+      <div class="hardware-btn power-btn"></div>
+
+      <div class="app-screen" id="appScreen">
+
+        <!-- Barra de estado superior -->
+        <header class="status-bar">
+          <span class="status-time" id="statusTime">9:41</span>
+          <div class="camera-punch"></div>
+          <div class="status-icons">
+            <i data-lucide="signal" class="status-icon"></i>
+            <i data-lucide="wifi" class="status-icon"></i>
+            <i data-lucide="battery-full" class="status-icon"></i>
+          </div>
+        </header>
+
+        <!-- Encabezado estándar con Stepper 1 al 7 TODOS activos en morado -->
+        <div class="app-header">
+          <div class="header-top-row">
+            <button class="icon-btn" id="openMenuBtn" aria-label="Abrir menú">
+              <i data-lucide="menu"></i>
+            </button>
+
+            <div class="brand-logo" id="brandHomeBtn" title="Ir al inicio">
+              <svg class="brand-owl-svg" viewBox="0 0 64 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="6" y="8" width="52" height="42" rx="20" fill="#5B21B6"/>
+                <path d="M12 10L6 2L20 8Z" fill="#5B21B6"/>
+                <path d="M52 10L58 2L44 8Z" fill="#5B21B6"/>
+                <circle cx="23" cy="28" r="11" fill="#F3E8FF" stroke="#3B0764" stroke-width="2.5"/>
+                <circle cx="41" cy="28" r="11" fill="#F3E8FF" stroke="#3B0764" stroke-width="2.5"/>
+                <circle cx="23" cy="28" r="6" fill="#1E1B4B"/>
+                <circle cx="41" cy="28" r="6" fill="#1E1B4B"/>
+                <path d="M23 26.5C22.2 25.5 20.5 25.8 20.5 27.3C20.5 28.8 23 30.5 23 30.5C23 30.5 25.5 28.8 25.5 27.3C25.5 25.8 23.8 25.5 23 26.5Z" fill="#F43F5E"/>
+                <path d="M38.5 28.5C39.8 27 42.2 27 43.5 28.5" stroke="#38BDF8" stroke-width="2" stroke-linecap="round"/>
+                <path d="M29 34L32 39L35 34H29Z" fill="#F59E0B"/>
+              </svg>
+              <div class="brand-text">
+                <span class="brand-title">StudentMind</span>
+                <span class="brand-subtitle">Connect</span>
+              </div>
+            </div>
+
+            <div style="width: 36px;"></div>
+          </div>
+
+          <p class="test-header-label">Test de Diagnóstico Académico</p>
+
+          <!-- Stepper de 7 Etapas (1 al 7 completos) -->
+          <nav class="stepper-container" aria-label="Progreso de etapas">
+            <div class="stepper-track">
+              <div class="step-node active nav-stage" data-href="etapa1.html" title="Ir a Etapa 1">1</div>
+              <div class="step-line active-line"></div>
+              <div class="step-node active nav-stage" data-href="etapa2.html" title="Ir a Etapa 2">2</div>
+              <div class="step-line active-line"></div>
+              <div class="step-node active nav-stage" data-href="etapa3.html" title="Ir a Etapa 3">3</div>
+              <div class="step-line active-line"></div>
+              <div class="step-node active nav-stage" data-href="etapa4.html" title="Ir a Etapa 4">4</div>
+              <div class="step-line active-line"></div>
+              <div class="step-node active nav-stage" data-href="etapa5.html" title="Ir a Etapa 5">5</div>
+              <div class="step-line active-line"></div>
+              <div class="step-node active nav-stage" data-href="etapa6.html" title="Ir a Etapa 6">6</div>
+              <div class="step-line active-line"></div>
+              <div class="step-node active" data-stage="7">7</div>
+            </div>
+          </nav>
+        </div>
+
+        <!-- Viewport de las 6 Pantallas de Resultados (Etapa 7) -->
+        <div class="screens-viewport">
+
+          <!-- ==========================================
+               PANTALLA 1: ¡TU DIAGNÓSTICO ESTÁ LISTO!
+               ========================================== -->
+          <section class="screen active" id="e7-screen-1" data-step="1">
+            <div class="screen-body welcome-body e7-welcome-body">
+              <span class="stage-pill">Etapa 7 de 7</span>
+
+              <h1 class="welcome-title e7-main-title">
+                ¡Tu diagnóstico<br>
+                <span>está listo!</span>
+              </h1>
+
+              <p class="welcome-desc">
+                Analizamos tus respuestas y hemos preparado un resumen personalizado con tus fortalezas, oportunidades de mejora y una ruta de estudio ideal para ti.
+              </p>
+
+              <!-- Búho con laptop sobre ondas -->
+              <div class="hero-mascot-wrapper e7-hero-box">
+                <div class="wave-bg"></div>
+                <svg class="owl-hero-svg" viewBox="0 0 250 185" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M56 46L42 38M52 58L36 56" stroke="#FBBF24" stroke-width="3.5" stroke-linecap="round"/>
+                  <ellipse cx="125" cy="126" rx="58" ry="48" fill="#6D28D9"/>
+                  <ellipse cx="125" cy="132" rx="41" ry="35" fill="#EDE9FE"/>
+                  <rect x="65" y="30" width="120" height="86" rx="42" fill="#7C3AED"/>
+                  <path d="M77 40L61 16L95 32Z" fill="#6D28D9"/>
+                  <path d="M173 40L189 16L155 32Z" fill="#6D28D9"/>
+                  <circle cx="101" cy="72" r="24" fill="#FAF5FF" stroke="#4C1D95" stroke-width="3.6"/>
+                  <circle cx="149" cy="72" r="24" fill="#FAF5FF" stroke="#4C1D95" stroke-width="3.6"/>
+                  <rect x="120" y="68" width="10" height="8" fill="#4C1D95"/>
+                  <circle cx="101" cy="72" r="14" fill="#1E1B4B"/>
+                  <circle cx="149" cy="72" r="14" fill="#1E1B4B"/>
+                  <path d="M101 69C99 66.5 94.5 67.3 94.5 71C94.5 74.7 101 79 101 79C101 79 107.5 74.7 107.5 71C107.5 67.3 103 66.5 101 69Z" fill="#F43F5E"/>
+                  <path d="M142 73C145 69 153 69 156 73" stroke="#38BDF8" stroke-width="3" stroke-linecap="round"/>
+                  <path d="M118 85L125 95L132 85H118Z" fill="#F59E0B"/>
+                  <!-- Laptop -->
+                  <path d="M84 134L91 174H159L166 134H84Z" fill="#8B5CF6" stroke="#4C1D95" stroke-width="2.8"/>
+                  <rect x="76" y="172" width="98" height="7" rx="3.5" fill="#6D28D9"/>
+                  <circle cx="125" cy="154" r="6" fill="#EDE9FE"/>
+                </svg>
+              </div>
+            </div>
+
+            <div class="screen-footer single-btn">
+              <button class="btn-primary full-width" id="btnE7ViewResults">
+                <span>Ver mis resultados</span>
+                <i data-lucide="arrow-right"></i>
+              </button>
+            </div>
+          </section>
+
+          <!-- ==========================================
+               PANTALLA 2: TU PANORAMA ACADÉMICO (GAUGE 68%)
+               ========================================== -->
+          <section class="screen" id="e7-screen-2" data-step="2">
+            <div class="screen-body e7-panorama-body">
+              <h2 class="e7-section-heading centered">Tu panorama académico</h2>
+
+              <!-- Gráfico Circular Radial -->
+              <div class="radial-gauge-container">
+                <svg class="radial-gauge-svg" viewBox="0 0 220 190">
+                  <!-- Arco de fondo gris claro -->
+                  <circle
+                    cx="110"
+                    cy="102"
+                    r="76"
+                    fill="none"
+                    stroke="#EDE9FE"
+                    stroke-width="16"
+                    stroke-dasharray="360 480"
+                    stroke-linecap="round"
+                    transform="rotate(135 110 102)"
+                  />
+                  <!-- Arco activo morado -->
+                  <circle
+                    id="radialProgressArc"
+                    cx="110"
+                    cy="102"
+                    r="76"
+                    fill="none"
+                    stroke="url(#purpleGrad)"
+                    stroke-width="16"
+                    stroke-dasharray="245 480"
+                    stroke-linecap="round"
+                    transform="rotate(135 110 102)"
+                  />
+                  <defs>
+                    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stop-color="#8B5CF6" />
+                      <stop offset="100%" stop-color="#6D28D9" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+
+                <div class="radial-center-text">
+                  <span class="radial-percent" id="overallScorePercent">68%</span>
+                  <span class="radial-sub">Nivel general</span>
+                </div>
+
+                <!-- Píldora flotante "Nivel: En progreso" -->
+                <div class="level-status-pill">
+                  <span>Nivel:</span>
+                  <strong id="overallLevelLabel">En progreso</strong>
+                </div>
+              </div>
+
+              <!-- 3 Tarjetas de Conteo (Fortalezas, Por mejorar, Oportunidades) -->
+              <div class="panorama-kpi-grid">
+                <div class="kpi-card green-kpi">
+                  <div class="kpi-icon green"><i data-lucide="check"></i></div>
+                  <span class="kpi-label">Fortalezas</span>
+                  <strong class="kpi-number" id="kpiStrengthsCount">3</strong>
+                </div>
+
+                <div class="kpi-card amber-kpi">
+                  <div class="kpi-icon amber"><i data-lucide="alert-triangle"></i></div>
+                  <span class="kpi-label">Por mejorar</span>
+                  <strong class="kpi-number" id="kpiImproveCount">2</strong>
+                </div>
+
+                <div class="kpi-card blue-kpi">
+                  <div class="kpi-icon blue"><i data-lucide="lightbulb"></i></div>
+                  <span class="kpi-label">Oportunidades</span>
+                  <strong class="kpi-number" id="kpiOpportunitiesCount">3</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="screen-footer dual-btns">
+              <button class="btn-secondary" data-prev="1">
+                <i data-lucide="arrow-left"></i>
+                <span>Anterior</span>
+              </button>
+              <button class="btn-primary" data-next="3">
+                <span>Siguiente</span>
+                <i data-lucide="arrow-right"></i>
+              </button>
+            </div>
+          </section>
+
+          <!-- ==========================================
+               PANTALLA 3: TUS HÁBITOS DE ESTUDIO (BARRAS)
+               ========================================== -->
+          <section class="screen" id="e7-screen-3" data-step="3">
+            <div class="screen-body e7-habits-body">
+              <h2 class="e7-section-heading">Tus hábitos de estudio</h2>
+
+              <div class="habits-metrics-list">
+                <!-- Métrica 1 -->
+                <div class="habit-metric-row">
+                  <div class="habit-icon-box"><i data-lucide="calendar"></i></div>
+                  <div class="habit-bar-col">
+                    <span class="habit-name">Organización del tiempo</span>
+                    <div class="habit-bar-flex">
+                      <div class="habit-track">
+                        <div class="habit-fill" id="barOrgTime" style="width: 62%;"></div>
+                      </div>
+                      <span class="habit-pct" id="pctOrgTime">62%</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Métrica 2 -->
+                <div class="habit-metric-row">
+                  <div class="habit-icon-box"><i data-lucide="book-open"></i></div>
+                  <div class="habit-bar-col">
+                    <span class="habit-name">Métodos de estudio</span>
+                    <div class="habit-bar-flex">
+                      <div class="habit-track">
+                        <div class="habit-fill" id="barStudyMethods" style="width: 70%;"></div>
+                      </div>
+                      <span class="habit-pct" id="pctStudyMethods">70%</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Métrica 3 -->
+                <div class="habit-metric-row">
+                  <div class="habit-icon-box"><i data-lucide="bed-double"></i></div>
+                  <div class="habit-bar-col">
+                    <span class="habit-name">Descanso y energía</span>
+                    <div class="habit-bar-flex">
+                      <div class="habit-track">
+                        <div class="habit-fill" id="barRestEnergy" style="width: 55%;"></div>
+                      </div>
+                      <span class="habit-pct" id="pctRestEnergy">55%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tarjeta Tip con Bombilla -->
+              <div class="yellow-tip-card">
+                <div class="yellow-bulb-icon"><i data-lucide="lightbulb"></i></div>
+                <p id="habitsTipText">
+                  <strong>Tip:</strong> Tienes buenos métodos, pero podrías planificar mejor tu semana y descansar un poco más.
+                </p>
+              </div>
+            </div>
+
+            <div class="screen-footer dual-btns">
+              <button class="btn-secondary" data-prev="2">
+                <i data-lucide="arrow-left"></i>
+                <span>Anterior</span>
+              </button>
+              <button class="btn-primary" data-next="4">
+                <span>Siguiente</span>
+                <i data-lucide="arrow-right"></i>
+              </button>
+            </div>
+          </section>
+
+          <!-- ==========================================
+               PANTALLA 4: PRINCIPALES VACÍOS DE CONOCIMIENTO
+               ========================================== -->
+          <section class="screen" id="e7-screen-4" data-step="4">
+            <div class="screen-body e7-gaps-body">
+              <h2 class="e7-section-heading">Tus principales vacíos<br>de conocimiento</h2>
+
+              <div class="priority-courses-list" id="priorityCoursesList">
+                <div class="priority-course-card high">
+                  <div class="p-course-left">
+                    <div class="p-course-icon red"><i data-lucide="target"></i></div>
+                    <span class="p-course-name">Cálculo II</span>
+                  </div>
+                  <span class="priority-pill high">Prioridad alta</span>
+                </div>
+
+                <div class="priority-course-card medium">
+                  <div class="p-course-left">
+                    <div class="p-course-icon orange"><i data-lucide="settings"></i></div>
+                    <span class="p-course-name">Estadística</span>
+                  </div>
+                  <span class="priority-pill medium">Prioridad media</span>
+                </div>
+
+                <div class="priority-course-card low">
+                  <div class="p-course-left">
+                    <div class="p-course-icon yellow"><i data-lucide="box"></i></div>
+                    <span class="p-course-name">Física</span>
+                  </div>
+                  <span class="priority-pill low">Prioridad media</span>
+                </div>
+              </div>
+
+              <!-- Recomendación inferior -->
+              <div class="e7-recommend-card">
+                <div class="rec-chart-icon"><i data-lucide="bar-chart-2"></i></div>
+                <p id="priorityRecommendText">
+                  Te recomendamos enfocarte primero en <strong>Cálculo II</strong> para mejorar tu rendimiento general.
+                </p>
+              </div>
+            </div>
+
+            <div class="screen-footer dual-btns">
+              <button class="btn-secondary" data-prev="3">
+                <i data-lucide="arrow-left"></i>
+                <span>Anterior</span>
+              </button>
+              <button class="btn-primary" data-next="5">
+                <span>Siguiente</span>
+                <i data-lucide="arrow-right"></i>
+              </button>
+            </div>
+          </section>
+
+          <!-- ==========================================
+               PANTALLA 5: TU RUTA DE MEJORA PERSONAL (4 SEMANAS)
+               ========================================== -->
+          <section class="screen" id="e7-screen-5" data-step="5">
+            <div class="screen-body e7-roadmap-body">
+              <h2 class="e7-section-heading">Tu ruta de mejora personal</h2>
+
+              <div class="timeline-weeks-list" id="roadmapTimelineList">
+                <div class="timeline-week-item">
+                  <div class="week-num-circle">1</div>
+                  <div class="week-text">
+                    <strong>Semana 1:</strong> <span id="week1Desc">Reforzar bases de Cálculo II (integrales y derivadas).</span>
+                  </div>
+                </div>
+
+                <div class="timeline-week-item">
+                  <div class="week-num-circle">2</div>
+                  <div class="week-text">
+                    <strong>Semana 2:</strong> <span>Practicar con ejercicios guiados y quizzes.</span>
+                  </div>
+                </div>
+
+                <div class="timeline-week-item">
+                  <div class="week-num-circle">3</div>
+                  <div class="week-text">
+                    <strong>Semana 3:</strong> <span>Aplicar en problemas mixtos y exámenes pasados.</span>
+                  </div>
+                </div>
+
+                <div class="timeline-week-item">
+                  <div class="week-num-circle">4</div>
+                  <div class="week-text">
+                    <strong>Semana 4:</strong> <span>Evaluar tu progreso y seguir con Estadística o Física.</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Objetivo final abajo -->
+              <div class="roadmap-goal-banner">
+                <div class="pink-goal-icon"><i data-lucide="target"></i></div>
+                <p><strong>Objetivo:</strong> mejorar tu comprensión, organización y confianza.</p>
+              </div>
+            </div>
+
+            <div class="screen-footer dual-btns">
+              <button class="btn-secondary" data-prev="4">
+                <i data-lucide="arrow-left"></i>
+                <span>Anterior</span>
+              </button>
+              <button class="btn-primary" data-next="6">
+                <span>Siguiente</span>
+                <i data-lucide="arrow-right"></i>
+              </button>
+            </div>
+          </section>
+
+          <!-- ==========================================
+               PANTALLA 6: CIERRE (!NO LO HAGAS SOLO!)
+               ========================================== -->
+          <section class="screen" id="e7-screen-6" data-step="6">
+            <div class="screen-body e7-final-cta-body">
+              <h1 class="final-cta-title">¡No lo hagas solo!</h1>
+              <p class="final-cta-sub">
+                Lleva tu plan al siguiente nivel con <strong>StudentMind Connect:</strong>
+              </p>
+
+              <ul class="final-perks-list">
+                <li>
+                  <span class="perk-check"><i data-lucide="check"></i></span>
+                  <span>Rutas personalizadas con IA.</span>
+                </li>
+                <li>
+                  <span class="perk-check"><i data-lucide="check"></i></span>
+                  <span>Comunidad P2P para resolver dudas.</span>
+                </li>
+                <li>
+                  <span class="perk-check"><i data-lucide="check"></i></span>
+                  <span>Recursos, resúmenes y ejercicios.</span>
+                </li>
+                <li>
+                  <span class="perk-check"><i data-lucide="check"></i></span>
+                  <span>Seguimiento de tu progreso.</span>
+                </li>
+              </ul>
+
+              <!-- Búho con birrete de graduación -->
+              <div class="grad-owl-container">
+                <svg class="grad-owl-svg" viewBox="0 0 180 135" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M36 46L22 38M32 58L18 56M144 46L158 38" stroke="#FBBF24" stroke-width="3" stroke-linecap="round"/>
+                  <!-- Cuerpo -->
+                  <ellipse cx="90" cy="96" rx="42" ry="34" fill="#6D28D9"/>
+                  <ellipse cx="90" cy="100" rx="30" ry="25" fill="#EDE9FE"/>
+                  <!-- Cabeza -->
+                  <rect x="46" y="30" width="88" height="64" rx="32" fill="#7C3AED"/>
+                  <circle cx="73" cy="62" r="18" fill="#FAF5FF" stroke="#4C1D95" stroke-width="3"/>
+                  <circle cx="107" cy="62" r="18" fill="#FAF5FF" stroke="#4C1D95" stroke-width="3"/>
+                  <circle cx="73" cy="62" r="11" fill="#1E1B4B"/>
+                  <circle cx="107" cy="62" r="11" fill="#1E1B4B"/>
+                  <path d="M73 59.5C71.5 57.5 68 58.2 68 61C68 63.8 73 67 73 67C73 67 78 63.8 78 61C78 58.2 74.5 57.5 73 59.5Z" fill="#F43F5E"/>
+                  <path d="M101 63C103.5 59.5 110.5 59.5 113 63" stroke="#38BDF8" stroke-width="2.5" stroke-linecap="round"/>
+                  <path d="M85 72L90 80L95 72H85Z" fill="#F59E0B"/>
+                  <!-- Birrete de graduación -->
+                  <path d="M44 26L90 10L136 26L90 42L44 26Z" fill="#3B0764" stroke="#1E1B4B" stroke-width="2"/>
+                  <rect x="68" y="31" width="44" height="12" rx="4" fill="#4C1D95"/>
+                  <path d="M126 29V48" stroke="#FBBF24" stroke-width="2.5" stroke-linecap="round"/>
+                  <circle cx="126" cy="50" r="3" fill="#FBBF24"/>
+                </svg>
+              </div>
+            </div>
+
+            <div class="screen-footer final-cta-footer">
+              <button class="btn-primary full-width" id="btnExplorePlatform">
+                <span>Conocer StudentMind Connect</span>
+                <i data-lucide="arrow-right"></i>
+              </button>
+              <button type="button" class="btn-text-later" id="btnLater">
+                Más adelante
+              </button>
+            </div>
+          </section>
+
+        </div>
+
+        <!-- Barra de gestos inferior -->
+        <div class="gesture-bar-container">
+          <div class="gesture-pill" id="gestureHomeBtn" title="Inicio Etapa 7"></div>
+        </div>
+
+        <!-- Toast de notificaciones -->
+        <div class="toast-notification" id="toastNotification" role="alert">
+          <i data-lucide="check-circle-2"></i>
+          <span id="toastMessage">Mensaje</span>
+        </div>
+
+        <!-- Menú Lateral (Drawer) -->
+        <div class="drawer-overlay" id="drawerOverlay">
+          <aside class="side-drawer">
+            <div class="drawer-header">
+              <div class="drawer-brand">
+                <span class="brand-title">StudentMind</span>
+                <span class="brand-subtitle">Connect</span>
+              </div>
+              <button class="icon-btn" id="closeMenuBtn"><i data-lucide="x"></i></button>
+            </div>
+
+            <div class="drawer-section">
+              <p class="drawer-section-title">Todas las Etapas (1–7)</p>
+              <ul class="drawer-nav-list">
+                <li><a href="etapa1.html" class="drawer-nav-link"><i data-lucide="check-circle-2"></i> Etapa 1: Perfil Académico</a></li>
+                <li><a href="etapa2.html" class="drawer-nav-link"><i data-lucide="check-circle-2"></i> Etapa 2: Hábitos Semanales</a></li>
+                <li><a href="etapa3.html" class="drawer-nav-link"><i data-lucide="check-circle-2"></i> Etapa 3: Métodos de Estudio</a></li>
+                <li><a href="etapa4.html" class="drawer-nav-link"><i data-lucide="check-circle-2"></i> Etapa 4: Vacíos de Conocimiento</a></li>
+                <li><a href="etapa5.html" class="drawer-nav-link"><i data-lucide="check-circle-2"></i> Etapa 5: Bienestar Académico</a></li>
+                <li><a href="etapa6.html" class="drawer-nav-link"><i data-lucide="check-circle-2"></i> Etapa 6: Aprendizaje Colaborativo</a></li>
+                <li><button class="drawer-nav-item" data-jump="1"><i data-lucide="award"></i> Etapa 7: Resultados Finales</button></li>
+              </ul>
+            </div>
+
+            <div class="drawer-footer">
+              <button class="btn-outline-danger" id="resetAllTestBtn">
+                <i data-lucide="rotate-ccw"></i>
+                <span>Reiniciar Todo el Diagnóstico</span>
+              </button>
+            </div>
+          </aside>
+        </div>
+
+        <!-- Modal Reporte Completo de las 7 Etapas -->
+        <div class="modal-overlay" id="fullReportModal">
+          <div class="modal-card summary-modal-card">
+            <div class="summary-badge-icon">
+              <i data-lucide="sparkles"></i>
+            </div>
+            <h3>¡Bienvenido a StudentMind Connect!</h3>
+            <p class="summary-subtitle">Tu diagnóstico integral de 7 etapas está sincronizado y listo para tu ruta de estudio.</p>
+
+            <div class="summary-details-box" id="fullReportDetails"></div>
+
+            <div class="summary-actions">
+              <button class="btn-primary full-width" id="closeReportModalBtn">
+                <span>Explorar mi Panel de Estudio</span>
+                <i data-lucide="arrow-right"></i>
+              </button>
+              <button class="btn-secondary full-width" id="restartFromStartBtn">
+                <span>Volver a Etapa 1</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <script src="../js%20encuesta/etapa7.js"></script>
+</body>
+</html>

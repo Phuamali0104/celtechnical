@@ -1,0 +1,200 @@
+/* ==========================================================================
+   BARRA DE NAVEGACIÓN INFERIOR COMÚN (navegacion.js)
+   Iconos a los costados + búho de IA Lumen al centro
+   ========================================================================== */
+.bottom-tab-bar.app-nav {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) 64px repeat(3, 1fr);
+  align-items: center;
+  background: var(--surface-white);
+  border-top: 1px solid var(--border-gray);
+  box-shadow: 0 -6px 18px rgba(17, 24, 39, 0.05);
+  padding: 8px 6px 6px;
+  flex-shrink: 0;
+  z-index: 5;
+}
+
+.app-nav .tab-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  border: none;
+  background: transparent;
+  border-radius: 12px;
+  color: var(--text-light);
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.app-nav .tab-item svg { width: 21px; height: 21px; }
+
+.app-nav .tab-item:hover { color: var(--primary-purple); }
+
+.app-nav .tab-item.active {
+  color: var(--primary-purple);
+  background: var(--soft-lavender-bg);
+}
+
+/* Botón central del búho (chat de Lumen) */
+.app-nav .lumen-owl-btn {
+  justify-self: center;
+  width: 58px;
+  height: 58px;
+  margin-top: -30px;
+  border-radius: 50%;
+  border: 3px solid var(--primary-purple-light);
+  background: radial-gradient(circle at 50% 40%, #FFFFFF 0%, var(--badge-lavender) 70%);
+  box-shadow: 0 0 0 4px var(--surface-white), 0 8px 18px rgba(99, 102, 241, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  transition: var(--transition-smooth);
+}
+
+.app-nav .lumen-owl-btn:hover { transform: translateY(-2px) scale(1.04); }
+.app-nav .lumen-owl-btn svg { width: 38px; height: 38px; }
+
+/* ==========================================================================
+   PANEL DE CHAT DE LUMEN
+   ========================================================================== */
+.lumen-chat-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(17, 24, 39, 0.35);
+  display: flex;
+  align-items: flex-end;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  z-index: 60;
+}
+
+.lumen-chat-overlay.open { opacity: 1; pointer-events: auto; }
+
+.lumen-chat-sheet {
+  width: 100%;
+  height: 78%;
+  background: var(--surface-white);
+  border-radius: 24px 24px 0 0;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(100%);
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  font-family: var(--font-main);
+}
+
+.lumen-chat-overlay.open .lumen-chat-sheet { transform: translateY(0); }
+
+.lumen-chat-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border-gray);
+}
+
+.lumen-chat-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--badge-lavender);
+  border: 2px solid var(--soft-lavender-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.lumen-chat-avatar svg { width: 28px; height: 28px; }
+
+.lumen-chat-title { flex: 1; line-height: 1.2; }
+.lumen-chat-title strong { display: block; font-size: 14px; color: var(--text-dark); }
+.lumen-chat-title span { font-size: 11px; color: var(--success-green); font-weight: 600; }
+
+.lumen-chat-close {
+  border: none;
+  background: var(--surface-gray);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.lumen-chat-close svg { width: 16px; height: 16px; }
+
+.lumen-chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: var(--soft-lavender-bg);
+  scrollbar-width: none;
+}
+
+.lumen-msg {
+  max-width: 80%;
+  padding: 9px 12px;
+  border-radius: 14px;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.lumen-msg.bot {
+  align-self: flex-start;
+  background: var(--surface-white);
+  color: var(--text-dark);
+  border: 1px solid var(--soft-lavender-border);
+  border-bottom-left-radius: 4px;
+}
+
+.lumen-msg.user {
+  align-self: flex-end;
+  background: var(--primary-purple);
+  color: #FFFFFF;
+  border-bottom-right-radius: 4px;
+}
+
+.lumen-chat-input {
+  display: flex;
+  gap: 8px;
+  padding: 10px 12px 14px;
+  border-top: 1px solid var(--border-gray);
+}
+
+.lumen-chat-input input {
+  flex: 1;
+  border: 1px solid var(--border-gray);
+  border-radius: 999px;
+  padding: 10px 14px;
+  font-family: var(--font-main);
+  font-size: 12px;
+  outline: none;
+}
+
+.lumen-chat-input input:focus { border-color: var(--primary-purple-light); }
+
+.lumen-chat-input button {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: var(--primary-purple);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.lumen-chat-input button svg { width: 17px; height: 17px; }

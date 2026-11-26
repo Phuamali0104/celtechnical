@@ -1,0 +1,707 @@
+/* ==========================================================================
+   ESTILOS ONBOARDING 4 PASOS (registro-perfil.html)
+   ========================================================================== */
+:root {
+  --royal-blue: #6366F1;
+  --royal-blue-hover: #4F46E5;
+  --sky-tint-bg: #EEF2FF;
+  --sky-tint-border: #C4B5FD;
+}
+
+.rp-header {
+  padding: 4px 16px 10px;
+  border-bottom: 1px solid #F3F4F6;
+  flex-shrink: 0;
+}
+
+.rp-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.rp-brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.rp-cap-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: var(--sky-tint-bg);
+  color: var(--royal-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.rp-cap-icon svg { width: 18px; height: 18px; }
+
+.rp-brand-words {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.05;
+}
+
+.rp-b1 { font-size: 13px; font-weight: 800; color: #1E3A8A; }
+.rp-b2 { font-size: 12px; font-weight: 700; color: #6366F1; }
+
+/* Stepper Horizontal 4 Pasos */
+.rp-stepper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 0 4px;
+}
+
+.rp-step-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-align: center;
+  width: 56px;
+}
+
+.rp-node {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #F3F4F6;
+  color: var(--text-muted);
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-smooth);
+}
+
+.rp-node svg { width: 13px; height: 13px; stroke-width: 3; }
+
+.rp-step-item.completed .rp-node,
+.rp-step-item.active .rp-node {
+  background: var(--royal-blue);
+  color: #FFFFFF;
+  box-shadow: 0 3px 8px rgba(29, 78, 216, 0.28);
+}
+
+.rp-step-item span {
+  font-size: 9.5px;
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--text-muted);
+}
+
+.rp-step-item.active span,
+.rp-step-item.completed span {
+  color: var(--royal-blue);
+  font-weight: 700;
+}
+
+.rp-connector {
+  flex: 1;
+  height: 2px;
+  background: #E5E7EB;
+  margin-top: 11px;
+}
+
+.rp-connector.active {
+  background: var(--royal-blue);
+}
+
+/* ==========================================================================
+   CUERPO Y FORMULARIO PASO 2 (PERFIL ACADÉMICO)
+   ========================================================================== */
+.rp-body {
+  padding: 12px 18px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rp-hero-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.rp-hero-copy h1 {
+  font-size: 20px;
+  font-weight: 800;
+  color: #0F172A;
+  margin-bottom: 3px;
+}
+
+.rp-hero-copy p {
+  font-size: 11px;
+  line-height: 1.35;
+  color: var(--text-muted);
+}
+
+.rp-owl-checklist {
+  width: 88px;
+  height: 82px;
+  flex-shrink: 0;
+}
+
+.avatar-name-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar-upload-circle {
+  position: relative;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  border: 2px solid var(--sky-tint-border);
+  overflow: hidden;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.avatar-upload-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cam-mini-badge {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--royal-blue);
+  color: #FFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cam-mini-badge svg { width: 11px; height: 11px; }
+
+.flex-1 { flex: 1; }
+
+.rp-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.rp-field-group label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.rp-field-group input {
+  height: 38px;
+  padding: 0 12px;
+  border-radius: 10px;
+  border: 1.3px solid var(--border-gray);
+  font-family: var(--font-main);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-dark);
+  outline: none;
+}
+
+.rp-field-group input:focus {
+  border-color: var(--royal-blue);
+}
+
+.rp-two-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9px;
+}
+
+.icon-select-box {
+  height: 38px;
+  padding: 0 10px;
+  border-radius: 10px;
+  border: 1.3px solid var(--border-gray);
+  background: #FFF;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.icon-select-box svg {
+  width: 14px;
+  height: 14px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.icon-select-box select {
+  width: 100%;
+  border: none;
+  background: transparent;
+  font-family: var(--font-main);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-dark);
+  outline: none;
+}
+
+.rp-section-block {
+  margin-top: 2px;
+}
+
+.rp-label-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 7px;
+}
+
+.rp-label-with-icon svg {
+  width: 15px;
+  height: 15px;
+  color: var(--primary-purple);
+  flex-shrink: 0;
+}
+
+.pink-icon { color: #DB2777 !important; }
+
+.sub-hint {
+  display: block;
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+/* Modalidad 3 Tarjetas */
+.modality-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.modality-card {
+  padding: 9px 6px;
+  border-radius: 12px;
+  border: 1.5px solid var(--border-gray);
+  background: #FFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-main);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.modality-card.selected {
+  background: var(--sky-tint-bg);
+  border-color: var(--royal-blue);
+  color: var(--royal-blue);
+}
+
+.mod-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  background: var(--badge-lavender);
+  color: var(--primary-purple);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modality-card.selected .mod-icon {
+  background: #E0E7FF;
+  color: var(--royal-blue);
+}
+.mod-icon svg { width: 15px; height: 15px; }
+
+.bottom-radio-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1.8px solid #D1D5DB;
+  background: #FFF;
+}
+
+.modality-card.selected .bottom-radio-dot,
+.square-choice-card.selected .bottom-radio-dot {
+  border-color: var(--royal-blue);
+  border-width: 4.5px;
+}
+
+/* Meta principal lista radio */
+.meta-radio-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.meta-radio-row {
+  width: 100%;
+  height: 36px;
+  padding: 0 12px;
+  border-radius: 10px;
+  border: 1.3px solid var(--border-gray);
+  background: #FFF;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-main);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-dark);
+  cursor: pointer;
+}
+
+.meta-radio-row.selected {
+  background: var(--sky-tint-bg);
+  border-color: var(--royal-blue);
+  color: var(--royal-blue);
+  font-weight: 700;
+}
+
+.blue-radio-circle {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 1.8px solid #D1D5DB;
+  background: #FFF;
+}
+
+.meta-radio-row.selected .blue-radio-circle {
+  border-color: var(--royal-blue);
+  border-width: 5px;
+}
+
+/* Botón Principal Azul Real */
+.btn-blue-primary {
+  height: 46px;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(180deg, #7C3AED 0%, #6366F1 100%);
+  color: #FFFFFF;
+  font-family: var(--font-main);
+  font-size: 14px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(29, 78, 216, 0.28);
+  transition: var(--transition-smooth);
+}
+.btn-blue-primary:hover { background: var(--royal-blue-hover); }
+.btn-blue-primary.full-width { width: 100%; }
+.btn-blue-primary svg { width: 17px; height: 17px; }
+
+/* ==========================================================================
+   PASO 3: CUADRÍCULAS DE 4 TARJETAS Y PÍLDORAS MÚLTIPLES
+   ========================================================================== */
+.four-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 7px;
+}
+
+.square-choice-card {
+  padding: 9px 4px;
+  border-radius: 12px;
+  border: 1.4px solid var(--border-gray);
+  background: #FFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+  font-family: var(--font-main);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--text-dark);
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.square-choice-card svg {
+  width: 17px;
+  height: 17px;
+  color: var(--primary-purple);
+}
+
+.square-choice-card.selected {
+  background: var(--sky-tint-bg);
+  border-color: var(--royal-blue);
+  color: var(--royal-blue);
+}
+.square-choice-card.selected svg { color: var(--royal-blue); }
+
+.multi-pills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.blue-check-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 11px;
+  border-radius: 10px;
+  border: 1.3px solid var(--border-gray);
+  background: #FFF;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-dark);
+  cursor: pointer;
+  user-select: none;
+}
+
+.blue-check-pill input { display: none; }
+
+.blue-check-pill.checked {
+  background: var(--sky-tint-bg);
+  border-color: var(--royal-blue);
+  color: var(--royal-blue);
+  font-weight: 700;
+}
+
+.b-cb {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  border: 1.6px solid #9CA3AF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: transparent;
+}
+.b-cb svg { width: 11px; height: 11px; stroke-width: 3; }
+
+.blue-check-pill.checked .b-cb {
+  background: var(--royal-blue);
+  border-color: var(--royal-blue);
+  color: #FFF;
+}
+
+/* ==========================================================================
+   PASO 4: ¡REGISTRO COMPLETADO!
+   ========================================================================== */
+.rp-done-body {
+  padding: 12px 18px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.done-owl-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.done-grad-owl {
+  width: 96px;
+  height: 90px;
+}
+
+.done-heading-copy h1 {
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.12;
+  color: #0F172A;
+  margin-bottom: 4px;
+}
+
+.done-heading-copy p {
+  font-size: 11px;
+  line-height: 1.3;
+  color: var(--text-muted);
+}
+
+.student-summary-card {
+  position: relative;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 16px;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.summary-avatar-photo {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--sky-tint-border);
+}
+
+.summary-student-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.summary-student-meta strong {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--text-dark);
+}
+
+.summary-student-meta span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.summary-student-meta svg { width: 12px; height: 12px; color: var(--royal-blue); }
+.summary-student-meta em { font-style: normal; }
+
+.edit-pencil-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  border: 1px solid #E2E8F0;
+  background: #FFF;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.edit-pencil-btn svg { width: 13px; height: 13px; }
+
+.freemium-plan-banner {
+  text-align: center;
+}
+
+.crown-plan-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--text-dark);
+  margin-bottom: 2px;
+}
+.crown-plan-pill svg { width: 16px; height: 16px; color: #F59E0B; }
+.crown-plan-pill strong {
+  background: var(--badge-lavender);
+  color: var(--primary-purple);
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.freemium-plan-banner p {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.freemium-features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.f-feature-tile {
+  background: #FFF;
+  border: 1px solid var(--border-gray);
+  border-radius: 12px;
+  padding: 9px 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--text-dark);
+  text-align: center;
+  transition: var(--transition-smooth);
+}
+.f-feature-tile:hover {
+  border-color: var(--royal-blue);
+  background: var(--sky-tint-bg);
+}
+.f-feature-tile svg { width: 17px; height: 17px; color: var(--primary-purple); }
+
+.unlock-pro-banner {
+  width: 100%;
+  background: var(--soft-lavender-bg);
+  border: 1px solid var(--soft-lavender-border);
+  border-radius: 14px;
+  padding: 9px 11px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  text-align: left;
+  cursor: pointer;
+  margin-top: auto;
+}
+
+.lock-pro-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: var(--badge-lavender);
+  color: var(--primary-purple);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.lock-pro-icon svg { width: 15px; height: 15px; }
+
+.pro-banner-text strong {
+  display: block;
+  font-size: 11px;
+  color: var(--primary-purple);
+}
+
+.pro-banner-text span {
+  font-size: 9.8px;
+  line-height: 1.25;
+  color: var(--text-muted);
+}
+
+.pro-arrow {
+  width: 16px;
+  height: 16px;
+  color: var(--primary-purple);
+  flex-shrink: 0;
+}
+
+.rp-done-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding-bottom: 6px;
+}
+
+.go-home-link {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--royal-blue);
+  text-decoration: underline;
+}

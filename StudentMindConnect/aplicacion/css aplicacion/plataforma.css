@@ -1,0 +1,739 @@
+/* ==========================================================================
+   ESTILOS DE PLATAFORMA: ACCESO, REGISTRO FREEMIUM Y DASHBOARD (plataforma.html)
+   ========================================================================== */
+
+/* ==========================================================================
+   PANTALLA 1: BIENVENIDA Y MÉTODOS DE ACCESO
+   ========================================================================== */
+.plat-welcome-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-top: 12px;
+}
+
+.plat-hero-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.brand-rays-svg {
+  width: 24px;
+  height: 28px;
+}
+
+.plat-brand-words {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.02;
+  text-align: left;
+}
+
+.plat-b-top {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text-dark);
+  letter-spacing: -0.02em;
+}
+
+.plat-b-bottom {
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--primary-purple);
+}
+
+.plat-tagline-pill {
+  margin-bottom: 6px;
+  font-size: 11px;
+}
+
+.plat-owl-showcase {
+  position: relative;
+  width: 100%;
+  height: 156px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.plat-owl-tablet-svg {
+  position: relative;
+  width: 225px;
+  height: 155px;
+  z-index: 1;
+  animation: floatOwl 3.4s ease-in-out infinite;
+}
+
+.plat-welcome-title {
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.18;
+  color: var(--text-dark);
+  margin: 4px 0 8px;
+}
+
+.plat-welcome-desc {
+  font-size: 11.5px;
+  line-height: 1.42;
+  color: var(--text-muted);
+  max-width: 315px;
+  margin-bottom: 14px;
+}
+
+.text-purple-highlight {
+  color: var(--primary-purple);
+  font-weight: 700;
+}
+
+.auth-buttons-stack {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-bottom: 12px;
+}
+
+.social-auth-btn {
+  width: 100%;
+  height: 44px;
+  padding: 0 16px;
+  background: var(--surface-white);
+  border: 1.5px solid var(--border-gray);
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: var(--font-main);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-dark);
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(17, 24, 39, 0.03);
+  transition: var(--transition-smooth);
+}
+
+.social-auth-btn:hover {
+  border-color: var(--primary-purple-light);
+  background: var(--soft-lavender-bg);
+}
+
+.social-g-icon,
+.social-apple-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.mail-purple-icon {
+  width: 18px;
+  height: 18px;
+  color: var(--primary-purple);
+}
+
+.plat-bottom-note {
+  width: 100%;
+  background: var(--soft-lavender-bg);
+  border: 1px solid var(--soft-lavender-border);
+  border-radius: 14px;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-align: left;
+  margin-top: auto;
+}
+
+.cap-badge {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: var(--badge-lavender);
+  color: var(--primary-purple);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.cap-badge svg { width: 17px; height: 17px; }
+
+.plat-bottom-note p {
+  font-size: 10.5px;
+  line-height: 1.32;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   PANTALLA 2: CREA TU CUENTA FREEMIUM
+   ========================================================================== */
+.reg-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 12px;
+  border-bottom: 1px solid #F3F4F6;
+  flex-shrink: 0;
+}
+
+.plat-mini-brand {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  color: var(--text-dark);
+}
+
+.mini-rays {
+  width: 18px;
+  height: 20px;
+}
+
+.purple-em {
+  font-style: normal;
+  font-weight: 800;
+  color: var(--primary-purple);
+}
+
+.reg-form-body {
+  padding: 12px 18px 16px;
+}
+
+.reg-hero-split {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.reg-hero-text h1 {
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--text-dark);
+  margin-bottom: 5px;
+}
+
+.reg-hero-text h1 span {
+  color: var(--primary-purple);
+}
+
+.reg-hero-text p {
+  font-size: 10.5px;
+  line-height: 1.34;
+  color: var(--text-muted);
+}
+
+.reg-owl-svg {
+  width: 96px;
+  height: 88px;
+  flex-shrink: 0;
+}
+
+.freemium-form {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.f-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.f-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: var(--soft-lavender-bg);
+  color: var(--primary-purple);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+  flex-shrink: 0;
+}
+.f-icon svg { width: 15px; height: 15px; }
+
+.f-field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.f-field label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.req { color: var(--danger-red); }
+
+.f-field input,
+.f-field select {
+  width: 100%;
+  height: 36px;
+  padding: 0 11px;
+  border-radius: 10px;
+  border: 1.3px solid var(--border-gray);
+  background: var(--surface-white);
+  font-family: var(--font-main);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-dark);
+  outline: none;
+}
+
+.f-field input:focus,
+.f-field select:focus {
+  border-color: var(--primary-purple);
+}
+
+.pass-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.pass-input-wrap input {
+  padding-right: 34px;
+}
+
+.toggle-pass-btn {
+  position: absolute;
+  right: 8px;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.toggle-pass-btn svg { width: 15px; height: 15px; }
+
+/* Tarjetas de Etapa Académica (3 columnas) */
+.stage-cards-section {
+  margin-top: 4px;
+}
+
+.stage-q-title {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.pink-mini-target {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #FCE7F3;
+  color: #DB2777;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pink-mini-target svg { width: 13px; height: 13px; }
+
+.stage-three-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.stage-choice-card {
+  position: relative;
+  padding: 10px 6px;
+  border-radius: 13px;
+  border: 1.5px solid var(--border-gray);
+  background: var(--surface-white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-main);
+  font-size: 10.5px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.stage-choice-card.selected {
+  background: var(--soft-lavender-bg);
+  border-color: var(--primary-purple);
+  color: var(--primary-purple);
+}
+
+.check-corner {
+  position: absolute;
+  top: -6px;
+  right: -5px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--primary-purple);
+  color: #FFFFFF;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.check-corner svg { width: 11px; height: 11px; stroke-width: 3; }
+
+.stage-choice-card.selected .check-corner {
+  display: flex;
+}
+
+.stage-choice-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.stage-choice-icon.green  { background: #DCFCE7; color: #16A34A; }
+.stage-choice-icon.purple { background: #E0E7FF; color: #6366F1; }
+.stage-choice-icon.lilac  { background: #E0F2FE; color: #7C3AED; }
+.stage-choice-icon svg { width: 16px; height: 16px; }
+
+.terms-check-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10.5px;
+  color: var(--text-muted);
+  margin: 4px 0;
+  cursor: pointer;
+}
+
+.terms-check-row input { display: none; }
+
+.small-cb {
+  width: 17px;
+  height: 17px;
+  border-radius: 5px;
+  background: var(--primary-purple);
+  border-color: var(--primary-purple);
+  color: #FFF;
+}
+
+.terms-check-row input:not(:checked) + .small-cb {
+  background: #FFF;
+  border-color: #9CA3AF;
+  color: transparent;
+}
+
+.terms-check-row a {
+  color: var(--primary-purple);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.reg-submit-btn {
+  height: 44px;
+  margin-top: 2px;
+}
+
+/* ==========================================================================
+   PANTALLA 3: DASHBOARD HOME PRINCIPAL
+   ========================================================================== */
+.dash-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 14px;
+  border-bottom: 1px solid #F3F4F6;
+  flex-shrink: 0;
+}
+
+.dash-header-icons {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.notif-btn {
+  position: relative;
+}
+
+.notif-dot {
+  position: absolute;
+  top: 7px;
+  right: 8px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--danger-red);
+}
+
+.dash-avatar-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1.5px solid var(--soft-lavender-border);
+  background: var(--soft-lavender-bg);
+  color: var(--primary-purple);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.dash-avatar-btn svg { width: 15px; height: 15px; }
+
+.dash-body {
+  padding: 12px 16px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dash-greeting-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.greeting-left h1 {
+  font-size: 21px;
+  font-weight: 800;
+  color: var(--text-dark);
+  line-height: 1.15;
+}
+
+.greeting-sub {
+  font-size: 11.5px;
+  color: var(--text-muted);
+  margin: 2px 0 8px;
+}
+
+.owl-speech-bubble {
+  background: var(--soft-lavender-bg);
+  border: 1px solid var(--soft-lavender-border);
+  border-radius: 14px;
+  padding: 8px 12px;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--text-dark);
+}
+
+.dash-guide-owl {
+  width: 96px;
+  height: 100px;
+  flex-shrink: 0;
+}
+
+/* Grid de 8 Módulos (4x2) */
+.modules-grid-8 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.modules-grid-8 .module-tile {
+  width: calc((100% - 24px) / 4);
+}
+
+/* Botón: Completa tu perfil */
+.complete-profile-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 14px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--primary-purple-light), var(--primary-purple));
+  color: #FFFFFF;
+  text-decoration: none;
+  box-shadow: 0 8px 18px rgba(99, 102, 241, 0.25);
+  transition: var(--transition-smooth);
+}
+
+.complete-profile-btn:hover { transform: translateY(-1px); background: var(--primary-purple-hover); }
+
+.complete-profile-btn .cp-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.complete-profile-btn .cp-icon svg { width: 18px; height: 18px; }
+
+.complete-profile-btn .cp-text { flex: 1; line-height: 1.25; }
+.complete-profile-btn .cp-text strong { display: block; font-size: 13px; font-weight: 800; }
+.complete-profile-btn .cp-text small { font-size: 10.5px; opacity: 0.85; }
+.complete-profile-btn .cp-arrow { width: 18px; height: 18px; }
+
+/* El búho del saludo también abre el chat de Lumen */
+.dash-guide-owl[data-open-lumen] { cursor: pointer; }
+
+.module-tile {
+  background: var(--surface-white);
+  border: 1px solid var(--border-gray);
+  border-radius: 14px;
+  padding: 9px 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5px;
+  text-decoration: none;
+  font-family: var(--font-main);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.18;
+  color: var(--text-dark);
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(17, 24, 39, 0.03);
+  transition: var(--transition-smooth);
+}
+
+.module-tile:hover {
+  border-color: var(--primary-purple-light);
+  background: var(--soft-lavender-bg);
+  transform: translateY(-2px);
+}
+
+.module-tile small {
+  display: block;
+  font-size: 8px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.tile-icon-box {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: var(--badge-lavender);
+  color: var(--primary-purple);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tile-icon-box.gold {
+  background: #FEF3C7;
+  color: #D97706;
+}
+.tile-icon-box svg { width: 18px; height: 18px; }
+
+/* Tarjeta Inferior: Mis hábitos académicos */
+.habits-summary-card {
+  background: var(--surface-white);
+  border: 1px solid var(--border-gray);
+  border-radius: 16px;
+  padding: 12px 13px;
+  box-shadow: 0 4px 12px rgba(17, 24, 39, 0.03);
+  margin-top: auto;
+}
+
+.habits-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.habits-card-title {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--text-dark);
+}
+.habits-card-title svg { width: 16px; height: 16px; color: var(--primary-purple); }
+
+.info-circle-btn {
+  border: none;
+  background: transparent;
+  color: var(--text-light);
+  cursor: pointer;
+  display: flex;
+}
+.info-circle-btn svg { width: 15px; height: 15px; }
+
+.habit-bars-compact {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.h-compact-row {
+  display: grid;
+  grid-template-columns: 18px 82px 1fr 34px;
+  align-items: center;
+  gap: 7px;
+  font-size: 11px;
+}
+
+.h-c-icon {
+  color: var(--primary-purple);
+  display: flex;
+}
+.h-c-icon.gold { color: #EAB308; }
+.h-c-icon.pink { color: #EC4899; }
+.h-c-icon svg { width: 14px; height: 14px; }
+
+.h-c-label {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.h-c-track {
+  height: 7px;
+  background: #F3F4F6;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.h-c-fill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.5s ease;
+}
+.h-c-fill.purple { background: #7C3AED; }
+.h-c-fill.blue   { background: #3B82F6; }
+.h-c-fill.violet { background: #8B5CF6; }
+.h-c-fill.teal   { background: #14B8A6; }
+
+.h-c-val {
+  font-weight: 800;
+  color: var(--text-dark);
+  text-align: right;
+  font-size: 11px;
+}
+
+.drawer-nav-link {
+  width: 100%;
+  padding: 9px 12px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--primary-purple);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  background: var(--soft-lavender-bg);
+  margin-bottom: 4px;
+}
+.drawer-nav-link svg { width: 15px; height: 15px; }

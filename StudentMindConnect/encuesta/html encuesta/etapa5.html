@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>StudentMind Connect — Etapa 5: Bienestar Académico</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="../css%20encuesta/etapa1.css" />
+  <link rel="stylesheet" href="../css%20encuesta/etapa5.css" />
+  <link rel="stylesheet" href="../../aplicacion/css%20aplicacion/tema.css" />
+  <link rel="stylesheet" href="../../aplicacion/css%20aplicacion/planes.css" />
+  <script src="../../aplicacion/js%20aplicacion/planes.js"></script>
+</head>
+<body>
+
+  <main class="desktop-stage">
+    <div class="phone-frame" id="phoneFrame">
+      <div class="hardware-btn volume-up"></div>
+      <div class="hardware-btn volume-down"></div>
+      <div class="hardware-btn power-btn"></div>
+
+      <div class="app-screen" id="appScreen">
+
+        <!-- Barra de estado superior -->
+        <header class="status-bar">
+          <span class="status-time" id="statusTime">9:41</span>
+          <div class="camera-punch"></div>
+          <div class="status-icons">
+            <i data-lucide="signal" class="status-icon"></i>
+            <i data-lucide="wifi" class="status-icon"></i>
+            <i data-lucide="battery-full" class="status-icon"></i>
+          </div>
+        </header>
+
+        <!-- Encabezado estándar con Stepper 1-2-3-4-5 activos -->
+        <div class="app-header">
+          <div class="header-top-row">
+            <button class="icon-btn" id="openMenuBtn" aria-label="Abrir menú">
+              <i data-lucide="menu"></i>
+            </button>
+
+            <div class="brand-logo" id="brandHomeBtn" title="Ir al inicio">
+              <svg class="brand-owl-svg" viewBox="0 0 64 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="6" y="8" width="52" height="42" rx="20" fill="#5B21B6"/>
+                <path d="M12 10L6 2L20 8Z" fill="#5B21B6"/>
+                <path d="M52 10L58 2L44 8Z" fill="#5B21B6"/>
+                <circle cx="23" cy="28" r="11" fill="#F3E8FF" stroke="#3B0764" stroke-width="2.5"/>
+                <circle cx="41" cy="28" r="11" fill="#F3E8FF" stroke="#3B0764" stroke-width="2.5"/>
+                <circle cx="23" cy="28" r="6" fill="#1E1B4B"/>
+                <circle cx="41" cy="28" r="6" fill="#1E1B4B"/>
+                <path d="M23 26.5C22.2 25.5 20.5 25.8 20.5 27.3C20.5 28.8 23 30.5 23 30.5C23 30.5 25.5 28.8 25.5 27.3C25.5 25.8 23.8 25.5 23 26.5Z" fill="#F43F5E"/>
+                <path d="M38.5 28.5C39.8 27 42.2 27 43.5 28.5" stroke="#38BDF8" stroke-width="2" stroke-linecap="round"/>
+                <path d="M29 34L32 39L35 34H29Z" fill="#F59E0B"/>
+              </svg>
+              <div class="brand-text">
+                <span class="brand-title">StudentMind</span>
+                <span class="brand-subtitle">Connect</span>
+              </div>
+            </div>
+
+            <div style="width: 36px;"></div>
+          </div>
+
+          <p class="test-header-label">Test de Diagnóstico Académico</p>
+
+          <!-- Stepper de 7 Etapas (1 al 5 morados) -->
+          <nav class="stepper-container" aria-label="Progreso de etapas">
+            <div class="stepper-track">
+              <div class="step-node active nav-stage" data-href="etapa1.html" title="Ir a Etapa 1">1</div>
+              <div class="step-line active-line"></div>
+              <div class="step-node active nav-stage" data-href="etapa2.html" title="Ir a Etapa 2">2</div>
+              <div class="step-line active-line"></div>
+              <div class="step-node active nav-stage" data-href="etapa3.html" title="Ir a Etapa 3">3</div>
+              <div class="step-line active-line"></div>
+              <div class="step-node active nav-stage" data-href="etapa4.html" title="Ir a Etapa 4">4</div>
+              <div class="step-line active-line"></div>
+              <div class="step-node active" data-stage="5">5</div>
+              <div class="step-line"></div>
+              <div class="step-node" data-stage="6">6</div>
+              <div class="step-line"></div>
+              <div class="step-node" data-stage="7">7</div>
+            </div>
+          </nav>
+        </div>
+
+        <!-- Viewport de las 6 Pantallas de Etapa 5 -->
+        <div class="screens-viewport">
+
+          <!-- ==========================================
+               PANTALLA 1: BIENVENIDA ETAPA 5 DE 7
+               ========================================== -->
+          <section class="screen active" id="e5-screen-1" data-step="1">
+            <div class="screen-body welcome-body e5-welcome-body">
+              <span class="stage-pill">Etapa 5 de 7</span>
+
+              <h1 class="welcome-title e5-main-title">
+                Estrés, confianza y<br>
+                <span>bienestar académico</span>
+              </h1>
+
+              <p class="welcome-desc">
+                Ahora queremos conocer cómo te sientes en tu vida universitaria, tu nivel de estrés y algunos hábitos que influyen en tu rendimiento.
+              </p>
+
+              <!-- Búho con audífonos y laptop -->
+              <div class="hero-mascot-wrapper e5-hero-box">
+                <div class="wave-bg"></div>
+                <svg class="owl-hero-svg" viewBox="0 0 250 185" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M196 42L210 34M202 54L216 52" stroke="#FBBF24" stroke-width="3.5" stroke-linecap="round"/>
+                  <!-- Cuerpo -->
+                  <ellipse cx="125" cy="126" rx="58" ry="48" fill="#6D28D9"/>
+                  <ellipse cx="125" cy="132" rx="41" ry="35" fill="#EDE9FE"/>
+                  <!-- Cabeza -->
+                  <rect x="65" y="32" width="120" height="86" rx="42" fill="#7C3AED"/>
+                  <path d="M77 42L61 18L95 34Z" fill="#6D28D9"/>
+                  <path d="M173 42L189 18L155 34Z" fill="#6D28D9"/>
+                  <!-- Diadema de audífonos -->
+                  <path d="M58 76C58 34 192 34 192 76" stroke="#A855F7" stroke-width="8" stroke-linecap="round"/>
+                  <rect x="48" y="62" width="18" height="34" rx="9" fill="#9333EA" stroke="#4C1D95" stroke-width="2.5"/>
+                  <rect x="184" y="62" width="18" height="34" rx="9" fill="#9333EA" stroke="#4C1D95" stroke-width="2.5"/>
+                  <!-- Rostro -->
+                  <circle cx="101" cy="74" r="24" fill="#FAF5FF" stroke="#4C1D95" stroke-width="3.6"/>
+                  <circle cx="149" cy="74" r="24" fill="#FAF5FF" stroke="#4C1D95" stroke-width="3.6"/>
+                  <rect x="120" y="70" width="10" height="8" fill="#4C1D95"/>
+                  <circle cx="101" cy="74" r="14" fill="#1E1B4B"/>
+                  <circle cx="149" cy="74" r="14" fill="#1E1B4B"/>
+                  <path d="M101 71C99 68.5 94.5 69.3 94.5 73C94.5 76.7 101 81 101 81C101 81 107.5 76.7 107.5 73C107.5 69.3 103 68.5 101 71Z" fill="#F43F5E"/>
+                  <path d="M142 75C145 71 153 71 156 75" stroke="#38BDF8" stroke-width="3" stroke-linecap="round"/>
+                  <path d="M118 87L125 97L132 87H118Z" fill="#F59E0B"/>
+                  <!-- Laptop -->
+                  <path d="M84 134L91 174H159L166 134H84Z" fill="#8B5CF6" stroke="#4C1D95" stroke-width="2.8"/>
+                  <rect x="76" y="172" width="98" height="7" rx="3.5" fill="#6D28D9"/>
+                  <circle cx="125" cy="154" r="6" fill="#EDE9FE"/>
+                </svg>
+              </div>
+
+              <!-- Tarjeta inferior con corazón -->
+              <div class="e5-heart-banner">
+                <div class="heart-pill-badge">
+                  <i data-lucide="heart"></i>
+                </div>
+                <p>No hay respuestas buenas ni malas. Queremos entenderte para apoyarte mejor.</p>
+              </div>
+            </div>
+
+            <div class="screen-footer single-btn">
+              <button class="btn-primary full-width" id="btnE5Start">
+                <span>¡Continuemos!</span>
+                <i data-lucide="arrow-right"></i>
+              </button>
+            </div>
+          </section>
+
+          <!-- ==========================================
+               PANTALLA 2: FRECUENCIA DE ESTRÉS
+               ========================================== -->
+          <section class="screen" id="e5-screen-2" data-step="2">
+            <div class="screen-body question-body">
+              <div class="question-header">
+                <div class="q-icon-badge pink-circle">
+                  <i data-lucide="brain"></i>
+                </div>
+                <h2 class="question-title">¿Con qué frecuencia sueles sentirte estresado(a) por tus estudios?</h2>
+              </div>
+
+              <div class="e5-radio-cards" id="stressFreqList">
+                <button type="button" class="e5-radio-card selected" data-value="Muy frecuentemente">
+                  <span class="e5-radio-dot"></span>
+                  <span class="e5-card-label">Muy frecuentemente</span>
+                </button>
+
+                <button type="button" class="e5-radio-card" data-value="Frecuentemente">
+                  <span class="e5-radio-dot"></span>
+                  <span class="e5-card-label">Frecuentemente</span>
+                </button>
+
+                <button type="button" class="e5-radio-card" data-value="A veces">
+                  <span class="e5-radio-dot"></span>
+                  <span class="e5-card-label">A veces</span>
+                </button>
+
+                <button type="button" class="e5-radio-card" data-value="Rara vez">
+                  <span class="e5-radio-dot"></span>
+                  <span class="e5-card-label">Rara vez</span>
+                </button>
+
+                <button type="button" class="e5-radio-card" data-value="Nunca">
+                  <span class="e5-radio-dot"></span>
+                  <span class="e5-card-label">Nunca</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="screen-footer dual-btns">
+              <button class="btn-secondary" data-prev="1">
+                <i data-lucide="arrow-left"></i>
+                <span>Anterior</span>
+              </button>
+              <button class="btn-primary" data-next="3">
+                <span>Siguiente</span>
+                <i data-lucide="arrow-right"></i>
+              </button>
+            </div>
+          </section>
+
+          <!-- ==========================================
+               PANTALLA 3: MOTIVACIÓN CON LA CARRERA (1 A 5)
+               ========================================== -->
+          <section class="screen" id="e5-screen-3" data-step="3">
+            <div class="screen-body question-body">
+              <div class="question-header">
+                <div class="q-icon-badge pink-circle">
+                  <i data-lucide="target"></i>
+                </div>
+                <h2 class="question-title">¿Qué tan motivado(a) te sientes actualmente con tu carrera?</h2>
+              </div>
+
+              <div class="likert-scale-wrapper">
+                <div class="likert-buttons-row" id="motivationScale">
+                  <button type="button" class="likert-btn" data-score="1">1</button>
+                  <button type="button" class="likert-btn" data-score="2">2</button>
+                  <button type="button" class="likert-btn" data-score="3">3</button>
+                  <button type="button" class="likert-btn selected" data-score="4">4</button>
+                  <button type="button" class="likert-btn" data-score="5">5</button>
+                </div>
+                <div class="likert-labels-row">
+                  <span>Nada<br>motivado(a)</span>
+                  <span style="text-align: right;">Muy<br>motivado(a)</span>
+                </div>
+              </div>
+
+              <!-- Búho celebrando con alas levantadas -->
+              <div class="bottom-owl-box">
+                <svg class="cheer-owl-svg" viewBox="0 0 210 165" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M52 44L38 36M48 56L34 54M158 44L172 36M162 56L176 54" stroke="#FBBF24" stroke-width="3.2" stroke-linecap="round"/>
+                  <!-- Cuerpo -->
+                  <ellipse cx="105" cy="116" rx="48" ry="40" fill="#6D28D9"/>
+                  <ellipse cx="105" cy="122" rx="34" ry="30" fill="#EDE9FE"/>
+                  <!-- Alas levantadas -->
+                  <path d="M58 98C36 86 30 68 42 64C50 62 58 76 62 88Z" fill="#5B21B6"/>
+                  <path d="M152 98C174 86 180 68 168 64C160 62 152 76 148 88Z" fill="#5B21B6"/>
+                  <!-- Cabeza -->
+                  <rect x="53" y="28" width="104" height="76" rx="38" fill="#7C3AED"/>
+                  <path d="M64 36L50 14L80 29Z" fill="#6D28D9"/>
+                  <path d="M146 36L160 14L130 29Z" fill="#6D28D9"/>
+                  <circle cx="85" cy="66" r="22" fill="#FAF5FF" stroke="#4C1D95" stroke-width="3.2"/>
+                  <circle cx="125" cy="66" r="22" fill="#FAF5FF" stroke="#4C1D95" stroke-width="3.2"/>
+                  <rect x="101" y="62" width="8" height="7" fill="#4C1D95"/>
+                  <circle cx="85" cy="66" r="13" fill="#1E1B4B"/>
+                  <circle cx="125" cy="66" r="13" fill="#1E1B4B"/>
+                  <path d="M85 63.5C83.3 61.2 79 61.8 79 65.3C79 68.8 85 72.5 85 72.5C85 72.5 91 68.8 91 65.3C91 61.8 86.7 61.2 85 63.5Z" fill="#F43F5E"/>
+                  <path d="M118 67C121 63 129 63 132 67" stroke="#38BDF8" stroke-width="2.8" stroke-linecap="round"/>
+                  <path d="M99 78L105 87L111 78H99Z" fill="#F59E0B"/>
+                  <!-- Patitas -->
+                  <path d="M84 154L80 162M88 154L88 162M92 154L96 162" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
+                  <path d="M118 154L114 162M122 154L122 162M126 154L130 162" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+              </div>
+            </div>
+
+            <div class="screen-footer dual-btns">
+              <button class="btn-secondary" data-prev="2">
+                <i data-lucide="arrow-left"></i>
+                <span>Anterior</span>
+              </button>
+              <button class="btn-primary" data-next="4">
+                <span>Siguiente</span>
+                <i data-lucide="arrow-right"></i>
+              </button>
+            </div>
+          </section>
+
+          <!-- ==========================================
+               PANTALLA 4: CALIDAD Y HORAS DE DESCANSO
+               ========================================== -->
+          <section class="screen" id="e5-screen-4" data-step="4">
+            <div class="screen-body question-body">
+              <div class="question-header">
+                <div class="q-icon-badge">
+                  <i data-lucide="bed-double"></i>
+                </div>
+                <h2 class="question-title">¿Cómo es tu descanso en una semana regular?</h2>
+              </div>
+
+              <div class="e5-radio-cards" id="sleepHabitList">
+                <button type="button" class="e5-radio-card selected" data-value="Duermo 7–9 horas (descanso bien)">
+                  <span class="e5-radio-dot"></span>
+                  <span class="e5-card-label">Duermo 7–9 horas<br><small>(descanso bien)</small></span>
+                </button>
+
+                <button type="button" class="e5-radio-card" data-value="Duermo 5–6 horas (me alcanza, pero podría mejorar)">
+                  <span class="e5-radio-dot"></span>
+                  <span class="e5-card-label">Duermo 5–6 horas<br><small>(me alcanza, pero podría mejorar)</small></span>
+                </button>
+
+                <button type="button" class="e5-radio-card" data-value="Duermo menos de 5 horas (suelo estar cansado(a))">
+                  <span class="e5-radio-dot"></span>
+                  <span class="e5-card-label">Duermo menos de 5 horas<br><small>(suelo estar cansado(a))</small></span>
+                </button>
+
+                <button type="button" class="e5-radio-card" data-value="Tengo un horario irregular de sueño">
+                  <span class="e5-radio-dot"></span>
+                  <span class="e5-card-label">Tengo un horario irregular de sueño</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="screen-footer dual-btns">
+              <button class="btn-secondary" data-prev="3">
+                <i data-lucide="arrow-left"></i>
+                <span>Anterior</span>
+              </button>
+              <button class="btn-primary" data-next="5">
+                <span>Siguiente</span>
+                <i data-lucide="arrow-right"></i>
+              </button>
+            </div>
+          </section>
+
+          <!-- ==========================================
+               PANTALLA 5: CONFIANZA EN EVALUACIONES (1 A 5)
+               ========================================== -->
+          <section class="screen" id="e5-screen-5" data-step="5">
+            <div class="screen-body question-body">
+              <div class="question-header">
+                <div class="q-icon-badge">
+                  <i data-lucide="bar-chart-2"></i>
+                </div>
+                <h2 class="question-title">¿Qué tan seguro(a) te sientes de tu rendimiento en las próximas evaluaciones?</h2>
+              </div>
+
+              <div class="likert-scale-wrapper">
+                <div class="likert-buttons-row" id="confidenceScale">
+                  <button type="button" class="likert-btn" data-score="1">1</button>
+                  <button type="button" class="likert-btn" data-score="2">2</button>
+                  <button type="button" class="likert-btn selected" data-score="3">3</button>
+                  <button type="button" class="likert-btn" data-score="4">4</button>
+                  <button type="button" class="likert-btn" data-score="5">5</button>
+                </div>
+                <div class="likert-labels-row">
+                  <span>Nada<br>seguro(a)</span>
+                  <span style="text-align: right;">Muy<br>seguro(a)</span>
+                </div>
+              </div>
+
+              <!-- Búho con globo de pensamiento A+ -->
+              <div class="bottom-owl-box">
+                <svg class="aplus-owl-svg" viewBox="0 0 225 165" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Cuerpo -->
+                  <ellipse cx="94" cy="122" rx="46" ry="36" fill="#6D28D9"/>
+                  <ellipse cx="94" cy="126" rx="32" ry="26" fill="#EDE9FE"/>
+                  <!-- Cabeza -->
+                  <rect x="44" y="42" width="100" height="72" rx="36" fill="#7C3AED"/>
+                  <path d="M54 50L40 28L70 43Z" fill="#6D28D9"/>
+                  <path d="M134 50L148 28L118 43Z" fill="#6D28D9"/>
+                  <circle cx="75" cy="78" r="21" fill="#FAF5FF" stroke="#4C1D95" stroke-width="3.2"/>
+                  <circle cx="113" cy="78" r="21" fill="#FAF5FF" stroke="#4C1D95" stroke-width="3.2"/>
+                  <rect x="91" y="74" width="6" height="7" fill="#4C1D95"/>
+                  <circle cx="75" cy="78" r="12" fill="#1E1B4B"/>
+                  <circle cx="113" cy="78" r="12" fill="#1E1B4B"/>
+                  <path d="M75 75.5C73.3 73.2 69 73.8 69 77.3C69 80.8 75 84.5 75 84.5C75 84.5 81 80.8 81 77.3C81 73.8 76.7 73.2 75 75.5Z" fill="#F43F5E"/>
+                  <path d="M107 79C110 75 117 75 120 79" stroke="#38BDF8" stroke-width="2.8" stroke-linecap="round"/>
+                  <path d="M88 89L94 98L100 89H88Z" fill="#F59E0B"/>
+                  <!-- Burbujas pensamiento -->
+                  <circle cx="148" cy="78" r="4" fill="#EDE9FE" stroke="#8B5CF6" stroke-width="2"/>
+                  <circle cx="157" cy="68" r="6" fill="#EDE9FE" stroke="#8B5CF6" stroke-width="2"/>
+                  <!-- Globo con examen A+ -->
+                  <rect x="160" y="10" width="54" height="58" rx="16" fill="#FFFFFF" stroke="#8B5CF6" stroke-width="2.5"/>
+                  <text x="173" y="34" fill="#EF4444" font-family="Plus Jakarta Sans, sans-serif" font-weight="800" font-size="16">A+</text>
+                  <line x1="170" y1="43" x2="202" y2="43" stroke="#C4B5FD" stroke-width="2.5" stroke-linecap="round"/>
+                  <line x1="170" y1="51" x2="196" y2="51" stroke="#DDD6FE" stroke-width="2.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+            </div>
+
+            <div class="screen-footer dual-btns">
+              <button class="btn-secondary" data-prev="4">
+                <i data-lucide="arrow-left"></i>
+                <span>Anterior</span>
+              </button>
+              <button class="btn-primary" data-next="6">
+                <span>Siguiente</span>
+                <i data-lucide="arrow-right"></i>
+              </button>
+            </div>
+          </section>
+
+          <!-- ==========================================
+               PANTALLA 6: ACTIVIDADES PARA MANEJAR EL ESTRÉS
+               ========================================== -->
+          <section class="screen" id="e5-screen-6" data-step="6">
+            <div class="screen-body question-body">
+              <div class="question-header">
+                <div class="q-icon-badge">
+                  <i data-lucide="flower-2"></i>
+                </div>
+                <div class="question-title-group">
+                  <h2 class="question-title">¿Qué actividades sueles hacer para manejar el estrés y sentirte mejor?</h2>
+                  <p class="question-subtitle">Puedes seleccionar varias.</p>
+                </div>
+              </div>
+
+              <div class="checkbox-list" id="copingActivitiesList">
+                <label class="checkbox-row checked">
+                  <input type="checkbox" value="Hacer ejercicio / deporte" checked />
+                  <span class="custom-checkbox"><i data-lucide="check"></i></span>
+                  <span class="checkbox-label">Hacer ejercicio / deporte</span>
+                </label>
+
+                <label class="checkbox-row checked">
+                  <input type="checkbox" value="Escuchar música" checked />
+                  <span class="custom-checkbox"><i data-lucide="check"></i></span>
+                  <span class="checkbox-label">Escuchar música</span>
+                </label>
+
+                <label class="checkbox-row">
+                  <input type="checkbox" value="Leer o ver series / películas" />
+                  <span class="custom-checkbox"><i data-lucide="check"></i></span>
+                  <span class="checkbox-label">Leer o ver series / películas</span>
+                </label>
+
+                <label class="checkbox-row checked">
+                  <input type="checkbox" value="Pasar tiempo con amigos/familia" checked />
+                  <span class="custom-checkbox"><i data-lucide="check"></i></span>
+                  <span class="checkbox-label">Pasar tiempo con amigos/familia</span>
+                </label>
+
+                <label class="checkbox-row">
+                  <input type="checkbox" value="Meditar o técnicas de relajación" />
+                  <span class="custom-checkbox"><i data-lucide="check"></i></span>
+                  <span class="checkbox-label">Meditar o técnicas de relajación</span>
+                </label>
+
+                <label class="checkbox-row">
+                  <input type="checkbox" value="Ninguna" id="noneActivityCheck" />
+                  <span class="custom-checkbox"><i data-lucide="check"></i></span>
+                  <span class="checkbox-label">Ninguna</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="screen-footer dual-btns compact-footer">
+              <button class="btn-secondary" data-prev="5">
+                <i data-lucide="arrow-left"></i>
+                <span>Anterior</span>
+              </button>
+              <button class="btn-primary btn-finish" id="btnFinishStage5">
+                <span>Continuar a la Etapa 6</span>
+                <i data-lucide="arrow-right"></i>
+              </button>
+            </div>
+          </section>
+
+        </div>
+
+        <!-- Barra de gestos inferior -->
+        <div class="gesture-bar-container">
+          <div class="gesture-pill" id="gestureHomeBtn" title="Inicio Etapa 5"></div>
+        </div>
+
+        <!-- Toast de notificaciones -->
+        <div class="toast-notification" id="toastNotification" role="alert">
+          <i data-lucide="alert-circle"></i>
+          <span id="toastMessage">Mensaje</span>
+        </div>
+
+        <!-- Menú Lateral (Drawer) -->
+        <div class="drawer-overlay" id="drawerOverlay">
+          <aside class="side-drawer">
+            <div class="drawer-header">
+              <div class="drawer-brand">
+                <span class="brand-title">StudentMind</span>
+                <span class="brand-subtitle">Connect</span>
+              </div>
+              <button class="icon-btn" id="closeMenuBtn"><i data-lucide="x"></i></button>
+            </div>
+
+            <div class="drawer-section">
+              <p class="drawer-section-title">Etapas del Diagnóstico</p>
+              <ul class="drawer-nav-list">
+                <li><a href="etapa1.html" class="drawer-nav-link"><i data-lucide="check-circle-2"></i> Etapa 1: Perfil Académico</a></li>
+                <li><a href="etapa2.html" class="drawer-nav-link"><i data-lucide="check-circle-2"></i> Etapa 2: Hábitos Semanales</a></li>
+                <li><a href="etapa3.html" class="drawer-nav-link"><i data-lucide="check-circle-2"></i> Etapa 3: Métodos de Estudio</a></li>
+                <li><a href="etapa4.html" class="drawer-nav-link"><i data-lucide="check-circle-2"></i> Etapa 4: Vacíos de Conocimiento</a></li>
+                <li><button class="drawer-nav-item" data-jump="1"><i data-lucide="heart"></i> Etapa 5: Bienestar Académico</button></li>
+              </ul>
+            </div>
+
+            <div class="drawer-section" style="margin-top: 10px;">
+              <p class="drawer-section-title">Pasos de Etapa 5</p>
+              <ul class="drawer-nav-list">
+                <li><button class="drawer-nav-item" data-jump="1">1. Bienvenida Etapa 5</button></li>
+                <li><button class="drawer-nav-item" data-jump="2">2. Nivel de Estrés</button></li>
+                <li><button class="drawer-nav-item" data-jump="3">3. Motivación (1-5)</button></li>
+                <li><button class="drawer-nav-item" data-jump="4">4. Hábitos de Sueño</button></li>
+                <li><button class="drawer-nav-item" data-jump="5">5. Confianza Evaluaciones (1-5)</button></li>
+                <li><button class="drawer-nav-item" data-jump="6">6. Manejo del Estrés</button></li>
+              </ul>
+            </div>
+
+            <div class="drawer-footer">
+              <button class="btn-outline-danger" id="resetE5Btn">
+                <i data-lucide="rotate-ccw"></i>
+                <span>Reiniciar Etapa 5</span>
+              </button>
+            </div>
+          </aside>
+        </div>
+
+        <!-- Modal Resumen Etapa 5 Completada -->
+        <div class="modal-overlay" id="summaryModalE5">
+          <div class="modal-card summary-modal-card">
+            <div class="summary-badge-icon">
+              <i data-lucide="heart-handshake"></i>
+            </div>
+            <h3>¡Etapa 5 Completada!</h3>
+            <p class="summary-subtitle">Hemos registrado tu perfil de bienestar y confianza académica.</p>
+
+            <div class="summary-details-box" id="summaryDetailsE5"></div>
+
+            <div class="summary-actions">
+              <button class="btn-primary full-width" id="proceedStage6Btn">
+                <span>Avanzar a Etapa 6</span>
+                <i data-lucide="arrow-right"></i>
+              </button>
+              <button class="btn-secondary full-width" id="editStage5Btn">
+                <span>Editar mis respuestas</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <script src="../js%20encuesta/etapa5.js"></script>
+</body>
+</html>

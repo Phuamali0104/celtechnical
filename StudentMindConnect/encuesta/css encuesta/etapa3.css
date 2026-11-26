@@ -1,0 +1,237 @@
+/* ==========================================================================
+   ESTILOS ESPECÍFICOS PARA ETAPA 3 (etapa3.html)
+   ========================================================================== */
+
+.step-line.active-line {
+  background: var(--primary-purple);
+  height: 2px;
+}
+
+.step-node.nav-stage {
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   PANTALLA 1: BIENVENIDA ETAPA 3
+   ========================================================================== */
+.e3-welcome-body {
+  padding-top: 16px;
+}
+
+.e3-main-title {
+  font-size: 26px;
+}
+
+.e3-hero-box {
+  height: 175px;
+  margin: 6px 0 10px;
+}
+
+.e3-info-banner {
+  width: 100%;
+  background: var(--soft-lavender-bg);
+  border: 1px solid var(--soft-lavender-border);
+  border-radius: 16px;
+  padding: 13px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  margin-top: auto;
+}
+
+.e3-target-pill {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #FCE7F3;
+  color: #DB2777;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.e3-target-pill svg { width: 18px; height: 18px; }
+
+.e3-info-banner p {
+  font-size: 11.5px;
+  font-weight: 600;
+  line-height: 1.38;
+  color: var(--text-dark);
+}
+
+/* ==========================================================================
+   PANTALLAS 3 Y 4: TARJETAS RADIO DOBLE INDICADOR (IZQUIERDA + CHECK DERECHA)
+   ========================================================================== */
+.q-icon-badge.circle {
+  border-radius: 50%;
+}
+
+.q-icon-badge.pink-circle {
+  border-radius: 50%;
+  background: #FCE7F3;
+  color: #DB2777;
+}
+
+.dual-radio-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.dual-radio-card {
+  width: 100%;
+  min-height: 54px;
+  padding: 12px 16px;
+  background: var(--surface-white);
+  border: 1.5px solid var(--border-gray);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-main);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-dark);
+  text-align: left;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.dual-radio-card:hover {
+  border-color: var(--soft-lavender-border);
+  background: #FAFAFF;
+}
+
+.dual-radio-card.selected {
+  background: var(--soft-lavender-bg);
+  border-color: var(--primary-purple);
+  color: var(--primary-purple);
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.08);
+}
+
+.left-radio-ring {
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  border: 2px solid #D1D5DB;
+  background: #FFFFFF;
+  flex-shrink: 0;
+  transition: var(--transition-smooth);
+}
+
+.dual-radio-card.selected .left-radio-ring {
+  border-color: var(--primary-purple);
+  border-width: 6px;
+}
+
+.dual-card-label {
+  flex: 1;
+  line-height: 1.3;
+}
+
+.right-check-badge {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--primary-purple);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: scale(0.7);
+  transition: var(--transition-smooth);
+  flex-shrink: 0;
+}
+
+.right-check-badge svg {
+  width: 13px;
+  height: 13px;
+  stroke-width: 3;
+}
+
+.dual-radio-card.selected .right-check-badge {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ==========================================================================
+   PANTALLA 5: ESCALA DE EFECTIVIDAD (1 AL 5)
+   ========================================================================== */
+.likert-scale-wrapper {
+  margin-top: 8px;
+}
+
+.likert-buttons-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.likert-btn {
+  height: 48px;
+  border-radius: 12px;
+  border: 1.5px solid var(--border-gray);
+  background: var(--surface-white);
+  font-family: var(--font-main);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.likert-btn:hover {
+  border-color: var(--primary-purple-light);
+  background: var(--soft-lavender-bg);
+}
+
+.likert-btn.selected {
+  background: var(--primary-purple);
+  border-color: var(--primary-purple);
+  color: #FFFFFF;
+  box-shadow: 0 6px 14px rgba(99, 102, 241, 0.3);
+  transform: translateY(-2px);
+}
+
+.likert-labels-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--text-muted);
+  padding: 0 2px;
+}
+
+.idea-owl-container {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  padding-top: 12px;
+}
+
+.idea-owl-svg {
+  width: 190px;
+  height: 140px;
+  animation: floatOwl 3.4s ease-in-out infinite;
+}
+
+.drawer-nav-link {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary-purple);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--soft-lavender-bg);
+  margin-bottom: 4px;
+}
+.drawer-nav-link svg { width: 16px; height: 16px; }

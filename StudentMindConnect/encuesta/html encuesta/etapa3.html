@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>StudentMind Connect — Etapa 3: Métodos de Estudio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="../css%20encuesta/etapa1.css" />
+  <link rel="stylesheet" href="../css%20encuesta/etapa3.css" />
+  <link rel="stylesheet" href="../../aplicacion/css%20aplicacion/tema.css" />
+  <link rel="stylesheet" href="../../aplicacion/css%20aplicacion/planes.css" />
+  <script src="../../aplicacion/js%20aplicacion/planes.js"></script>
+</head>
+<body>
+
+  <main class="desktop-stage">
+    <div class="phone-frame" id="phoneFrame">
+      <div class="hardware-btn volume-up"></div>
+      <div class="hardware-btn volume-down"></div>
+      <div class="hardware-btn power-btn"></div>
+
+      <div class="app-screen" id="appScreen">
+
+        <!-- Barra de estado superior -->
+        <header class="status-bar">
+          <span class="status-time" id="statusTime">9:41</span>
+          <div class="camera-punch"></div>
+          <div class="status-icons">
+            <i data-lucide="signal" class="status-icon"></i>
+            <i data-lucide="wifi" class="status-icon"></i>
+            <i data-lucide="battery-full" class="status-icon"></i>
+          </div>
+        </header>
+
+        <!-- Encabezado estándar con Stepper 1-2-3 activos -->
+        <div class="app-header">
+          <div class="header-top-row">
+            <button class="icon-btn" id="openMenuBtn" aria-label="Abrir menú">
+              <i data-lucide="menu"></i>
+            </button>
+
+            <div class="brand-logo" id="brandHomeBtn" title="Ir al inicio">
+              <svg class="brand-owl-svg" viewBox="0 0 64 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="6" y="8" width="52" height="42" rx="20" fill="#5B21B6"/>
+                <path d="M12 10L6 2L20 8Z" fill="#5B21B6"/>
+                <path d="M52 10L58 2L44 8Z" fill="#5B21B6"/>
+                <circle cx="23" cy="28" r="11" fill="#F3E8FF" stroke="#3B0764" stroke-width="2.5"/>
+                <circle cx="41" cy="28" r="11" fill="#F3E8FF" stroke="#3B0764" stroke-width="2.5"/>
+                <circle cx="23" cy="28" r="6" fill="#1E1B4B"/>
+                <circle cx="41" cy="28" r="6" fill="#1E1B4B"/>
+                <path d="M23 26.5C22.2 25.5 20.5 25.8 20.5 27.3C20.5 28.8 23 30.5 23 30.5C23 30.5 25.5 28.8 25.5 27.3C25.5 25.8 23.8 25.5 23 26.5Z" fill="#F43F5E"/>
+                <path d="M38.5 28.5C39.8 27 42.2 27 43.5 28.5" stroke="#38BDF8" stroke-width="2" stroke-linecap="round"/>
+                <path d="M29 34L32 39L35 34H29Z" fill="#F59E0B"/>
+              </svg>
+              <div class="brand-text">
+                <span class="brand-title">StudentMind</span>
+                <span class="brand-subtitle">Connect</span>
+              </div>
+            </div>
+
+            <div style="width: 36px;"></div>
+          </div>
+
+          <p class="test-header-label">Test de Diagnóstico Académico</p>
+
+          <!-- Stepper de 7 Etapas (1, 2 y 3 morados) -->
+          <nav class="stepper-container" aria-label="Progreso de etapas">
+            <div class="stepper-track">
+              <div class="step-node active nav-stage" data-href="etapa1.html" title="Ir a Etapa 1">1</div>
+              <div class="step-line active-line"></div>
+              <div class="step-node active nav-stage" data-href="etapa2.html" title="Ir a Etapa 2">2</div>
+              <div class="step-line active-line"></div>
+              <div class="step-node active" data-stage="3">3</div>
+              <div class="step-line"></div>
+              <div class="step-node" data-stage="4">4</div>
+              <div class="step-line"></div>
+              <div class="step-node" data-stage="5">5</div>
+              <div class="step-line"></div>
+              <div class="step-node" data-stage="6">6</div>
+              <div class="step-line"></div>
+              <div class="step-node" data-stage="7">7</div>
+            </div>
+          </nav>
+        </div>
+
+        <!-- Viewport de las 6 Pantallas de Etapa 3 -->
+        <div class="screens-viewport">
+
+          <!-- ==========================================
+               PANTALLA 1: BIENVENIDA ETAPA 3 DE 7
+               ========================================== -->
+          <section class="screen active" id="e3-screen-1" data-step="1">
+            <div class="screen-body welcome-body e3-welcome-body">
+              <span class="stage-pill">Etapa 3 de 7</span>
+
+              <h1 class="welcome-title e3-main-title">
+                ¿Cómo estás<br>
+                <span>estudiando?</span>
+              </h1>
+
+              <p class="welcome-desc">
+                Ahora queremos conocer tus hábitos, métodos y estrategias de estudio. No hay respuestas correctas o incorrectas, solo queremos entenderte mejor.
+              </p>
+
+              <!-- Búho leyendo libro + pila de libros -->
+              <div class="hero-mascot-wrapper e3-hero-box">
+                <div class="wave-bg"></div>
+                <svg class="owl-hero-svg e3-owl-book" viewBox="0 0 260 195" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M58 55L44 47M54 68L38 66M66 44L60 32" stroke="#FBBF24" stroke-width="3.5" stroke-linecap="round"/>
+                  <!-- Cuerpo -->
+                  <ellipse cx="126" cy="132" rx="60" ry="50" fill="#6D28D9"/>
+                  <ellipse cx="126" cy="138" rx="43" ry="36" fill="#EDE9FE"/>
+                  <!-- Cabeza -->
+                  <rect x="66" y="30" width="120" height="88" rx="44" fill="#7C3AED"/>
+                  <path d="M78 40L62 16L96 32Z" fill="#6D28D9"/>
+                  <path d="M174 40L190 16L156 32Z" fill="#6D28D9"/>
+                  <circle cx="102" cy="76" r="26" fill="#FAF5FF" stroke="#4C1D95" stroke-width="3.8"/>
+                  <circle cx="150" cy="76" r="26" fill="#FAF5FF" stroke="#4C1D95" stroke-width="3.8"/>
+                  <rect x="120" y="72" width="12" height="8" fill="#4C1D95"/>
+                  <circle cx="102" cy="76" r="15" fill="#1E1B4B"/>
+                  <circle cx="150" cy="76" r="15" fill="#1E1B4B"/>
+                  <!-- Ojo corazón -->
+                  <path d="M102 72.5C100 69.8 95 70.6 95 74.8C95 79 102 83.5 102 83.5C102 83.5 109 79 109 74.8C109 70.6 104 69.8 102 72.5Z" fill="#F43F5E"/>
+                  <!-- Ojo guiño -->
+                  <path d="M142 77C145.5 72.5 154.5 72.5 158 77" stroke="#38BDF8" stroke-width="3.2" stroke-linecap="round"/>
+                  <path d="M119 90L126 101L133 90H119Z" fill="#F59E0B"/>
+                  <!-- Libro abierto -->
+                  <path d="M74 134L126 144L178 134V176L126 184L74 176V134Z" fill="#4F46E5" stroke="#312E81" stroke-width="3" stroke-linejoin="round"/>
+                  <path d="M126 144V184" stroke="#312E81" stroke-width="3"/>
+                  <!-- Libros apilados a la derecha -->
+                  <rect x="176" y="156" width="54" height="13" rx="4" fill="#F472B6" stroke="#831843" stroke-width="2"/>
+                  <rect x="172" y="169" width="60" height="14" rx="4" fill="#A78BFA" stroke="#4C1D95" stroke-width="2"/>
+                </svg>
+              </div>
+
+              <!-- Tarjeta informativa con diana -->
+              <div class="e3-info-banner">
+                <div class="e3-target-pill">
+                  <i data-lucide="target"></i>
+                </div>
+                <p>Con esta información podremos darte recomendaciones de estudio más efectivas.</p>
+              </div>
+            </div>
+
+            <div class="screen-footer single-btn">
+              <button class="btn-primary full-width" id="btnE3Start">
+                <span>¡Empecemos!</span>
+                <i data-lucide="arrow-right"></i>
+              </button>
+            </div>
+          </section>
+
+          <!-- ==========================================
+               PANTALLA 2: MÉTODOS DE ESTUDIO (MÁX. 3)
+               ========================================== -->
+          <section class="screen" id="e3-screen-2" data-step="2">
+            <div class="screen-body question-body">
+              <div class="question-header">
+                <div class="q-icon-badge">
+                  <i data-lucide="book-open"></i>
+                </div>
+                <div class="question-title-group">
+                  <h2 class="question-title">¿Qué métodos de estudio usas con mayor frecuencia?</h2>
+                  <p class="question-subtitle">Puedes seleccionar hasta 3. <span class="counter-badge" id="methodsCounter">2/3</span></p>
+                </div>
+              </div>
+
+              <div class="checkbox-list" id="methodsList">
+                <label class="checkbox-row checked">
+                  <input type="checkbox" value="Resúmenes" checked />
+                  <span class="custom-checkbox"><i data-lucide="check"></i></span>
+                  <span class="checkbox-label">Resúmenes</span>
+                </label>
+
+                <label class="checkbox-row">
+                  <input type="checkbox" value="Mapas mentales" />
+                  <span class="custom-checkbox"><i data-lucide="check"></i></span>
+                  <span class="checkbox-label">Mapas mentales</span>
+                </label>
+
+                <label class="checkbox-row checked">
+                  <input type="checkbox" value="Ejercicios o práctica" checked />
+                  <span class="custom-checkbox"><i data-lucide="check"></i></span>
+                  <span class="checkbox-label">Ejercicios o práctica</span>
+                </label>
+
+                <label class="checkbox-row">
+                  <input type="checkbox" value="Flashcards" />
+                  <span class="custom-checkbox"><i data-lucide="check"></i></span>
+                  <span class="checkbox-label">Flashcards</span>
+                </label>
+
+                <label class="checkbox-row">
+                  <input type="checkbox" value="Videos o clases en línea" />
+                  <span class="custom-checkbox"><i data-lucide="check"></i></span>
+                  <span class="checkbox-label">Videos o clases en línea</span>
+                </label>
+
+                <label class="checkbox-row">
+                  <input type="checkbox" value="Repetición / memorización" />
+                  <span class="custom-checkbox"><i data-lucide="check"></i></span>
+                  <span class="checkbox-label">Repetición / memorización</span>
+                </label>
+
+                <label class="checkbox-row">
+                  <input type="checkbox" value="Otros" id="otherMethodCheck" />
+                  <span class="custom-checkbox"><i data-lucide="check"></i></span>
+                  <span class="checkbox-label">Otros</span>
+                </label>
+              </div>
+
+              <div class="other-input-box hidden" id="otherMethodInputBox">
+                <input type="text" id="otherMethodText" placeholder="Escribe otro método de estudio..." maxlength="60" />
+              </div>
+            </div>
+
+            <div class="screen-footer dual-btns">
+              <button class="btn-secondary" data-prev="1">
+                <i data-lucide="arrow-left"></i>
+                <span>Anterior</span>
+              </button>
+              <button class="btn-primary" id="btnNextE3_2">
+                <span>Siguiente</span>
+                <i data-lucide="arrow-right"></i>
+              </button>
+            </div>
+          </section>
+
+          <!-- ==========================================
+               PANTALLA 3: PREPARACIÓN PARA EVALUACIONES
+               ========================================== -->
+          <section class="screen" id="e3-screen-3" data-step="3">
+            <div class="screen-body question-body">
+              <div class="question-header">
+                <div class="q-icon-badge circle">
+                  <i data-lucide="clock"></i>
+                </div>
+                <h2 class="question-title">¿Cómo sueles prepararte para una evaluación (parcial, práctica o final)?</h2>
+              </div>
+
+              <div class="dual-radio-cards" id="examPrepList">
+                <button type="button" class="dual-radio-card" data-value="Estudio con anticipación y un plan.">
+                  <span class="left-radio-ring"></span>
+                  <span class="dual-card-label">Estudio con anticipación y un plan.</span>
+                  <span class="right-check-badge"><i data-lucide="check"></i></span>
+                </button>
+
+                <button type="button" class="dual-radio-card selected" data-value="Estudio unos días antes.">
+                  <span class="left-radio-ring"></span>
+                  <span class="dual-card-label">Estudio unos días antes.</span>
+                  <span class="right-check-badge"><i data-lucide="check"></i></span>
+                </button>
+
+                <button type="button" class="dual-radio-card" data-value="Estudio el día anterior.">
+                  <span class="left-radio-ring"></span>
+                  <span class="dual-card-label">Estudio el día anterior.</span>
+                  <span class="right-check-badge"><i data-lucide="check"></i></span>
+                </button>
+
+                <button type="button" class="dual-radio-card" data-value="Suelo improvisar.">
+                  <span class="left-radio-ring"></span>
+                  <span class="dual-card-label">Suelo improvisar.</span>
+                  <span class="right-check-badge"><i data-lucide="check"></i></span>
+                </button>
+              </div>
+            </div>
+
+            <div class="screen-footer dual-btns">
+              <button class="btn-secondary" data-prev="2">
+                <i data-lucide="arrow-left"></i>
+                <span>Anterior</span>
+              </button>
+              <button class="btn-primary" data-next="4">
+                <span>Siguiente</span>
+                <i data-lucide="arrow-right"></i>
+              </button>
+            </div>
+          </section>
+
+          <!-- ==========================================
+               PANTALLA 4: FRECUENCIA DE PRÁCTICA
+               ========================================== -->
+          <section class="screen" id="e3-screen-4" data-step="4">
+            <div class="screen-body question-body">
+              <div class="question-header">
+                <div class="q-icon-badge">
+                  <i data-lucide="bar-chart-2"></i>
+                </div>
+                <h2 class="question-title">¿Con qué frecuencia practicas o resuelves ejercicios del curso?</h2>
+              </div>
+
+              <div class="dual-radio-cards" id="practiceFreqList">
+                <button type="button" class="dual-radio-card" data-value="Siempre (casi todos los días)">
+                  <span class="left-radio-ring"></span>
+                  <span class="dual-card-label">Siempre (casi todos los días)</span>
+                  <span class="right-check-badge"><i data-lucide="check"></i></span>
+                </button>
+
+                <button type="button" class="dual-radio-card selected" data-value="Frecuentemente (2–3 veces por semana)">
+                  <span class="left-radio-ring"></span>
+                  <span class="dual-card-label">Frecuentemente<br>(2–3 veces por semana)</span>
+                  <span class="right-check-badge"><i data-lucide="check"></i></span>
+                </button>
+
+                <button type="button" class="dual-radio-card" data-value="A veces (1 vez por semana)">
+                  <span class="left-radio-ring"></span>
+                  <span class="dual-card-label">A veces (1 vez por semana)</span>
+                  <span class="right-check-badge"><i data-lucide="check"></i></span>
+                </button>
+
+                <button type="button" class="dual-radio-card" data-value="Rara vez.">
+                  <span class="left-radio-ring"></span>
+                  <span class="dual-card-label">Rara vez.</span>
+                  <span class="right-check-badge"><i data-lucide="check"></i></span>
+                </button>
+
+                <button type="button" class="dual-radio-card" data-value="Nunca.">
+                  <span class="left-radio-ring"></span>
+                  <span class="dual-card-label">Nunca.</span>
+                  <span class="right-check-badge"><i data-lucide="check"></i></span>
+                </button>
+              </div>
+            </div>
+
+            <div class="screen-footer dual-btns">
+              <button class="btn-secondary" data-prev="3">
+                <i data-lucide="arrow-left"></i>
+                <span>Anterior</span>
+              </button>
+              <button class="btn-primary" data-next="5">
+                <span>Siguiente</span>
+                <i data-lucide="arrow-right"></i>
+              </button>
+            </div>
+          </section>
+
+          <!-- ==========================================
+               PANTALLA 5: ESCALA DE EFECTIVIDAD (1 A 5)
+               ========================================== -->
+          <section class="screen" id="e3-screen-5" data-step="5">
+            <div class="screen-body question-body">
+              <div class="question-header">
+                <div class="q-icon-badge pink-circle">
+                  <i data-lucide="target"></i>
+                </div>
+                <h2 class="question-title">¿Qué tan efectivo sientes que es tu método de estudio actual?</h2>
+              </div>
+
+              <!-- Selector Escala Likert 1-5 -->
+              <div class="likert-scale-wrapper">
+                <div class="likert-buttons-row" id="effectivenessScale">
+                  <button type="button" class="likert-btn" data-score="1">1</button>
+                  <button type="button" class="likert-btn" data-score="2">2</button>
+                  <button type="button" class="likert-btn" data-score="3">3</button>
+                  <button type="button" class="likert-btn selected" data-score="4">4</button>
+                  <button type="button" class="likert-btn" data-score="5">5</button>
+                </div>
+                <div class="likert-labels-row">
+                  <span>Poco<br>efectivo</span>
+                  <span style="text-align: right;">Muy<br>efectivo</span>
+                </div>
+              </div>
+
+              <!-- Búho con bombilla de idea -->
+              <div class="idea-owl-container">
+                <svg class="idea-owl-svg" viewBox="0 0 210 155" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Cuerpo -->
+                  <ellipse cx="98" cy="118" rx="48" ry="38" fill="#6D28D9"/>
+                  <ellipse cx="98" cy="122" rx="34" ry="28" fill="#EDE9FE"/>
+                  <!-- Ala derecha levantada señalando bombilla -->
+                  <path d="M140 94C158 82 164 66 154 62C146 60 138 74 134 86Z" fill="#5B21B6"/>
+                  <!-- Cabeza -->
+                  <rect x="46" y="34" width="104" height="76" rx="38" fill="#7C3AED"/>
+                  <path d="M56 42L42 20L72 35Z" fill="#6D28D9"/>
+                  <path d="M140 42L154 20L124 35Z" fill="#6D28D9"/>
+                  <circle cx="78" cy="72" r="22" fill="#FAF5FF" stroke="#4C1D95" stroke-width="3.2"/>
+                  <circle cx="118" cy="72" r="22" fill="#FAF5FF" stroke="#4C1D95" stroke-width="3.2"/>
+                  <rect x="94" y="68" width="8" height="7" fill="#4C1D95"/>
+                  <circle cx="78" cy="72" r="13" fill="#1E1B4B"/>
+                  <circle cx="118" cy="72" r="13" fill="#1E1B4B"/>
+                  <path d="M78 69.5C76.3 67.2 72 67.8 72 71.3C72 74.8 78 78.5 78 78.5C78 78.5 84 74.8 84 71.3C84 67.8 79.7 67.2 78 69.5Z" fill="#F43F5E"/>
+                  <path d="M111 73C114 69 122 69 125 73" stroke="#38BDF8" stroke-width="2.8" stroke-linecap="round"/>
+                  <path d="M92 84L98 93L104 84H92Z" fill="#F59E0B"/>
+                  <!-- Bombilla iluminada -->
+                  <circle cx="172" cy="36" r="16" fill="#FEF08A" stroke="#F59E0B" stroke-width="2.5"/>
+                  <rect x="166" y="51" width="12" height="7" rx="2" fill="#9CA3AF"/>
+                  <path d="M172 12V16M192 22L189 25M196 38H192M152 22L155 25M148 38H152" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+            </div>
+
+            <div class="screen-footer dual-btns">
+              <button class="btn-secondary" data-prev="4">
+                <i data-lucide="arrow-left"></i>
+                <span>Anterior</span>
+              </button>
+              <button class="btn-primary" data-next="6">
+                <span>Siguiente</span>
+                <i data-lucide="arrow-right"></i>
+              </button>
+            </div>
+          </section>
+
+          <!-- ==========================================
+               PANTALLA 6: QUÉ TE GUSTARÍA MEJORAR (MÁX. 3)
+               ========================================== -->
+          <section class="screen" id="e3-screen-6" data-step="6">
+            <div class="screen-body question-body">
+              <div class="question-header">
+                <div class="q-icon-badge">
+                  <i data-lucide="clipboard-check"></i>
+                </div>
+                <div class="question-title-group">
+                  <h2 class="question-title">¿Qué te gustaría mejorar de tu forma de estudiar?</h2>
+                  <p class="question-subtitle">Puedes seleccionar hasta 3. <span class="counter-badge" id="improveCounter">3/3</span></p>
+                </div>
+              </div>
+
+              <div class="checkbox-list" id="improveList">
+                <label class="checkbox-row checked">
+                  <input type="checkbox" value="Ser más constante" checked />
+                  <span class="custom-checkbox"><i data-lucide="check"></i></span>
+                  <span class="checkbox-label">Ser más constante</span>
+                </label>
+
+                <label class="checkbox-row checked">
+                  <input type="checkbox" value="Aplicar mejores técnicas" checked />
+                  <span class="custom-checkbox"><i data-lucide="check"></i></span>
+                  <span class="checkbox-label">Aplicar mejores técnicas</span>
+                </label>
+
+                <label class="checkbox-row">
+                  <input type="checkbox" value="Entender mejor los temas" />
+                  <span class="custom-checkbox"><i data-lucide="check"></i></span>
+                  <span class="checkbox-label">Entender mejor los temas</span>
+                </label>
+
+                <label class="checkbox-row checked">
+                  <input type="checkbox" value="Retener la información por más tiempo" checked />
+                  <span class="custom-checkbox"><i data-lucide="check"></i></span>
+                  <span class="checkbox-label">Retener la información por más tiempo</span>
+                </label>
+
+                <label class="checkbox-row">
+                  <input type="checkbox" value="Gestionar la distracción" />
+                  <span class="custom-checkbox"><i data-lucide="check"></i></span>
+                  <span class="checkbox-label">Gestionar la distracción</span>
+                </label>
+
+                <label class="checkbox-row">
+                  <input type="checkbox" value="Otro" id="otherImproveCheck" />
+                  <span class="custom-checkbox"><i data-lucide="check"></i></span>
+                  <span class="checkbox-label">Otro</span>
+                </label>
+              </div>
+
+              <div class="other-input-box hidden" id="otherImproveInputBox">
+                <input type="text" id="otherImproveText" placeholder="Escribe qué otro aspecto deseas mejorar..." maxlength="60" />
+              </div>
+            </div>
+
+            <div class="screen-footer dual-btns compact-footer">
+              <button class="btn-secondary" data-prev="5">
+                <i data-lucide="arrow-left"></i>
+                <span>Anterior</span>
+              </button>
+              <button class="btn-primary btn-finish" id="btnFinishStage3">
+                <span>Continuar a la Etapa 4</span>
+                <i data-lucide="arrow-right"></i>
+              </button>
+            </div>
+          </section>
+
+        </div>
+
+        <!-- Barra de gestos inferior -->
+        <div class="gesture-bar-container">
+          <div class="gesture-pill" id="gestureHomeBtn" title="Inicio Etapa 3"></div>
+        </div>
+
+        <!-- Toast de notificaciones -->
+        <div class="toast-notification" id="toastNotification" role="alert">
+          <i data-lucide="alert-circle"></i>
+          <span id="toastMessage">Mensaje</span>
+        </div>
+
+        <!-- Menú Lateral (Drawer) -->
+        <div class="drawer-overlay" id="drawerOverlay">
+          <aside class="side-drawer">
+            <div class="drawer-header">
+              <div class="drawer-brand">
+                <span class="brand-title">StudentMind</span>
+                <span class="brand-subtitle">Connect</span>
+              </div>
+              <button class="icon-btn" id="closeMenuBtn"><i data-lucide="x"></i></button>
+            </div>
+
+            <div class="drawer-section">
+              <p class="drawer-section-title">Etapas del Diagnóstico</p>
+              <ul class="drawer-nav-list">
+                <li><a href="etapa1.html" class="drawer-nav-link"><i data-lucide="check-circle-2"></i> Etapa 1: Perfil Académico</a></li>
+                <li><a href="etapa2.html" class="drawer-nav-link"><i data-lucide="check-circle-2"></i> Etapa 2: Hábitos Semanales</a></li>
+                <li><button class="drawer-nav-item" data-jump="1"><i data-lucide="book-open"></i> Etapa 3: Métodos de Estudio</button></li>
+              </ul>
+            </div>
+
+            <div class="drawer-section" style="margin-top: 14px;">
+              <p class="drawer-section-title">Pasos de Etapa 3</p>
+              <ul class="drawer-nav-list">
+                <li><button class="drawer-nav-item" data-jump="1">1. Bienvenida Etapa 3</button></li>
+                <li><button class="drawer-nav-item" data-jump="2">2. Métodos de Estudio</button></li>
+                <li><button class="drawer-nav-item" data-jump="3">3. Preparación Evaluaciones</button></li>
+                <li><button class="drawer-nav-item" data-jump="4">4. Frecuencia de Práctica</button></li>
+                <li><button class="drawer-nav-item" data-jump="5">5. Nivel de Efectividad (1-5)</button></li>
+                <li><button class="drawer-nav-item" data-jump="6">6. Aspectos a Mejorar</button></li>
+              </ul>
+            </div>
+
+            <div class="drawer-footer">
+              <button class="btn-outline-danger" id="resetE3Btn">
+                <i data-lucide="rotate-ccw"></i>
+                <span>Reiniciar Etapa 3</span>
+              </button>
+            </div>
+          </aside>
+        </div>
+
+        <!-- Modal Resumen Etapa 3 Completada -->
+        <div class="modal-overlay" id="summaryModalE3">
+          <div class="modal-card summary-modal-card">
+            <div class="summary-badge-icon">
+              <i data-lucide="check-circle-2"></i>
+            </div>
+            <h3>¡Etapa 3 Completada!</h3>
+            <p class="summary-subtitle">Tus estrategias de estudio se han registrado correctamente.</p>
+
+            <div class="summary-details-box" id="summaryDetailsE3"></div>
+
+            <div class="summary-actions">
+              <button class="btn-primary full-width" id="proceedStage4Btn">
+                <span>Avanzar a Etapa 4</span>
+                <i data-lucide="arrow-right"></i>
+              </button>
+              <button class="btn-secondary full-width" id="editStage3Btn">
+                <span>Editar mis respuestas</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <script src="../js%20encuesta/etapa3.js"></script>
+</body>
+</html>

@@ -1,0 +1,417 @@
+/* ==========================================================================
+   ESTILOS ESPECÍFICOS PARA ETAPA 4 (etapa4.html)
+   ========================================================================== */
+
+.step-line.active-line {
+  background: var(--primary-purple);
+  height: 2px;
+}
+
+.step-node.nav-stage {
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   PANTALLA 1: BIENVENIDA ETAPA 4
+   ========================================================================== */
+.e4-welcome-body {
+  padding-top: 12px;
+}
+
+.e4-main-title {
+  font-size: 24px;
+  line-height: 1.15;
+}
+
+.e4-hero-box {
+  height: 165px;
+  margin: 4px 0 8px;
+}
+
+.e4-info-banner {
+  width: 100%;
+  background: var(--soft-lavender-bg);
+  border: 1px solid var(--soft-lavender-border);
+  border-radius: 16px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  margin-top: auto;
+}
+
+.e4-target-pill {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #FCE7F3;
+  color: #DB2777;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.e4-target-pill svg { width: 18px; height: 18px; }
+
+.e4-info-banner p {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.q-icon-badge.pink-circle {
+  border-radius: 50%;
+  background: #FCE7F3;
+  color: #DB2777;
+}
+
+/* ==========================================================================
+   PANTALLA 4: MINI EVALUACIÓN INTERACTIVA
+   ========================================================================== */
+.e4-quiz-body {
+  padding-top: 16px;
+}
+
+.quiz-top-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.quiz-course-pill {
+  margin-bottom: 0;
+  font-size: 11.5px;
+}
+
+.quiz-progress-text {
+  align-self: flex-end;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.quiz-prompt-title {
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.28;
+  color: var(--text-dark);
+  margin-bottom: 14px;
+}
+
+.formula-display-card {
+  width: 100%;
+  min-height: 58px;
+  padding: 14px 16px;
+  background: #F3F4F6;
+  border: 1px solid #E5E7EB;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-dark);
+  letter-spacing: 0.01em;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.quiz-options-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.quiz-option-btn {
+  width: 100%;
+  min-height: 50px;
+  padding: 10px 16px;
+  background: var(--surface-white);
+  border: 1.5px solid var(--border-gray);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  font-family: var(--font-main);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-dark);
+  text-align: left;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.quiz-option-btn:hover {
+  border-color: var(--soft-lavender-border);
+  background: #FAFAFF;
+}
+
+.quiz-option-btn.selected {
+  background: var(--soft-lavender-bg);
+  border-color: var(--primary-purple);
+  color: var(--primary-purple);
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.09);
+}
+
+.quiz-radio-circle {
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  border: 2px solid #D1D5DB;
+  background: #FFFFFF;
+  flex-shrink: 0;
+  transition: var(--transition-smooth);
+}
+
+.quiz-option-btn.selected .quiz-radio-circle {
+  border-color: var(--primary-purple);
+  border-width: 6px;
+}
+
+/* ==========================================================================
+   PANTALLA 5: RESULTADO EN EL CURSO (FORTALEZAS Y POR REFORZAR)
+   ========================================================================== */
+.e4-result-body {
+  display: flex;
+  flex-direction: column;
+  padding-top: 16px;
+}
+
+.result-header-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.small-badge {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+}
+.small-badge svg { width: 18px; height: 18px; }
+
+.result-course-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--text-dark);
+}
+
+.score-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.score-progress-track {
+  flex: 1;
+  height: 12px;
+  background: #E5E7EB;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.score-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #7C3AED 0%, #6366F1 100%);
+  border-radius: 999px;
+  transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.score-percent-label {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--primary-purple);
+}
+
+.feedback-box {
+  border-radius: 15px;
+  padding: 12px 14px;
+  margin-bottom: 11px;
+}
+
+.strengths-box {
+  background: #ECFDF5;
+  border: 1px solid #A7F3D0;
+}
+
+.reinforce-box {
+  background: #FFFBEB;
+  border: 1px solid #FDE68A;
+}
+
+.feedback-box-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 7px;
+  font-size: 13.5px;
+}
+
+.strengths-box .feedback-box-header { color: #065F46; }
+.reinforce-box .feedback-box-header { color: #92400E; }
+
+.status-dot-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.status-dot-icon.green {
+  background: #10B981;
+  color: #FFFFFF;
+}
+
+.status-dot-icon.amber {
+  background: #F59E0B;
+  color: #FFFFFF;
+}
+
+.status-dot-icon svg {
+  width: 12px;
+  height: 12px;
+  stroke-width: 3;
+}
+
+.feedback-bullet-list {
+  list-style: disc;
+  padding-left: 22px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--text-dark);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.result-owl-footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  padding-top: 4px;
+}
+
+.mini-owl-svg {
+  width: 145px;
+  height: 96px;
+}
+
+/* ==========================================================================
+   PANTALLA 6: CIERRE ETAPA 4 (!LISTO!)
+   ========================================================================== */
+.e4-done-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-top: 18px;
+}
+
+.done-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.done-check-circle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid var(--primary-purple);
+  color: var(--primary-purple);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.done-check-circle svg { width: 16px; height: 16px; stroke-width: 3; }
+
+.done-title-row h1 {
+  font-size: 23px;
+  font-weight: 800;
+  color: var(--text-dark);
+}
+
+.done-subtitle {
+  font-size: 13px;
+  line-height: 1.42;
+  color: var(--text-muted);
+  max-width: 295px;
+  margin-bottom: 8px;
+}
+
+.clipboard-owl-wrapper {
+  position: relative;
+  width: 100%;
+  height: 175px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 6px 0 10px;
+}
+
+.clipboard-owl-svg {
+  position: relative;
+  width: 225px;
+  height: 175px;
+  z-index: 1;
+  animation: floatOwl 3.4s ease-in-out infinite;
+}
+
+.valuable-tip-card {
+  width: 100%;
+  background: var(--soft-lavender-bg);
+  border: 1px solid var(--soft-lavender-border);
+  border-radius: 16px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  margin-top: auto;
+}
+
+.tip-bulb-badge {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: #FEF3C7;
+  color: #D97706;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.tip-bulb-badge svg { width: 18px; height: 18px; }
+
+.tip-single-text {
+  font-size: 11.5px;
+  font-weight: 600;
+  line-height: 1.38;
+  color: var(--text-dark);
+}
+
+.drawer-nav-link {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary-purple);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--soft-lavender-bg);
+  margin-bottom: 4px;
+}
+.drawer-nav-link svg { width: 16px; height: 16px; }

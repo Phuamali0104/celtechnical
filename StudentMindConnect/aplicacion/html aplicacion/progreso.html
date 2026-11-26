@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>StudentMind Connect — Tu Progreso y Logros</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="../../encuesta/css%20encuesta/etapa1.css" />
+  <link rel="stylesheet" href="../css%20aplicacion/progreso.css" />
+  <link rel="stylesheet" href="../css%20aplicacion/navegacion.css" />
+  <link rel="stylesheet" href="../css%20aplicacion/tema.css" />
+  <link rel="stylesheet" href="../css%20aplicacion/planes.css" />
+  <script src="../js%20aplicacion/planes.js"></script>
+</head>
+<body>
+
+  <main class="desktop-stage">
+    <div class="phone-frame" id="phoneFrame">
+      <div class="hardware-btn volume-up"></div>
+      <div class="hardware-btn volume-down"></div>
+      <div class="hardware-btn power-btn"></div>
+
+      <div class="app-screen" id="appScreen">
+
+        <!-- Barra de estado superior -->
+        <header class="status-bar">
+          <span class="status-time" id="statusTime">9:41</span>
+          <div class="camera-punch"></div>
+          <div class="status-icons">
+            <i data-lucide="signal" class="status-icon"></i>
+            <i data-lucide="wifi" class="status-icon"></i>
+            <i data-lucide="battery-full" class="status-icon"></i>
+          </div>
+        </header>
+
+        <!-- Header Superior Compartido -->
+        <div class="prog-top-header">
+          <button type="button" class="icon-btn" id="progBackBtn" aria-label="Volver">
+            <i data-lucide="chevron-left"></i>
+          </button>
+
+          <div class="plat-mini-brand">
+            <svg class="brand-owl-svg" viewBox="0 0 64 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="6" y="8" width="52" height="42" rx="20" fill="#5B21B6"/>
+              <path d="M12 10L6 2L20 8Z" fill="#5B21B6"/>
+              <path d="M52 10L58 2L44 8Z" fill="#5B21B6"/>
+              <circle cx="23" cy="28" r="11" fill="#F3E8FF" stroke="#3B0764" stroke-width="2.5"/>
+              <circle cx="41" cy="28" r="11" fill="#F3E8FF" stroke="#3B0764" stroke-width="2.5"/>
+              <circle cx="23" cy="28" r="6" fill="#1E1B4B"/>
+              <circle cx="41" cy="28" r="6" fill="#1E1B4B"/>
+              <path d="M23 26.5C22.2 25.5 20.5 25.8 20.5 27.3C20.5 28.8 23 30.5 23 30.5C23 30.5 25.5 28.8 25.5 27.3C25.5 25.8 23.8 25.5 23 26.5Z" fill="#F43F5E"/>
+              <path d="M38.5 28.5C39.8 27 42.2 27 43.5 28.5" stroke="#38BDF8" stroke-width="2" stroke-linecap="round"/>
+              <path d="M29 34L32 39L35 34H29Z" fill="#F59E0B"/>
+            </svg>
+            <div class="brand-text"><span class="brand-title">StudentMind</span><span class="brand-subtitle">Connect</span></div>
+          </div>
+
+          <button type="button" class="icon-btn prog-right-btn" id="progHeaderRightBtn" aria-label="Compartir o Calendario">
+            <i data-lucide="share-2" id="progHeaderRightIcon"></i>
+          </button>
+        </div>
+
+        <!-- Viewport de las 3 Pantallas (Tu Progreso, Tus Logros, Comparte tu Progreso) -->
+        <div class="screens-viewport">
+
+          <!-- ==========================================
+               PANTALLA 1: TU PROGRESO
+               ========================================== -->
+          <section class="screen active" id="prog-screen-1" data-step="1">
+            <div class="screen-body prog-body">
+              <div class="prog-hero-split">
+                <div>
+                  <h1>Tu <span>Progreso</span></h1>
+                  <p>¡Sigue así! Estás logrando<br>grandes avances ✨💪</p>
+                </div>
+
+                <!-- Búho con flecha morada ascendente -->
+                <svg class="prog-owl-arrow" viewBox="0 0 135 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <ellipse cx="76" cy="80" rx="34" ry="27" fill="#6D28D9"/>
+                  <ellipse cx="76" cy="84" rx="24" ry="19" fill="#EDE9FE"/>
+                  <rect x="42" y="16" width="68" height="52" rx="25" fill="#7C3AED"/>
+                  <circle cx="64" cy="42" r="14" fill="#FAF5FF" stroke="#4C1D95" stroke-width="2.5"/>
+                  <circle cx="88" cy="42" r="14" fill="#FAF5FF" stroke="#4C1D95" stroke-width="2.5"/>
+                  <circle cx="64" cy="42" r="9" fill="#0F172A"/>
+                  <circle cx="88" cy="42" r="9" fill="#0F172A"/>
+                  <path d="M64 40C62.8 38.5 60 39 60 41.2C60 43.4 64 46 64 46C64 46 68 43.4 68 41.2C68 39 65.2 38.5 64 40Z" fill="#F43F5E"/>
+                  <path d="M84 43C86 40.5 90 40.5 92 43" stroke="#38BDF8" stroke-width="2.2" stroke-linecap="round"/>
+                  <path d="M72 51L76 57L80 51H72Z" fill="#F59E0B"/>
+                  <!-- Flecha morada ascendente izquierda -->
+                  <path d="M18 96L36 66L28 62L48 48L50 72L42 68L26 98L18 96Z" fill="#7C3AED" stroke="#4C1D95" stroke-width="2" stroke-linejoin="round"/>
+                </svg>
+              </div>
+
+              <!-- 3 Tarjetas KPI Superiores -->
+              <div class="prog-kpi-row">
+                <div class="p-kpi-box lavender">
+                  <div class="p-kpi-top">
+                    <i data-lucide="trophy" class="purple-i"></i>
+                    <strong id="kpiTotalPct">75%</strong>
+                  </div>
+                  <span>Tu progreso total</span>
+                </div>
+
+                <div class="p-kpi-box peach">
+                  <div class="p-kpi-top">
+                    <i data-lucide="flame" class="orange-i"></i>
+                    <strong id="kpiStreakDays">12</strong>
+                  </div>
+                  <span>Racha de días</span>
+                </div>
+
+                <div class="p-kpi-box lemon">
+                  <div class="p-kpi-top">
+                    <i data-lucide="star" class="gold-i"></i>
+                    <strong id="kpiTotalPoints">850</strong>
+                  </div>
+                  <span>Puntos acumulados</span>
+                </div>
+              </div>
+
+              <!-- Gráfico Lineal: Tu rendimiento académico -->
+              <div class="chart-card-box">
+                <div class="chart-card-head">
+                  <div class="cc-title">
+                    <i data-lucide="bar-chart-2"></i>
+                    <span>Tu rendimiento académico</span>
+                  </div>
+                  <select id="chartPeriodSelect" class="period-mini-select">
+                    <option value="month">Último mes</option>
+                    <option value="cycle">Último ciclo</option>
+                  </select>
+                </div>
+
+                <div class="line-chart-container">
+                  <svg viewBox="0 0 300 105" class="perf-line-svg">
+                    <defs>
+                      <linearGradient id="areaPurple" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.28" />
+                        <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0.0" />
+                      </linearGradient>
+                    </defs>
+                    <!-- Líneas horizontales guía -->
+                    <line x1="36" y1="18" x2="285" y2="18" stroke="#F3F4F6" stroke-width="1" />
+                    <line x1="36" y1="40" x2="285" y2="40" stroke="#F3F4F6" stroke-width="1" />
+                    <line x1="36" y1="62" x2="285" y2="62" stroke="#F3F4F6" stroke-width="1" />
+                    <line x1="36" y1="84" x2="285" y2="84" stroke="#E5E7EB" stroke-width="1" />
+
+                    <!-- Etiquetas eje Y -->
+                    <text x="6" y="21" font-size="8" fill="#9CA3AF" font-weight="600">100%</text>
+                    <text x="10" y="43" font-size="8" fill="#9CA3AF" font-weight="600">75%</text>
+                    <text x="10" y="65" font-size="8" fill="#9CA3AF" font-weight="600">50%</text>
+                    <text x="10" y="87" font-size="8" fill="#9CA3AF" font-weight="600">25%</text>
+
+                    <!-- Área rellena -->
+                    <path id="chartAreaPath" d="M 48 62 L 125 40 L 202 26 L 272 34 L 272 84 L 48 84 Z" fill="url(#areaPurple)" />
+                    <!-- Línea principal -->
+                    <path id="chartStrokePath" d="M 48 62 L 125 40 L 202 26 L 272 34" fill="none" stroke="#7C3AED" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" />
+
+                    <!-- Puntos -->
+                    <circle cx="48" cy="62" r="3.5" fill="#FFFFFF" stroke="#7C3AED" stroke-width="2" />
+                    <circle cx="125" cy="40" r="3.5" fill="#FFFFFF" stroke="#7C3AED" stroke-width="2" />
+                    <circle cx="202" cy="26" r="3.5" fill="#FFFFFF" stroke="#7C3AED" stroke-width="2" />
+                    <circle id="chartEndDot" cx="272" cy="34" r="4.5" fill="#7C3AED" stroke="#FFFFFF" stroke-width="2" />
+
+                    <!-- Badge 90% -->
+                    <rect x="252" y="8" width="36" height="16" rx="6" fill="#7C3AED" />
+                    <text id="chartPeakLabel" x="270" y="19" text-anchor="middle" font-size="8.5" fill="#FFFFFF" font-weight="800">90%</text>
+
+                    <!-- Etiquetas eje X -->
+                    <text x="48" y="99" text-anchor="middle" font-size="8.5" fill="#6B7280" font-weight="600">Sem 1</text>
+                    <text x="125" y="99" text-anchor="middle" font-size="8.5" fill="#6B7280" font-weight="600">Sem 2</text>
+                    <text x="202" y="99" text-anchor="middle" font-size="8.5" fill="#6B7280" font-weight="600">Sem 3</text>
+                    <text x="272" y="99" text-anchor="middle" font-size="8.5" fill="#6B7280" font-weight="600">Sem 4</text>
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Detalles por módulo (Grid 2x3) -->
+              <div class="modules-detail-section">
+                <h2><i data-lucide="target"></i> Detalles por módulo</h2>
+                <div class="mod-detail-grid-2x3">
+                  <div class="mod-mini-card">
+                    <div class="mm-top"><i data-lucide="file-check"></i><span>Test Diagnóstico</span></div>
+                    <div class="mm-bar-row"><div class="mm-track"><div class="mm-fill" style="width: 100%;"></div></div><strong>100%</strong></div>
+                  </div>
+
+                  <div class="mod-mini-card">
+                    <div class="mm-top"><i data-lucide="calendar-days"></i><span>Planificador Semanal</span></div>
+                    <div class="mm-bar-row"><div class="mm-track"><div class="mm-fill" style="width: 80%;"></div></div><strong>80%</strong></div>
+                  </div>
+
+                  <div class="mod-mini-card">
+                    <div class="mm-top"><i data-lucide="star" class="gold-i"></i><span>Microretos</span></div>
+                    <div class="mm-bar-row"><div class="mm-track"><div class="mm-fill" style="width: 100%;"></div></div><strong>100%</strong></div>
+                  </div>
+
+                  <div class="mod-mini-card">
+                    <div class="mm-top"><i data-lucide="book-open"></i><span>Biblioteca</span></div>
+                    <div class="mm-bar-row"><div class="mm-track"><div class="mm-fill" style="width: 60%;"></div></div><strong>60%</strong></div>
+                  </div>
+
+                  <div class="mod-mini-card">
+                    <div class="mm-top"><i data-lucide="users"></i><span>Comunidad P2P</span></div>
+                    <div class="mm-bar-row"><div class="mm-track"><div class="mm-fill" style="width: 90%;"></div></div><strong>90%</strong></div>
+                  </div>
+
+                  <div class="mod-mini-card">
+                    <div class="mm-top"><i data-lucide="bot"></i><span>IA Lumen</span></div>
+                    <div class="mm-bar-row"><div class="mm-track"><div class="mm-fill" style="width: 70%;"></div></div><strong>70%</strong></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Banner Logro Desbloqueado -->
+              <div class="unlocked-banner-row">
+                <div class="ub-left">
+                  <div class="ub-medal"><i data-lucide="award"></i></div>
+                  <div>
+                    <strong>¡Nuevo logro desbloqueado!</strong>
+                    <span>Completaste 10 microretos 🎉</span>
+                  </div>
+                </div>
+                <button type="button" class="btn-purple-pill-sm" id="btnGoToAchievements">
+                  Ver logros &gt;
+                </button>
+              </div>
+            </div>
+
+            <!-- Barra Inferior -->
+            <nav class="bottom-tab-bar">
+              <a href="plataforma.html" class="tab-item">
+                <i data-lucide="home"></i>
+                <span></span>
+              </a>
+              <a href="planificador.html" class="tab-item">
+                <i data-lucide="calendar-days"></i>
+                <span></span>
+              </a>
+              <button type="button" class="tab-item active">
+                <i data-lucide="bar-chart-2"></i>
+                <span>Progreso</span>
+              </button>
+              <a href="biblioteca.html" class="tab-item">
+                <i data-lucide="book-open"></i>
+                <span></span>
+              </a>
+              <a href="comunidad.html" class="tab-item">
+                <i data-lucide="users"></i>
+                <span></span>
+              </a>
+            </nav>
+          </section>
+
+          <!-- ==========================================
+               PANTALLA 2: TUS LOGROS (MEDALLERO)
+               ========================================== -->
+          <section class="screen" id="prog-screen-2" data-step="2">
+            <div class="screen-body achievements-body">
+              <div class="ach-hero-split">
+                <div>
+                  <h1>Tus <span>Logros</span></h1>
+                  <p>Reconoce todo tu esfuerzo<br>y sigue avanzando 💜</p>
+                </div>
+
+                <!-- Ilustración Trofeo Dorado -->
+                <svg class="golden-trophy-svg" viewBox="0 0 110 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18 24L10 18M92 24L100 18M55 8V2" stroke="#FACC15" stroke-width="3" stroke-linecap="round"/>
+                  <path d="M32 22H78V46C78 60 67 70 55 70C43 70 32 60 32 46V22Z" fill="#FACC15" stroke="#7C3AED" stroke-width="2.5"/>
+                  <path d="M32 28H20C18 42 25 50 32 50" stroke="#F59E0B" stroke-width="4" stroke-linecap="round"/>
+                  <path d="M78 28H90C92 42 85 50 78 50" stroke="#F59E0B" stroke-width="4" stroke-linecap="round"/>
+                  <polygon points="55,33 58,42 67,42 60,47 63,56 55,51 47,56 50,47 43,42 52,42" fill="#FEF08A"/>
+                  <rect x="49" y="70" width="12" height="14" fill="#D97706"/>
+                  <rect x="37" y="84" width="36" height="9" rx="3" fill="#6D28D9"/>
+                </svg>
+              </div>
+
+              <!-- Píldoras de Filtro -->
+              <div class="ach-filter-pills" id="achFilterPills">
+                <button type="button" class="a-pill active" data-cat="Todos">Todos</button>
+                <button type="button" class="a-pill" data-cat="Académicos">Académicos</button>
+                <button type="button" class="a-pill" data-cat="Hábitos">Hábitos</button>
+                <button type="button" class="a-pill" data-cat="Especiales">Especiales</button>
+              </div>
+
+              <!-- Lista de 5 Logros -->
+              <div class="achievements-list" id="achievementsList">
+                <!-- Se renderiza dinámicamente desde progreso.js -->
+              </div>
+
+              <!-- Banner Inferior Regalo + Compartir Logros -->
+              <div class="share-ach-banner">
+                <div class="sab-top">
+                  <div class="gift-box-sm"><i data-lucide="gift"></i></div>
+                  <span>Sigue avanzando y desbloquea más logros ✨</span>
+                </div>
+                <button type="button" class="btn-primary full-width sm-cta" id="btnShareAchievements">
+                  <span>Compartir logros</span>
+                  <i data-lucide="share-2"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Barra Inferior -->
+            <nav class="bottom-tab-bar">
+              <a href="plataforma.html" class="tab-item">
+                <i data-lucide="home"></i>
+                <span></span>
+              </a>
+              <a href="planificador.html" class="tab-item">
+                <i data-lucide="calendar-days"></i>
+                <span></span>
+              </a>
+              <button type="button" class="tab-item active" id="tabProgBack">
+                <i data-lucide="bar-chart-2"></i>
+                <span>Progreso</span>
+              </button>
+              <a href="biblioteca.html" class="tab-item">
+                <i data-lucide="book-open"></i>
+                <span></span>
+              </a>
+              <a href="comunidad.html" class="tab-item">
+                <i data-lucide="users"></i>
+                <span></span>
+              </a>
+            </nav>
+          </section>
+
+          <!-- ==========================================
+               PANTALLA 3: COMPARTE TU PROGRESO
+               ========================================== -->
+          <section class="screen" id="prog-screen-3" data-step="3">
+            <div class="screen-body share-prog-body">
+              <div class="sp-hero-split">
+                <div>
+                  <h1>Comparte tu<br><span>progreso</span></h1>
+                  <p>Inspira a tus amigos a<br>también dar lo mejor de sí 💜</p>
+                </div>
+
+                <!-- Búho con smartphone y red -->
+                <svg class="sp-owl-phone" viewBox="0 0 135 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <ellipse cx="76" cy="78" rx="32" ry="26" fill="#6D28D9"/>
+                  <ellipse cx="76" cy="82" rx="22" ry="18" fill="#EDE9FE"/>
+                  <rect x="42" y="16" width="68" height="50" rx="24" fill="#7C3AED"/>
+                  <circle cx="64" cy="41" r="14" fill="#FAF5FF" stroke="#4C1D95" stroke-width="2.5"/>
+                  <circle cx="88" cy="41" r="14" fill="#FAF5FF" stroke="#4C1D95" stroke-width="2.5"/>
+                  <circle cx="64" cy="41" r="9" fill="#0F172A"/>
+                  <circle cx="88" cy="41" r="9" fill="#0F172A"/>
+                  <path d="M64 39C62.8 37.5 60 38 60 40.2C60 42.4 64 45 64 45C64 45 68 42.4 68 40.2C68 38 65.2 37.5 64 39Z" fill="#F43F5E"/>
+                  <path d="M84 42C86 39.5 90 39.5 92 42" stroke="#38BDF8" stroke-width="2.2" stroke-linecap="round"/>
+                  <!-- Smartphone -->
+                  <rect x="26" y="48" width="24" height="40" rx="6" fill="#1E1B4B" stroke="#6D28D9" stroke-width="2"/>
+                  <rect x="29" y="53" width="18" height="30" rx="3" fill="#EDE9FE"/>
+                </svg>
+              </div>
+
+              <!-- Tarjeta Destacada 75% -->
+              <div class="big-progress-showcase">
+                <div class="bps-chart-icon"><i data-lucide="bar-chart-2"></i></div>
+                <div class="bps-center">
+                  <span>Mi progreso actual</span>
+                  <strong id="shareProgressPct">75%</strong>
+                  <em>¡Vamos por más!</em>
+                </div>
+                <div class="bps-rays">✨</div>
+              </div>
+
+              <!-- Comparte en tus redes -->
+              <div class="social-share-section">
+                <h2><i data-lucide="share-2"></i> Comparte en tus redes</h2>
+                <div class="social-circles-grid">
+                  <button type="button" class="soc-circle-btn" data-soc="Instagram">
+                    <div class="sc-disc insta"><i data-lucide="instagram"></i></div>
+                    <span>Instagram</span>
+                  </button>
+
+                  <button type="button" class="soc-circle-btn" data-soc="WhatsApp">
+                    <div class="sc-disc wa"><i data-lucide="message-circle"></i></div>
+                    <span>WhatsApp</span>
+                  </button>
+
+                  <button type="button" class="soc-circle-btn" data-soc="TikTok">
+                    <div class="sc-disc tt"><i data-lucide="music-2"></i></div>
+                    <span>TikTok</span>
+                  </button>
+
+                  <button type="button" class="soc-circle-btn" id="btnCopyProgLink">
+                    <div class="sc-disc link"><i data-lucide="link"></i></div>
+                    <span>Copiar<br>enlace</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Tarjeta Invita a tus amigos -->
+              <div class="invite-box-card">
+                <div class="ib-top">
+                  <div class="ib-icon"><i data-lucide="users"></i></div>
+                  <div>
+                    <strong>Invita a tus amigos</strong>
+                    <span>Ayúdalos a unirse a StudentMind Connect y aprendan juntos.</span>
+                  </div>
+                </div>
+                <a href="microretos.html" class="btn-primary full-width sm-cta">
+                  <i data-lucide="user-plus"></i>
+                  <span>Invitar amigos</span>
+                </a>
+              </div>
+
+              <p class="footer-heart-note">💜 Compartir también es aprender. 💜</p>
+            </div>
+
+            <!-- Barra Inferior -->
+            <nav class="bottom-tab-bar">
+              <a href="plataforma.html" class="tab-item">
+                <i data-lucide="home"></i>
+                <span></span>
+              </a>
+              <a href="planificador.html" class="tab-item">
+                <i data-lucide="calendar-days"></i>
+                <span></span>
+              </a>
+              <button type="button" class="tab-item active" id="tabProgBack2">
+                <i data-lucide="bar-chart-2"></i>
+                <span>Progreso</span>
+              </button>
+              <a href="biblioteca.html" class="tab-item">
+                <i data-lucide="book-open"></i>
+                <span></span>
+              </a>
+              <a href="comunidad.html" class="tab-item">
+                <i data-lucide="users"></i>
+                <span></span>
+              </a>
+            </nav>
+          </section>
+
+        </div>
+
+        <!-- Barra de gestos inferior -->
+        <div class="gesture-bar-container">
+          <div class="gesture-pill" id="gestureHomeBtn" title="Inicio Progreso"></div>
+        </div>
+
+        <!-- Toast -->
+        <div class="toast-notification" id="toastNotification" role="alert">
+          <i data-lucide="check-circle-2"></i>
+          <span id="toastMessage">Mensaje</span>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <script src="../js%20aplicacion/navegacion.js"></script>
+  <script src="../js%20aplicacion/progreso.js"></script>
+</body>
+</html>

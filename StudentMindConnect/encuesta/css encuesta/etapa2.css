@@ -1,0 +1,466 @@
+/* ==========================================================================
+   ESTILOS ESPECÍFICOS PARA ETAPA 2 (etapa2.html)
+   ========================================================================== */
+
+.etapa2-header {
+  padding-bottom: 12px;
+}
+
+.header-split-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.header-right-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.header-right-label {
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text-muted);
+  text-align: right;
+}
+
+.compact-menu-btn {
+  width: 32px;
+  height: 32px;
+}
+
+/* Nodo Etapa 1 completado con check morado */
+.step-node.completed-purple {
+  background: var(--primary-purple);
+  color: #FFFFFF;
+  cursor: pointer;
+}
+.step-node.completed-purple svg {
+  width: 13px;
+  height: 13px;
+  stroke-width: 3;
+}
+
+.step-line.active-line {
+  background: var(--primary-purple);
+  height: 2px;
+}
+
+/* ==========================================================================
+   PANTALLA 1: BIENVENIDA ETAPA 2
+   ========================================================================== */
+.e2-welcome-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-top: 12px;
+}
+
+.e2-title {
+  font-size: 23px;
+  margin-bottom: 8px;
+}
+
+.e2-hero-illustration {
+  position: relative;
+  width: 100%;
+  height: 165px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 4px 0 8px;
+}
+
+.e2-owl-notebook-svg {
+  position: relative;
+  width: 245px;
+  height: 165px;
+  z-index: 1;
+  animation: floatOwl 3.4s ease-in-out infinite;
+}
+
+.valuable-tip-card {
+  width: 100%;
+  background: var(--soft-lavender-bg);
+  border: 1px solid var(--soft-lavender-border);
+  border-radius: 16px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  margin-top: auto;
+}
+
+.tip-bulb-badge {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: #FEF3C7;
+  color: #D97706;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.tip-bulb-badge svg { width: 18px; height: 18px; }
+
+.tip-content strong {
+  display: block;
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--primary-purple);
+  margin-bottom: 2px;
+}
+
+.tip-content p {
+  font-size: 11px;
+  line-height: 1.35;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   PANTALLAS DE PREGUNTAS CENTRADAS (2 A 5)
+   ========================================================================== */
+.e2-question-body {
+  display: flex;
+  flex-direction: column;
+  padding-top: 16px;
+}
+
+.centered-q-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.circle-icon-badge,
+.square-icon-badge,
+.pink-target-badge {
+  width: 48px;
+  height: 48px;
+  background: var(--badge-lavender);
+  color: var(--primary-purple);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.circle-icon-badge { border-radius: 50%; }
+.square-icon-badge { border-radius: 14px; }
+.pink-target-badge {
+  border-radius: 50%;
+  background: #FCE7F3;
+  color: #DB2777;
+}
+
+.circle-icon-badge svg,
+.square-icon-badge svg,
+.pink-target-badge svg {
+  width: 24px;
+  height: 24px;
+}
+
+.centered-q-title {
+  font-size: 18.5px;
+  font-weight: 800;
+  line-height: 1.24;
+  color: var(--text-dark);
+  max-width: 295px;
+  margin-bottom: 8px;
+}
+
+.centered-q-note {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size: 11px;
+  color: var(--text-muted);
+  max-width: 290px;
+}
+
+.centered-q-note svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  color: var(--text-light);
+}
+
+.sparkle-gold {
+  color: #F59E0B !important;
+}
+
+/* Contenedor de tarjeta agrupada para opciones */
+.options-card-container {
+  background: var(--surface-white);
+  border: 1px solid var(--border-gray);
+  border-radius: 18px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  box-shadow: 0 4px 16px rgba(17, 24, 39, 0.04);
+}
+
+.option-row-btn {
+  width: 100%;
+  min-height: 46px;
+  padding: 10px 14px;
+  border: 1.5px solid transparent;
+  background: transparent;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-main);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-dark);
+  text-align: left;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.option-row-btn:hover {
+  background: #F9FAFB;
+}
+
+.option-row-btn.selected {
+  background: var(--soft-lavender-bg);
+  border-color: var(--soft-lavender-border);
+  color: var(--primary-purple);
+  font-weight: 700;
+}
+
+.radio-dot {
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  border: 2px solid #D1D5DB;
+  background: #FFFFFF;
+  position: relative;
+  flex-shrink: 0;
+  transition: var(--transition-smooth);
+}
+
+.option-row-btn.selected .radio-dot {
+  border-color: var(--primary-purple);
+  border-width: 6px;
+}
+
+/* Checkboxes de Pantalla 5 */
+.option-check-row {
+  width: 100%;
+  min-height: 46px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.15s;
+}
+
+.option-check-row:hover {
+  background: #F9FAFB;
+}
+
+.option-check-row input {
+  display: none;
+}
+
+.sq-check-box {
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  border: 1.8px solid #D1D5DB;
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: transparent;
+  flex-shrink: 0;
+  transition: var(--transition-smooth);
+}
+
+.sq-check-box svg {
+  width: 13px;
+  height: 13px;
+  stroke-width: 3;
+}
+
+.option-check-row.checked .sq-check-box {
+  background: var(--primary-purple);
+  border-color: var(--primary-purple);
+  color: #FFFFFF;
+}
+
+.option-check-row .option-row-label {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+/* Ilustración inferior centrada */
+.bottom-owl-illustration {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  padding-top: 8px;
+}
+
+.mini-owl-svg {
+  width: 150px;
+  height: 102px;
+}
+
+/* Footer con botón circular atrás + píldora Continuar */
+.e2-nav-footer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-circle-back {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border-gray);
+  background: var(--surface-white);
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: var(--transition-smooth);
+}
+
+.btn-circle-back:hover {
+  background: var(--surface-gray);
+}
+
+.btn-circle-back svg {
+  width: 19px;
+  height: 19px;
+}
+
+.flex-grow-btn {
+  flex: 1;
+}
+
+/* ==========================================================================
+   PANTALLA 6: RESUMEN DE CIERRE ETAPA 2
+   ========================================================================== */
+.e2-summary-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.completion-owl-box {
+  margin-bottom: 6px;
+}
+
+.completion-owl-svg {
+  width: 205px;
+  height: 122px;
+}
+
+.completion-title {
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.22;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+}
+
+.completion-desc {
+  font-size: 12px;
+  line-height: 1.42;
+  color: var(--text-muted);
+  max-width: 300px;
+  margin-bottom: 14px;
+}
+
+.summary-cards-stack {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  text-align: left;
+}
+
+.summary-metric-card {
+  background: var(--surface-white);
+  border: 1px solid var(--border-gray);
+  border-radius: 15px;
+  padding: 11px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 2px 8px rgba(17, 24, 39, 0.03);
+}
+
+.metric-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--badge-lavender);
+  color: var(--primary-purple);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.metric-icon.pink {
+  background: #FCE7F3;
+  color: #DB2777;
+}
+
+.metric-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.metric-info strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 1px;
+}
+
+.metric-info span {
+  display: block;
+  font-size: 11px;
+  line-height: 1.3;
+  color: var(--text-muted);
+}
+
+.drawer-nav-link {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary-purple);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--soft-lavender-bg);
+}
+.drawer-nav-link svg { width: 16px; height: 16px; }

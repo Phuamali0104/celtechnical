@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>StudentMind Connect — Etapa 2: Hábitos de Estudio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="../css%20encuesta/etapa1.css" />
+  <link rel="stylesheet" href="../css%20encuesta/etapa2.css" />
+  <link rel="stylesheet" href="../../aplicacion/css%20aplicacion/tema.css" />
+  <link rel="stylesheet" href="../../aplicacion/css%20aplicacion/planes.css" />
+  <script src="../../aplicacion/js%20aplicacion/planes.js"></script>
+</head>
+<body>
+
+  <main class="desktop-stage">
+    <div class="phone-frame" id="phoneFrame">
+      <div class="hardware-btn volume-up"></div>
+      <div class="hardware-btn volume-down"></div>
+      <div class="hardware-btn power-btn"></div>
+
+      <div class="app-screen" id="appScreen">
+
+        <!-- Barra de estado superior -->
+        <header class="status-bar">
+          <span class="status-time" id="statusTime">9:41</span>
+          <div class="camera-punch"></div>
+          <div class="status-icons">
+            <i data-lucide="signal" class="status-icon"></i>
+            <i data-lucide="wifi" class="status-icon"></i>
+            <i data-lucide="battery-full" class="status-icon"></i>
+          </div>
+        </header>
+
+        <!-- Encabezado específico de Etapa 2 (Logo izquierda + Título derecha) -->
+        <div class="app-header etapa2-header">
+          <div class="header-split-row">
+            <div class="brand-logo" id="brandHomeBtn" title="Volver a Etapa 1">
+              <svg class="brand-owl-svg" viewBox="0 0 64 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="6" y="8" width="52" height="42" rx="20" fill="#5B21B6"/>
+                <path d="M12 10L6 2L20 8Z" fill="#5B21B6"/>
+                <path d="M52 10L58 2L44 8Z" fill="#5B21B6"/>
+                <circle cx="23" cy="28" r="11" fill="#F3E8FF" stroke="#3B0764" stroke-width="2.5"/>
+                <circle cx="41" cy="28" r="11" fill="#F3E8FF" stroke="#3B0764" stroke-width="2.5"/>
+                <circle cx="23" cy="28" r="6" fill="#1E1B4B"/>
+                <circle cx="41" cy="28" r="6" fill="#1E1B4B"/>
+                <path d="M23 26.5C22.2 25.5 20.5 25.8 20.5 27.3C20.5 28.8 23 30.5 23 30.5C23 30.5 25.5 28.8 25.5 27.3C25.5 25.8 23.8 25.5 23 26.5Z" fill="#F43F5E"/>
+                <path d="M38.5 28.5C39.8 27 42.2 27 43.5 28.5" stroke="#38BDF8" stroke-width="2" stroke-linecap="round"/>
+                <path d="M29 34L32 39L35 34H29Z" fill="#F59E0B"/>
+              </svg>
+              <div class="brand-text">
+                <span class="brand-title">StudentMind</span>
+                <span class="brand-subtitle">Connect</span>
+              </div>
+            </div>
+
+            <div class="header-right-actions">
+              <span class="header-right-label">Diagnóstico<br>Académico</span>
+              <button class="icon-btn compact-menu-btn" id="openMenuBtn" aria-label="Menú">
+                <i data-lucide="menu"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Stepper de 7 Etapas (Etapa 1 con check, Etapa 2 activa) -->
+          <nav class="stepper-container" aria-label="Progreso de etapas">
+            <div class="stepper-track">
+              <div class="step-node completed-purple" data-stage="1" title="Volver a Etapa 1">
+                <i data-lucide="check"></i>
+              </div>
+              <div class="step-line active-line"></div>
+              <div class="step-node active" data-stage="2">2</div>
+              <div class="step-line"></div>
+              <div class="step-node" data-stage="3">3</div>
+              <div class="step-line"></div>
+              <div class="step-node" data-stage="4">4</div>
+              <div class="step-line"></div>
+              <div class="step-node" data-stage="5">5</div>
+              <div class="step-line"></div>
+              <div class="step-node" data-stage="6">6</div>
+              <div class="step-line"></div>
+              <div class="step-node" data-stage="7">7</div>
+            </div>
+          </nav>
+        </div>
+
+        <!-- Viewport de las 6 Pantallas de la Etapa 2 -->
+        <div class="screens-viewport">
+
+          <!-- ==========================================
+               PANTALLA 1: BIENVENIDA ETAPA 2 DE 7
+               ========================================== -->
+          <section class="screen active" id="e2-screen-1" data-step="1">
+            <div class="screen-body e2-welcome-body">
+              <span class="stage-pill">Etapa 2 de 7</span>
+
+              <h1 class="welcome-title e2-title">
+                Ahora cuéntanos<br>
+                <span>cómo estudias</span> en<br>
+                tu semana
+              </h1>
+
+              <p class="welcome-desc">
+                Queremos conocer tus hábitos, tu disponibilidad y cómo organizas tus estudios, para darte recomendaciones que se ajusten a tu realidad.
+              </p>
+
+              <!-- Ilustración Búho con Libros y Libreta con Check -->
+              <div class="e2-hero-illustration">
+                <div class="wave-bg"></div>
+                <svg class="e2-owl-notebook-svg" viewBox="0 0 280 190" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Libros apilados a la izquierda -->
+                  <rect x="26" y="138" width="66" height="16" rx="5" fill="#A78BFA" stroke="#4C1D95" stroke-width="2.5"/>
+                  <rect x="34" y="142" width="52" height="8" rx="2" fill="#EDE9FE"/>
+                  <rect x="22" y="154" width="72" height="17" rx="5" fill="#7C3AED" stroke="#4C1D95" stroke-width="2.5"/>
+                  <rect x="30" y="158" width="58" height="9" rx="2" fill="#F5F3FF"/>
+
+                  <!-- Cuerpo Búho -->
+                  <ellipse cx="135" cy="126" rx="56" ry="48" fill="#6D28D9"/>
+                  <ellipse cx="135" cy="132" rx="40" ry="35" fill="#EDE9FE"/>
+                  <path d="M119 122Q125 128 131 122M139 122Q145 128 151 122" stroke="#C4B5FD" stroke-width="2.5" stroke-linecap="round"/>
+                  <!-- Ala izquierda -->
+                  <path d="M80 108C66 122 68 148 86 154C91 140 89 122 80 108Z" fill="#5B21B6"/>
+
+                  <!-- Cabeza Búho -->
+                  <rect x="78" y="28" width="114" height="84" rx="40" fill="#7C3AED"/>
+                  <path d="M90 36L76 14L108 29Z" fill="#6D28D9"/>
+                  <path d="M180 36L194 14L162 29Z" fill="#6D28D9"/>
+                  <circle cx="112" cy="70" r="24" fill="#FAF5FF" stroke="#4C1D95" stroke-width="3.5"/>
+                  <circle cx="158" cy="70" r="24" fill="#FAF5FF" stroke="#4C1D95" stroke-width="3.5"/>
+                  <rect x="130" y="66" width="10" height="7" fill="#4C1D95"/>
+                  <circle cx="112" cy="70" r="14" fill="#1E1B4B"/>
+                  <circle cx="158" cy="70" r="14" fill="#1E1B4B"/>
+                  <!-- Ojo corazón -->
+                  <path d="M112 67C110 64.5 105.5 65.3 105.5 69C105.5 72.7 112 77 112 77C112 77 118.5 72.7 118.5 69C118.5 65.3 114 64.5 112 67Z" fill="#F43F5E"/>
+                  <!-- Ojo guiño -->
+                  <path d="M151 71C154 67 162 67 165 71" stroke="#38BDF8" stroke-width="3" stroke-linecap="round"/>
+                  <!-- Pico -->
+                  <path d="M129 83L135 93L141 83H129Z" fill="#F59E0B"/>
+
+                  <!-- Libreta anillada derecha con Check -->
+                  <g transform="rotate(-6 205 130)">
+                    <rect x="176" y="96" width="60" height="72" rx="10" fill="#FFFFFF" stroke="#6D28D9" stroke-width="3"/>
+                    <!-- Espiral superior -->
+                    <path d="M186 92V100M198 92V100M210 92V100M222 92V100" stroke="#4C1D95" stroke-width="3" stroke-linecap="round"/>
+                    <!-- Check morado dentro de la libreta -->
+                    <circle cx="206" cy="133" r="16" fill="#EDE9FE"/>
+                    <path d="M199 133L204 138L214 127" stroke="#6D28D9" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </g>
+                </svg>
+              </div>
+
+              <!-- Tarjeta informativa con bombilla -->
+              <div class="valuable-tip-card">
+                <div class="tip-bulb-badge">
+                  <i data-lucide="lightbulb"></i>
+                </div>
+                <div class="tip-content">
+                  <strong>¡Es muy valioso!</strong>
+                  <p>Tus respuestas nos ayudarán a proponerte una rutina de estudio más efectiva.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="screen-footer single-btn">
+              <button class="btn-primary full-width" id="btnE2Start">
+                <span>Comenzar</span>
+                <i data-lucide="arrow-right"></i>
+              </button>
+            </div>
+          </section>
+
+          <!-- ==========================================
+               PANTALLA 2: DISPONIBILIDAD SEMANAL
+               ========================================== -->
+          <section class="screen" id="e2-screen-2" data-step="2">
+            <div class="screen-body e2-question-body">
+              <div class="centered-q-header">
+                <div class="circle-icon-badge">
+                  <i data-lucide="clock"></i>
+                </div>
+                <h2 class="centered-q-title">¿Cuánto tiempo tienes disponible para estudiar cada semana?</h2>
+                <p class="centered-q-note">
+                  <i data-lucide="info"></i>
+                  <span>No hay respuestas correctas o incorrectas.</span>
+                </p>
+              </div>
+
+              <div class="options-card-container" id="weeklyTimeList">
+                <button type="button" class="option-row-btn" data-value="Menos de 5 horas">
+                  <span class="radio-dot"></span>
+                  <span class="option-row-label">Menos de 5 horas</span>
+                </button>
+                <button type="button" class="option-row-btn selected" data-value="5–10 horas">
+                  <span class="radio-dot"></span>
+                  <span class="option-row-label">5–10 horas</span>
+                </button>
+                <button type="button" class="option-row-btn" data-value="11–15 horas">
+                  <span class="radio-dot"></span>
+                  <span class="option-row-label">11–15 horas</span>
+                </button>
+                <button type="button" class="option-row-btn" data-value="Más de 15 horas">
+                  <span class="radio-dot"></span>
+                  <span class="option-row-label">Más de 15 horas</span>
+                </button>
+              </div>
+
+              <!-- Búho con Laptop abajo -->
+              <div class="bottom-owl-illustration">
+                <svg class="mini-owl-svg" viewBox="0 0 180 125" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M36 42L24 35M32 54L18 52" stroke="#FBBF24" stroke-width="3" stroke-linecap="round"/>
+                  <rect x="46" y="20" width="88" height="68" rx="32" fill="#7C3AED"/>
+                  <path d="M55 27L44 10L70 21Z" fill="#6D28D9"/>
+                  <path d="M125 27L136 10L110 21Z" fill="#6D28D9"/>
+                  <circle cx="72" cy="54" r="18" fill="#FAF5FF" stroke="#4C1D95" stroke-width="3"/>
+                  <circle cx="108" cy="54" r="18" fill="#FAF5FF" stroke="#4C1D95" stroke-width="3"/>
+                  <circle cx="72" cy="54" r="11" fill="#1E1B4B"/>
+                  <circle cx="108" cy="54" r="11" fill="#1E1B4B"/>
+                  <path d="M72 51.5C70.5 49.5 67 50.2 67 53C67 55.8 72 59 72 59C72 59 77 55.8 77 53C77 50.2 73.5 49.5 72 51.5Z" fill="#F43F5E"/>
+                  <path d="M102 55C104.5 51.5 111.5 51.5 114 55" stroke="#38BDF8" stroke-width="2.5" stroke-linecap="round"/>
+                  <path d="M85 64L90 72L95 64H85Z" fill="#F59E0B"/>
+                  <!-- Laptop -->
+                  <path d="M56 84L62 116H118L124 84H56Z" fill="#A78BFA" stroke="#4C1D95" stroke-width="2.5"/>
+                  <rect x="48" y="115" width="84" height="6" rx="3" fill="#6D28D9"/>
+                  <path d="M83 98L90 94L97 98L90 102L83 98Z" fill="#FFFFFF"/>
+                </svg>
+              </div>
+            </div>
+
+            <div class="screen-footer e2-nav-footer">
+              <button class="btn-circle-back" data-prev="1" aria-label="Anterior">
+                <i data-lucide="arrow-left"></i>
+              </button>
+              <button class="btn-primary flex-grow-btn" data-next="3">
+                <span>Continuar</span>
+                <i data-lucide="arrow-right"></i>
+              </button>
+            </div>
+          </section>
+
+          <!-- ==========================================
+               PANTALLA 3: PLANIFICACIÓN DE SESIONES
+               ========================================== -->
+          <section class="screen" id="e2-screen-3" data-step="3">
+            <div class="screen-body e2-question-body">
+              <div class="centered-q-header">
+                <div class="square-icon-badge">
+                  <i data-lucide="calendar-check"></i>
+                </div>
+                <h2 class="centered-q-title">¿Sueles planificar tus sesiones de estudio?</h2>
+                <p class="centered-q-note">
+                  <i data-lucide="sparkles" class="sparkle-gold"></i>
+                  <span>Esto nos ayudará a darte una ruta de estudio más útil.</span>
+                </p>
+              </div>
+
+              <div class="options-card-container" id="planningList">
+                <button type="button" class="option-row-btn" data-value="Sí, siempre">
+                  <span class="radio-dot"></span>
+                  <span class="option-row-label">Sí, siempre</span>
+                </button>
+                <button type="button" class="option-row-btn selected" data-value="A veces">
+                  <span class="radio-dot"></span>
+                  <span class="option-row-label">A veces</span>
+                </button>
+                <button type="button" class="option-row-btn" data-value="Casi nunca">
+                  <span class="radio-dot"></span>
+                  <span class="option-row-label">Casi nunca</span>
+                </button>
+                <button type="button" class="option-row-btn" data-value="Solo antes de exámenes">
+                  <span class="radio-dot"></span>
+                  <span class="option-row-label">Solo antes de exámenes</span>
+                </button>
+              </div>
+
+              <!-- Búho leyendo libro -->
+              <div class="bottom-owl-illustration">
+                <svg class="mini-owl-svg" viewBox="0 0 180 125" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="46" y="18" width="88" height="68" rx="32" fill="#7C3AED"/>
+                  <path d="M55 25L44 8L70 19Z" fill="#6D28D9"/>
+                  <path d="M125 25L136 8L110 19Z" fill="#6D28D9"/>
+                  <circle cx="72" cy="52" r="18" fill="#FAF5FF" stroke="#4C1D95" stroke-width="3"/>
+                  <circle cx="108" cy="52" r="18" fill="#FAF5FF" stroke="#4C1D95" stroke-width="3"/>
+                  <circle cx="72" cy="52" r="11" fill="#1E1B4B"/>
+                  <circle cx="108" cy="52" r="11" fill="#1E1B4B"/>
+                  <path d="M72 49.5C70.5 47.5 67 48.2 67 51C67 53.8 72 57 72 57C72 57 77 53.8 77 51C77 48.2 73.5 47.5 72 49.5Z" fill="#F43F5E"/>
+                  <path d="M102 53C104.5 49.5 111.5 49.5 114 53" stroke="#38BDF8" stroke-width="2.5" stroke-linecap="round"/>
+                  <path d="M85 62L90 70L95 62H85Z" fill="#F59E0B"/>
+                  <!-- Libro abierto morado -->
+                  <path d="M52 84L90 92L128 84V116L90 122L52 116V84Z" fill="#8B5CF6" stroke="#4C1D95" stroke-width="2.5" stroke-linejoin="round"/>
+                  <path d="M90 92V122" stroke="#4C1D95" stroke-width="2.5"/>
+                  <path d="M106 116V124L111 121L116 124V115" fill="#FBBF24"/>
+                </svg>
+              </div>
+            </div>
+
+            <div class="screen-footer e2-nav-footer">
+              <button class="btn-circle-back" data-prev="2" aria-label="Anterior">
+                <i data-lucide="arrow-left"></i>
+              </button>
+              <button class="btn-primary flex-grow-btn" data-next="4">
+                <span>Continuar</span>
+                <i data-lucide="arrow-right"></i>
+              </button>
+            </div>
+          </section>
+
+          <!-- ==========================================
+               PANTALLA 4: ORGANIZACIÓN DE TAREAS
+               ========================================== -->
+          <section class="screen" id="e2-screen-4" data-step="4">
+            <div class="screen-body e2-question-body">
+              <div class="centered-q-header">
+                <div class="square-icon-badge">
+                  <i data-lucide="laptop"></i>
+                </div>
+                <h2 class="centered-q-title">¿Cómo organizas tus tareas y entregas?</h2>
+                <p class="centered-q-note">
+                  <i data-lucide="info"></i>
+                  <span>Puedes elegir la opción que más uses actualmente.</span>
+                </p>
+              </div>
+
+              <div class="options-card-container" id="organizationList">
+                <button type="button" class="option-row-btn selected" data-value="Agenda o planner">
+                  <span class="radio-dot"></span>
+                  <span class="option-row-label">Agenda o planner</span>
+                </button>
+                <button type="button" class="option-row-btn" data-value="Calendario digital">
+                  <span class="radio-dot"></span>
+                  <span class="option-row-label">Calendario digital</span>
+                </button>
+                <button type="button" class="option-row-btn" data-value="Notas sueltas">
+                  <span class="radio-dot"></span>
+                  <span class="option-row-label">Notas sueltas</span>
+                </button>
+                <button type="button" class="option-row-btn" data-value="No llevo un control fijo">
+                  <span class="radio-dot"></span>
+                  <span class="option-row-label">No llevo un control fijo</span>
+                </button>
+              </div>
+
+              <!-- Ilustración Agenda Anillada con Lápiz -->
+              <div class="bottom-owl-illustration">
+                <svg class="mini-owl-svg" viewBox="0 0 200 125" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g transform="rotate(-8 90 65)">
+                    <rect x="44" y="24" width="96" height="86" rx="12" fill="#FFFFFF" stroke="#7C3AED" stroke-width="3"/>
+                    <path d="M58 18V30M76 18V30M94 18V30M112 18V30M128 18V30" stroke="#6D28D9" stroke-width="3.5" stroke-linecap="round"/>
+                    <!-- Cuadros check -->
+                    <rect x="60" y="42" width="16" height="16" rx="4" fill="#8B5CF6"/>
+                    <path d="M64 50L67 53L73 46" stroke="#FFF" stroke-width="2.2" stroke-linecap="round"/>
+                    <line x1="84" y1="50" x2="122" y2="50" stroke="#DDD6FE" stroke-width="4" stroke-linecap="round"/>
+
+                    <rect x="60" y="66" width="16" height="16" rx="4" fill="#8B5CF6"/>
+                    <path d="M64 74L67 77L73 70" stroke="#FFF" stroke-width="2.2" stroke-linecap="round"/>
+                    <line x1="84" y1="74" x2="116" y2="74" stroke="#DDD6FE" stroke-width="4" stroke-linecap="round"/>
+
+                    <rect x="60" y="88" width="16" height="14" rx="4" stroke="#C4B5FD" stroke-width="2"/>
+                    <line x1="84" y1="95" x2="110" y2="95" stroke="#EDE9FE" stroke-width="4" stroke-linecap="round"/>
+                  </g>
+                  <!-- Lápiz morado flotante -->
+                  <g transform="rotate(32 162 65)">
+                    <rect x="154" y="34" width="14" height="54" rx="3" fill="#8B5CF6" stroke="#4C1D95" stroke-width="2"/>
+                    <path d="M154 88L161 102L168 88H154Z" fill="#FDE68A" stroke="#4C1D95" stroke-width="2"/>
+                    <rect x="154" y="28" width="14" height="8" rx="2" fill="#F472B6"/>
+                  </g>
+                </svg>
+              </div>
+            </div>
+
+            <div class="screen-footer e2-nav-footer">
+              <button class="btn-circle-back" data-prev="3" aria-label="Anterior">
+                <i data-lucide="arrow-left"></i>
+              </button>
+              <button class="btn-primary flex-grow-btn" data-next="5">
+                <span>Continuar</span>
+                <i data-lucide="arrow-right"></i>
+              </button>
+            </div>
+          </section>
+
+          <!-- ==========================================
+               PANTALLA 5: OBSTÁCULOS AL ESTUDIAR
+               ========================================== -->
+          <section class="screen" id="e2-screen-5" data-step="5">
+            <div class="screen-body e2-question-body">
+              <div class="centered-q-header">
+                <div class="pink-target-badge">
+                  <i data-lucide="target"></i>
+                </div>
+                <h2 class="centered-q-title">¿Qué te dificulta<br>más estudiar?</h2>
+                <p class="centered-q-note">
+                  <i data-lucide="sparkles" class="sparkle-gold"></i>
+                  <span>Puedes seleccionar una o más opciones, según tu experiencia.</span>
+                </p>
+              </div>
+
+              <div class="options-card-container checkbox-card-group" id="obstaclesList">
+                <label class="option-check-row checked">
+                  <input type="checkbox" value="Falta de tiempo" checked />
+                  <span class="sq-check-box"><i data-lucide="check"></i></span>
+                  <span class="option-row-label">Falta de tiempo</span>
+                </label>
+
+                <label class="option-check-row checked">
+                  <input type="checkbox" value="Distracciones" checked />
+                  <span class="sq-check-box"><i data-lucide="check"></i></span>
+                  <span class="option-row-label">Distracciones</span>
+                </label>
+
+                <label class="option-check-row">
+                  <input type="checkbox" value="No sé por dónde empezar" />
+                  <span class="sq-check-box"><i data-lucide="check"></i></span>
+                  <span class="option-row-label">No sé por dónde empezar</span>
+                </label>
+
+                <label class="option-check-row checked">
+                  <input type="checkbox" value="Cansancio o estrés" checked />
+                  <span class="sq-check-box"><i data-lucide="check"></i></span>
+                  <span class="option-row-label">Cansancio o estrés</span>
+                </label>
+
+                <label class="option-check-row">
+                  <input type="checkbox" value="Demasiados cursos a la vez" />
+                  <span class="sq-check-box"><i data-lucide="check"></i></span>
+                  <span class="option-row-label">Demasiados cursos a la vez</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="screen-footer e2-nav-footer">
+              <button class="btn-circle-back" data-prev="4" aria-label="Anterior">
+                <i data-lucide="arrow-left"></i>
+              </button>
+              <button class="btn-primary flex-grow-btn" id="btnToSummaryE2">
+                <span>Continuar</span>
+                <i data-lucide="arrow-right"></i>
+              </button>
+            </div>
+          </section>
+
+          <!-- ==========================================
+               PANTALLA 6: CIERRE Y RESUMEN ETAPA 2
+               ========================================== -->
+          <section class="screen" id="e2-screen-6" data-step="6">
+            <div class="screen-body e2-summary-body">
+              <!-- Búho con laptop + Check Verde Flotante -->
+              <div class="completion-owl-box">
+                <svg class="completion-owl-svg" viewBox="0 0 230 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M38 42L24 34M34 55L18 53M46 31L40 19" stroke="#FBBF24" stroke-width="3.2" stroke-linecap="round"/>
+                  <rect x="56" y="18" width="96" height="74" rx="35" fill="#7C3AED"/>
+                  <path d="M66 26L54 8L82 20Z" fill="#6D28D9"/>
+                  <path d="M142 26L154 8L126 20Z" fill="#6D28D9"/>
+                  <circle cx="85" cy="54" r="20" fill="#FAF5FF" stroke="#4C1D95" stroke-width="3.2"/>
+                  <circle cx="123" cy="54" r="20" fill="#FAF5FF" stroke="#4C1D95" stroke-width="3.2"/>
+                  <circle cx="85" cy="54" r="12" fill="#1E1B4B"/>
+                  <circle cx="123" cy="54" r="12" fill="#1E1B4B"/>
+                  <path d="M85 51.5C83.3 49.5 79.5 50.2 79.5 53C79.5 55.8 85 59 85 59C85 59 90.5 55.8 90.5 53C90.5 50.2 86.7 49.5 85 51.5Z" fill="#F43F5E"/>
+                  <path d="M117 55C119.5 51.5 126.5 51.5 129 55" stroke="#38BDF8" stroke-width="2.8" stroke-linecap="round"/>
+                  <path d="M99 65L104 73L109 65H99Z" fill="#F59E0B"/>
+                  <!-- Laptop -->
+                  <path d="M72 88L78 124H142L148 88H72Z" fill="#A78BFA" stroke="#4C1D95" stroke-width="2.8"/>
+                  <rect x="64" y="123" width="92" height="7" rx="3.5" fill="#6D28D9"/>
+                  <!-- Círculo verde de check flotante -->
+                  <circle cx="186" cy="54" r="22" fill="#10B981" stroke="#D1FAE5" stroke-width="5"/>
+                  <path d="M177 54L183 60L195 48" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+
+              <h1 class="completion-title">¡Listo! Ya entendemos<br>mejor tu organización</h1>
+              <p class="completion-desc">
+                Con esta información podremos recomendarte estrategias y una ruta de estudio más personalizada.
+              </p>
+
+              <!-- 3 Tarjetas Resumen de Etapa 2 -->
+              <div class="summary-cards-stack">
+                <div class="summary-metric-card">
+                  <div class="metric-icon"><i data-lucide="clock"></i></div>
+                  <div class="metric-info">
+                    <strong>Tiempo disponible</strong>
+                    <span id="summaryTimeText">5–10 horas semanales para estudiar.</span>
+                  </div>
+                </div>
+
+                <div class="summary-metric-card">
+                  <div class="metric-icon"><i data-lucide="calendar-days"></i></div>
+                  <div class="metric-info">
+                    <strong>Nivel de planificación</strong>
+                    <span id="summaryPlanText">Planificas tus sesiones: A veces.</span>
+                  </div>
+                </div>
+
+                <div class="summary-metric-card">
+                  <div class="metric-icon pink"><i data-lucide="target"></i></div>
+                  <div class="metric-info">
+                    <strong>Principales obstáculos</strong>
+                    <span id="summaryObstaclesText">Falta de tiempo, Distracciones, Cansancio o estrés.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="screen-footer single-btn">
+              <button class="btn-primary full-width" id="btnContinueStage3">
+                <span>Continuar a la Etapa 3</span>
+                <i data-lucide="arrow-right"></i>
+              </button>
+            </div>
+          </section>
+
+        </div>
+
+        <!-- Barra de gestos inferior -->
+        <div class="gesture-bar-container">
+          <div class="gesture-pill" id="gestureHomeBtn" title="Inicio Etapa 2"></div>
+        </div>
+
+        <!-- Toast de notificaciones -->
+        <div class="toast-notification" id="toastNotification" role="alert">
+          <i data-lucide="alert-circle"></i>
+          <span id="toastMessage">Mensaje</span>
+        </div>
+
+        <!-- Menú Lateral (Drawer) -->
+        <div class="drawer-overlay" id="drawerOverlay">
+          <aside class="side-drawer">
+            <div class="drawer-header">
+              <div class="drawer-brand">
+                <span class="brand-title">StudentMind</span>
+                <span class="brand-subtitle">Connect</span>
+              </div>
+              <button class="icon-btn" id="closeMenuBtn"><i data-lucide="x"></i></button>
+            </div>
+
+            <div class="drawer-section">
+              <p class="drawer-section-title">Etapas del Diagnóstico</p>
+              <ul class="drawer-nav-list">
+                <li><a href="etapa1.html" class="drawer-nav-link"><i data-lucide="check-circle-2"></i> Etapa 1: Perfil Académico</a></li>
+                <li><button class="drawer-nav-item" data-jump="1"><i data-lucide="clock"></i> Etapa 2: Hábitos de Estudio</button></li>
+              </ul>
+            </div>
+
+            <div class="drawer-section" style="margin-top: 16px;">
+              <p class="drawer-section-title">Pasos de Etapa 2</p>
+              <ul class="drawer-nav-list">
+                <li><button class="drawer-nav-item" data-jump="1">1. Bienvenida Etapa 2</button></li>
+                <li><button class="drawer-nav-item" data-jump="2">2. Disponibilidad Semanal</button></li>
+                <li><button class="drawer-nav-item" data-jump="3">3. Planificación de Sesiones</button></li>
+                <li><button class="drawer-nav-item" data-jump="4">4. Organización de Tareas</button></li>
+                <li><button class="drawer-nav-item" data-jump="5">5. Obstáculos al Estudiar</button></li>
+                <li><button class="drawer-nav-item" data-jump="6">6. Resumen de Organización</button></li>
+              </ul>
+            </div>
+
+            <div class="drawer-footer">
+              <button class="btn-outline-danger" id="resetE2Btn">
+                <i data-lucide="rotate-ccw"></i>
+                <span>Reiniciar Etapa 2</span>
+              </button>
+            </div>
+          </aside>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <script src="../js%20encuesta/etapa2.js"></script>
+</body>
+</html>

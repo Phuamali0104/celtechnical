@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>StudentMind Connect — Biblioteca Académica</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="../../encuesta/css%20encuesta/etapa1.css" />
+  <link rel="stylesheet" href="../css%20aplicacion/biblioteca.css" />
+  <link rel="stylesheet" href="../css%20aplicacion/navegacion.css" />
+  <link rel="stylesheet" href="../css%20aplicacion/tema.css" />
+  <link rel="stylesheet" href="../css%20aplicacion/planes.css" />
+  <script src="../js%20aplicacion/planes.js"></script>
+</head>
+<body>
+
+  <main class="desktop-stage">
+    <div class="phone-frame" id="phoneFrame">
+      <div class="hardware-btn volume-up"></div>
+      <div class="hardware-btn volume-down"></div>
+      <div class="hardware-btn power-btn"></div>
+
+      <div class="app-screen" id="appScreen">
+
+        <!-- Barra de estado superior -->
+        <header class="status-bar">
+          <span class="status-time" id="statusTime">9:41</span>
+          <div class="camera-punch"></div>
+          <div class="status-icons">
+            <i data-lucide="signal" class="status-icon"></i>
+            <i data-lucide="wifi" class="status-icon"></i>
+            <i data-lucide="battery-full" class="status-icon"></i>
+          </div>
+        </header>
+
+        <!-- Header Superior Compartido -->
+        <div class="bib-top-header">
+          <button type="button" class="icon-btn" id="bibBackBtn" aria-label="Volver">
+            <i data-lucide="chevron-left"></i>
+          </button>
+
+          <div class="plat-mini-brand">
+            <svg class="brand-owl-svg" viewBox="0 0 64 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="6" y="8" width="52" height="42" rx="20" fill="#5B21B6"/>
+              <path d="M12 10L6 2L20 8Z" fill="#5B21B6"/>
+              <path d="M52 10L58 2L44 8Z" fill="#5B21B6"/>
+              <circle cx="23" cy="28" r="11" fill="#F3E8FF" stroke="#3B0764" stroke-width="2.5"/>
+              <circle cx="41" cy="28" r="11" fill="#F3E8FF" stroke="#3B0764" stroke-width="2.5"/>
+              <circle cx="23" cy="28" r="6" fill="#1E1B4B"/>
+              <circle cx="41" cy="28" r="6" fill="#1E1B4B"/>
+              <path d="M23 26.5C22.2 25.5 20.5 25.8 20.5 27.3C20.5 28.8 23 30.5 23 30.5C23 30.5 25.5 28.8 25.5 27.3C25.5 25.8 23.8 25.5 23 26.5Z" fill="#F43F5E"/>
+              <path d="M38.5 28.5C39.8 27 42.2 27 43.5 28.5" stroke="#38BDF8" stroke-width="2" stroke-linecap="round"/>
+              <path d="M29 34L32 39L35 34H29Z" fill="#F59E0B"/>
+            </svg>
+            <div class="brand-text"><span class="brand-title">StudentMind</span><span class="brand-subtitle">Connect</span></div>
+          </div>
+
+          <button type="button" class="icon-btn bib-right-btn" id="bibHeaderRightBtn" aria-label="Buscar o Compartir">
+            <i data-lucide="search" id="bibHeaderRightIcon"></i>
+          </button>
+        </div>
+
+        <!-- Viewport de las 3 Pantallas de Biblioteca -->
+        <div class="screens-viewport">
+
+          <!-- ==========================================
+               PANTALLA 1: BIBLIOTECA PRINCIPAL
+               ========================================== -->
+          <section class="screen active" id="bib-screen-1" data-step="1">
+            <div class="screen-body bib-body">
+              <div class="bib-hero-split">
+                <div>
+                  <div class="bib-title-row">
+                    <span class="bib-book-badge"><i data-lucide="book-open"></i></span>
+                    <h1>Biblioteca</h1>
+                  </div>
+                  <p>Recursos para aprender,<br>estudiar y rendir mejor 💪</p>
+                </div>
+
+                <!-- Búho leyendo libro morado -->
+                <svg class="bib-owl-reader" viewBox="0 0 130 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <ellipse cx="70" cy="80" rx="34" ry="27" fill="#6D28D9"/>
+                  <ellipse cx="70" cy="84" rx="24" ry="19" fill="#EDE9FE"/>
+                  <rect x="36" y="16" width="68" height="52" rx="25" fill="#7C3AED"/>
+                  <circle cx="58" cy="42" r="14" fill="#FAF5FF" stroke="#4C1D95" stroke-width="2.5"/>
+                  <circle cx="82" cy="42" r="14" fill="#FAF5FF" stroke="#4C1D95" stroke-width="2.5"/>
+                  <circle cx="58" cy="42" r="9" fill="#0F172A"/>
+                  <circle cx="82" cy="42" r="9" fill="#0F172A"/>
+                  <path d="M58 40C56.8 38.5 54 39 54 41.2C54 43.4 58 46 58 46C58 46 62 43.4 62 41.2C62 39 59.2 38.5 58 40Z" fill="#F43F5E"/>
+                  <path d="M78 43C80 40.5 84 40.5 86 43" stroke="#38BDF8" stroke-width="2.2" stroke-linecap="round"/>
+                  <path d="M66 51L70 57L74 51H66Z" fill="#F59E0B"/>
+                  <!-- Libro morado abierto -->
+                  <path d="M24 64L52 72L80 64V98L52 104L24 98V64Z" fill="#7C3AED" stroke="#3B0764" stroke-width="2.2" stroke-linejoin="round"/>
+                  <path d="M52 72V104" stroke="#3B0764" stroke-width="2.2"/>
+                </svg>
+              </div>
+
+              <!-- Barra de búsqueda -->
+              <div class="bib-search-bar">
+                <i data-lucide="search"></i>
+                <input type="text" id="bibSearchInput" placeholder="Buscar recursos..." />
+              </div>
+
+              <!-- Píldoras de tipo -->
+              <div class="bib-filter-pills" id="bibTypePills">
+                <button type="button" class="b-pill active" data-type="Todos">Todos</button>
+                <button type="button" class="b-pill" data-type="Videos"><i data-lucide="play"></i> Videos</button>
+                <button type="button" class="b-pill" data-type="Guías"><i data-lucide="file-text"></i> Guías</button>
+                <button type="button" class="b-pill" data-type="Apuntes"><i data-lucide="book-open"></i> Apuntes</button>
+                <button type="button" class="b-pill" data-type="Cursos"><i data-lucide="graduation-cap"></i> Cursos</button>
+              </div>
+
+              <!-- Sección Recursos destacados -->
+              <div class="bib-section">
+                <div class="bib-sec-head">
+                  <h2>⭐ Recursos destacados</h2>
+                  <button type="button" class="see-all-link" id="btnSeeAllVideos">Ver todos &rarr;</button>
+                </div>
+
+                <div class="featured-resource-card" id="featuredResourceCard">
+                  <div class="feat-thumb">
+                    <div class="feat-play-circle"><i data-lucide="play"></i></div>
+                    <span class="duration-badge">▶ 12 min</span>
+                  </div>
+                  <div class="feat-info">
+                    <span class="type-tag-pill">Video</span>
+                    <strong>Cómo organizar tu tiempo en la universidad</strong>
+                    <p>Aprende técnicas efectivas de planificación con ejemplos prácticos.</p>
+                    <div class="feat-stats">
+                      <span><i data-lucide="eye"></i> 25.4K vistas</span>
+                      <span><i data-lucide="thumbs-up"></i> 4.8</span>
+                    </div>
+                  </div>
+                  <i data-lucide="chevron-right" class="feat-arrow"></i>
+                </div>
+              </div>
+
+              <!-- Sección Explora por categoría -->
+              <div class="bib-section">
+                <div class="bib-sec-head">
+                  <h2>📖 Explora por categoría</h2>
+                </div>
+
+                <div class="categories-grid-2x2">
+                  <button type="button" class="cat-tile-btn" data-open-cat="Videos">
+                    <div class="cat-icon purple"><i data-lucide="video"></i></div>
+                    <div class="cat-copy">
+                      <strong>Videos</strong>
+                      <span>Clases y tutoriales</span>
+                    </div>
+                    <i data-lucide="chevron-right" class="cat-chev"></i>
+                  </button>
+
+                  <button type="button" class="cat-tile-btn" data-open-cat="Guías">
+                    <div class="cat-icon blue"><i data-lucide="file-text"></i></div>
+                    <div class="cat-copy">
+                      <strong>Guías</strong>
+                      <span>Resúmenes y tips</span>
+                    </div>
+                    <i data-lucide="chevron-right" class="cat-chev"></i>
+                  </button>
+
+                  <button type="button" class="cat-tile-btn" data-open-cat="Apuntes">
+                    <div class="cat-icon lilac"><i data-lucide="notebook-pen"></i></div>
+                    <div class="cat-copy">
+                      <strong>Apuntes</strong>
+                      <span>Material de estudio</span>
+                    </div>
+                    <i data-lucide="chevron-right" class="cat-chev"></i>
+                  </button>
+
+                  <button type="button" class="cat-tile-btn" data-open-cat="Cursos">
+                    <div class="cat-icon indigo"><i data-lucide="graduation-cap"></i></div>
+                    <div class="cat-copy">
+                      <strong>Cursos</strong>
+                      <span>Aprende a tu ritmo</span>
+                    </div>
+                    <i data-lucide="chevron-right" class="cat-chev"></i>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Sección Más populares -->
+              <div class="bib-section">
+                <div class="bib-sec-head">
+                  <h2>🔥 Más populares</h2>
+                  <button type="button" class="see-all-link" id="btnSeeAllPopular">Ver todos &rarr;</button>
+                </div>
+
+                <div class="popular-pdf-card">
+                  <div class="pdf-badge-box">PDF</div>
+                  <div class="pdf-info">
+                    <strong>Resumen: Cálculo Diferencial</strong>
+                    <span><em>Apuntes</em> • 2.1 MB</span>
+                  </div>
+                  <button type="button" class="pdf-dl-btn" id="btnDownloadPdf" title="Descargar PDF">
+                    <i data-lucide="download"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Barra Inferior -->
+            <nav class="bottom-tab-bar">
+              <a href="plataforma.html" class="tab-item">
+                <i data-lucide="home"></i>
+                <span></span>
+              </a>
+              <a href="planificador.html" class="tab-item">
+                <i data-lucide="calendar-days"></i>
+                <span></span>
+              </a>
+              <a href="progreso.html" class="tab-item">
+                <i data-lucide="bar-chart-2"></i>
+                <span></span>
+              </a>
+              <button type="button" class="tab-item active">
+                <i data-lucide="book-open"></i>
+                <span>Biblioteca</span>
+              </button>
+              <a href="comunidad.html" class="tab-item">
+                <i data-lucide="users"></i>
+                <span></span>
+              </a>
+            </nav>
+          </section>
+
+          <!-- ==========================================
+               PANTALLA 2: CATÁLOGO DE VIDEOS
+               ========================================== -->
+          <section class="screen" id="bib-screen-2" data-step="2">
+            <div class="screen-body bib-body">
+              <div class="bib-hero-split">
+                <div>
+                  <div class="bib-title-row">
+                    <span class="bib-book-badge"><i data-lucide="play"></i></span>
+                    <h1 id="catalogHeaderTitle">Videos</h1>
+                  </div>
+                  <p>Aprende con contenido<br>visual y dinámico</p>
+                </div>
+
+                <!-- Búho con audífonos y laptop -->
+                <svg class="bib-owl-laptop" viewBox="0 0 135 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18 36L8 28M16 48L4 46" stroke="#FACC15" stroke-width="2.8" stroke-linecap="round"/>
+                  <ellipse cx="72" cy="76" rx="32" ry="26" fill="#6D28D9"/>
+                  <rect x="40" y="18" width="64" height="48" rx="23" fill="#7C3AED"/>
+                  <path d="M36 44C36 18 108 18 108 44" stroke="#7C3AED" stroke-width="5" stroke-linecap="round"/>
+                  <rect x="30" y="36" width="11" height="20" rx="5" fill="#6D28D9"/>
+                  <rect x="103" y="36" width="11" height="20" rx="5" fill="#6D28D9"/>
+                  <circle cx="60" cy="42" r="13" fill="#FAF5FF" stroke="#4C1D95" stroke-width="2.4"/>
+                  <circle cx="84" cy="42" r="13" fill="#FAF5FF" stroke="#4C1D95" stroke-width="2.4"/>
+                  <circle cx="60" cy="42" r="8" fill="#0F172A"/>
+                  <circle cx="84" cy="42" r="8" fill="#0F172A"/>
+                  <path d="M60 40C59 38.8 56.5 39.2 56.5 41C56.5 42.8 60 45 60 45C60 45 63.5 42.8 63.5 41C63.5 39.2 61 38.8 60 40Z" fill="#F43F5E"/>
+                  <path d="M80 43C82 40.8 86 40.8 88 43" stroke="#38BDF8" stroke-width="2" stroke-linecap="round"/>
+                  <!-- Laptop -->
+                  <path d="M46 68L51 96H93L98 68H46Z" fill="#8B5CF6" stroke="#4C1D95" stroke-width="2.2"/>
+                  <rect x="40" y="95" width="64" height="5" rx="2.5" fill="#6D28D9"/>
+                </svg>
+              </div>
+
+              <!-- Píldoras de Materia -->
+              <div class="bib-subject-pills" id="subjectFilterPills">
+                <button type="button" class="s-pill active" data-subject="Todos">Todos</button>
+                <button type="button" class="s-pill" data-subject="Matemáticas">Matemáticas</button>
+                <button type="button" class="s-pill" data-subject="Programación">Programación</button>
+                <button type="button" class="s-pill" data-subject="Gestión">Gestión</button>
+              </div>
+
+              <!-- Lista de Videos -->
+              <div class="videos-catalog-list" id="videosCatalogList">
+                <!-- Se renderiza dinámicamente desde biblioteca.js -->
+              </div>
+
+              <!-- Banner IA Lumen -->
+              <button type="button" class="lumen-help-banner" id="btnAskLumenFromBib">
+                <div class="bulb-circle-icon"><i data-lucide="lightbulb"></i></div>
+                <div class="lh-text">
+                  <strong>¿No encuentras lo que buscas?</strong>
+                  <span>Prueba con nuestra IA Lumen</span>
+                </div>
+                <i data-lucide="chevron-right" class="lh-arrow"></i>
+              </button>
+            </div>
+
+            <!-- Barra Inferior -->
+            <nav class="bottom-tab-bar">
+              <a href="plataforma.html" class="tab-item">
+                <i data-lucide="home"></i>
+                <span></span>
+              </a>
+              <a href="planificador.html" class="tab-item">
+                <i data-lucide="calendar-days"></i>
+                <span></span>
+              </a>
+              <a href="progreso.html" class="tab-item">
+                <i data-lucide="bar-chart-2"></i>
+                <span></span>
+              </a>
+              <button type="button" class="tab-item active" id="tabBibBack">
+                <i data-lucide="book-open"></i>
+                <span>Biblioteca</span>
+              </button>
+              <a href="comunidad.html" class="tab-item">
+                <i data-lucide="users"></i>
+                <span></span>
+              </a>
+            </nav>
+          </section>
+
+          <!-- ==========================================
+               PANTALLA 3: DETALLE Y REPRODUCTOR DE VIDEO
+               ========================================== -->
+          <section class="screen" id="bib-screen-3" data-step="3">
+            <div class="screen-body detail-body">
+              <!-- Portada / Reproductor Simulado -->
+              <div class="video-player-stage" id="videoPlayerStage">
+                <svg class="graph-illustration-svg" viewBox="0 0 260 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Ejes Cartesianos -->
+                  <path d="M56 18V112H186" stroke="#6D28D9" stroke-width="3" stroke-linecap="round"/>
+                  <path d="M51 24L56 16L61 24M180 107L188 112L180 117" stroke="#6D28D9" stroke-width="2.5" stroke-linecap="round"/>
+                  <!-- Curva de función -->
+                  <path d="M62 104C95 98 116 62 162 28" stroke="#7C3AED" stroke-width="3.5" stroke-linecap="round"/>
+                  <!-- Libros apilados derecha -->
+                  <rect x="192" y="64" width="48" height="12" rx="4" fill="#FDBA74" stroke="#9A3412" stroke-width="1.8"/>
+                  <rect x="188" y="76" width="54" height="12" rx="4" fill="#93C5FD" stroke="#1E40AF" stroke-width="1.8"/>
+                  <rect x="190" y="88" width="52" height="12" rx="4" fill="#C4B5FD" stroke="#4C1D95" stroke-width="1.8"/>
+                  <rect x="186" y="100" width="56" height="12" rx="4" fill="#6366F1" stroke="#312E81" stroke-width="1.8"/>
+                </svg>
+
+                <button type="button" class="stage-center-play-btn" id="stageCenterPlayBtn" aria-label="Reproducir">
+                  <i data-lucide="play" id="stagePlayIcon"></i>
+                </button>
+
+                <span class="stage-duration-pill" id="detailDurationPill">▶ 15 min</span>
+
+                <!-- Barra de progreso simulada al reproducir -->
+                <div class="player-timeline-bar hidden" id="playerTimelineBar">
+                  <div class="pt-fill" id="ptFill"></div>
+                </div>
+              </div>
+
+              <h1 class="detail-title" id="detailTitle">Funciones y gráficas paso a paso</h1>
+              <span class="type-tag-pill detail-badge" id="detailTypeBadge">Video</span>
+              <p class="detail-desc" id="detailDesc">
+                Aprende a identificar y graficar funciones con ejemplos claros y sencillos.
+              </p>
+
+              <!-- Caja Contenido -->
+              <div class="content-outline-card">
+                <div class="co-header">
+                  <i data-lucide="bar-chart-2"></i>
+                  <strong>Contenido</strong>
+                </div>
+                <ul class="co-list" id="detailSyllabusList">
+                  <li><i data-lucide="check-circle-2"></i> Conceptos clave</li>
+                  <li><i data-lucide="check-circle-2"></i> Ejemplos prácticos</li>
+                  <li><i data-lucide="check-circle-2"></i> Ejercicios para practicar</li>
+                </ul>
+              </div>
+
+              <!-- CTA Reproducir video -->
+              <button type="button" class="btn-primary full-width" id="btnPlayVideoMain">
+                <i data-lucide="play"></i>
+                <span id="btnPlayVideoLabel">Reproducir video</span>
+              </button>
+
+              <!-- Botones Descargar y Compartir -->
+              <div class="detail-secondary-actions">
+                <button type="button" class="btn-outline-pill" id="btnDownloadDetail">
+                  <i data-lucide="download"></i>
+                  <span>Descargar</span>
+                </button>
+                <button type="button" class="btn-outline-pill" id="btnShareDetail">
+                  <i data-lucide="share-2"></i>
+                  <span>Compartir</span>
+                </button>
+              </div>
+
+              <!-- También te puede interesar -->
+              <div class="related-section">
+                <h2>⭐ También te puede interesar</h2>
+                <div class="related-item-card" id="relatedVideoCard">
+                  <div class="rel-thumb"><i data-lucide="line-chart"></i></div>
+                  <div class="rel-info">
+                    <strong>Funciones avanzadas</strong>
+                    <span>18 min</span>
+                  </div>
+                  <i data-lucide="chevron-right" class="rel-arrow"></i>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        </div>
+
+        <!-- Barra de gestos inferior -->
+        <div class="gesture-bar-container">
+          <div class="gesture-pill" id="gestureHomeBtn" title="Inicio Biblioteca"></div>
+        </div>
+
+        <!-- Toast -->
+        <div class="toast-notification" id="toastNotification" role="alert">
+          <i data-lucide="check-circle-2"></i>
+          <span id="toastMessage">Mensaje</span>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <script src="../js%20aplicacion/navegacion.js"></script>
+  <script src="../js%20aplicacion/biblioteca.js"></script>
+</body>
+</html>

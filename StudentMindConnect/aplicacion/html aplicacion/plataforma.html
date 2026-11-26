@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>StudentMind Connect — Plataforma Estudiantil</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="../../encuesta/css%20encuesta/etapa1.css" />
+  <link rel="stylesheet" href="../css%20aplicacion/plataforma.css" />
+  <link rel="stylesheet" href="../css%20aplicacion/navegacion.css" />
+  <link rel="stylesheet" href="../css%20aplicacion/tema.css" />
+  <link rel="stylesheet" href="../css%20aplicacion/planes.css" />
+  <script src="../js%20aplicacion/planes.js"></script>
+</head>
+<body>
+
+  <main class="desktop-stage">
+    <div class="phone-frame" id="phoneFrame">
+      <div class="hardware-btn volume-up"></div>
+      <div class="hardware-btn volume-down"></div>
+      <div class="hardware-btn power-btn"></div>
+
+      <div class="app-screen" id="appScreen">
+
+        <!-- Barra de estado superior -->
+        <header class="status-bar">
+          <span class="status-time" id="statusTime">9:41</span>
+          <div class="camera-punch"></div>
+          <div class="status-icons">
+            <i data-lucide="signal" class="status-icon"></i>
+            <i data-lucide="wifi" class="status-icon"></i>
+            <i data-lucide="battery-full" class="status-icon"></i>
+          </div>
+        </header>
+
+        <!-- Viewport Principal (3 Pantallas: Bienvenida, Registro Freemium, Dashboard Home) -->
+        <div class="screens-viewport">
+
+          <!-- ==========================================
+               PANTALLA 1: BIENVENIDA Y MÉTODOS DE ACCESO
+               ========================================== -->
+          <section class="screen active" id="plat-screen-1" data-view="welcome">
+            <div class="screen-body plat-welcome-body">
+              <!-- Logo centrado con rayos amarillos -->
+              <div class="plat-hero-brand">
+                <svg class="brand-owl-svg brand-owl-lg" aria-hidden="true" viewBox="0 0 64 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="6" y="8" width="52" height="42" rx="20" fill="#5B21B6"/>
+                  <path d="M12 10L6 2L20 8Z" fill="#5B21B6"/>
+                  <path d="M52 10L58 2L44 8Z" fill="#5B21B6"/>
+                  <circle cx="23" cy="28" r="11" fill="#F3E8FF" stroke="#3B0764" stroke-width="2.5"/>
+                  <circle cx="41" cy="28" r="11" fill="#F3E8FF" stroke="#3B0764" stroke-width="2.5"/>
+                  <circle cx="23" cy="28" r="6" fill="#1E1B4B"/>
+                  <circle cx="41" cy="28" r="6" fill="#1E1B4B"/>
+                  <path d="M23 26.5C22.2 25.5 20.5 25.8 20.5 27.3C20.5 28.8 23 30.5 23 30.5C23 30.5 25.5 28.8 25.5 27.3C25.5 25.8 23.8 25.5 23 26.5Z" fill="#F43F5E"/>
+                  <path d="M38.5 28.5C39.8 27 42.2 27 43.5 28.5" stroke="#38BDF8" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M29 34L32 39L35 34H29Z" fill="#F59E0B"/>
+                </svg>
+                <div class="brand-text">
+                  <span class="brand-title">StudentMind</span>
+                  <span class="brand-subtitle">Connect</span>
+                </div>
+              </div>
+
+              <span class="stage-pill plat-tagline-pill">Tu aliado académico para tu éxito</span>
+
+              <!-- Ilustración Búho con Tablet, Mochila Azul y Libros -->
+              <div class="plat-owl-showcase">
+                <div class="wave-bg"></div>
+                <svg class="plat-owl-tablet-svg" viewBox="0 0 270 190" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M84 36L72 22M186 36L198 22M194 50L210 46" stroke="#FACC15" stroke-width="3.5" stroke-linecap="round"/>
+                  <!-- Libros apilados izquierda -->
+                  <rect x="24" y="132" width="66" height="15" rx="5" fill="#A78BFA" stroke="#4C1D95" stroke-width="2.2"/>
+                  <rect x="30" y="136" width="52" height="7" rx="2" fill="#EDE9FE"/>
+                  <rect x="20" y="147" width="72" height="16" rx="5" fill="#6366F1" stroke="#312E81" stroke-width="2.2"/>
+                  <rect x="28" y="151" width="56" height="8" rx="2" fill="#E0E7FF"/>
+
+                  <!-- Mochila azul derecha -->
+                  <rect x="174" y="102" width="44" height="58" rx="16" fill="#2563EB" stroke="#1E3A8A" stroke-width="2.5"/>
+                  <rect x="182" y="128" width="28" height="22" rx="7" fill="#3B82F6" stroke="#1E3A8A" stroke-width="2"/>
+                  <path d="M191 136L196 141L201 136" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round"/>
+
+                  <!-- Cuerpo Búho -->
+                  <ellipse cx="136" cy="126" rx="55" ry="46" fill="#4C1D95"/>
+                  <ellipse cx="136" cy="132" rx="39" ry="34" fill="#EDE9FE"/>
+                  <!-- Cabeza Búho -->
+                  <rect x="78" y="28" width="116" height="84" rx="40" fill="#6D28D9"/>
+                  <path d="M90 36L76 14L108 29Z" fill="#4C1D95"/>
+                  <path d="M182 36L196 14L164 29Z" fill="#4C1D95"/>
+                  <!-- Antifaz oscuro -->
+                  <circle cx="114" cy="68" r="24" fill="#F3E8FF" stroke="#1E1B4B" stroke-width="3.5"/>
+                  <circle cx="158" cy="68" r="24" fill="#F3E8FF" stroke="#1E1B4B" stroke-width="3.5"/>
+                  <circle cx="114" cy="68" r="15" fill="#0F172A"/>
+                  <circle cx="158" cy="68" r="15" fill="#0F172A"/>
+                  <path d="M114 65C112 62.5 107.5 63.3 107.5 67C107.5 70.7 114 75 114 75C114 75 120.5 70.7 120.5 67C120.5 63.3 116 62.5 114 65Z" fill="#F43F5E"/>
+                  <path d="M151 69C154 65 162 65 165 69" stroke="#38BDF8" stroke-width="3" stroke-linecap="round"/>
+                  <path d="M130 81L136 91L142 81H130Z" fill="#F59E0B"/>
+
+                  <!-- Tablet azul sostenida al frente -->
+                  <rect x="96" y="106" width="76" height="58" rx="10" fill="#3B82F6" stroke="#1E3A8A" stroke-width="2.8"/>
+                  <path d="M126 131L134 139L142 131" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+
+              <h1 class="plat-welcome-title">
+                Organiza tu estudio<br>con más claridad
+              </h1>
+
+              <p class="plat-welcome-desc">
+                StudentMind Connect te ayuda como estudiante de <span class="text-purple-highlight">educación superior</span> a detectar tus vacíos académicos, organizar prioridades y mejorar tu rendimiento académico y bienestar.
+              </p>
+
+              <!-- 3 Botones Sociales / Correo -->
+              <div class="auth-buttons-stack">
+                <button type="button" class="social-auth-btn" id="btnGoogleLogin">
+                  <svg class="social-g-icon" viewBox="0 0 24 24">
+                    <path fill="#EA4335" d="M12 5c1.6 0 3 .6 4.1 1.6l3.1-3.1C17.3 1.7 14.8 1 12 1 7.4 1 3.5 3.6 1.6 7.4l3.7 2.8C6.2 7.2 8.9 5 12 5z"/>
+                    <path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5c-.3 1.5-1.1 2.8-2.4 3.6l3.7 2.9c2.2-2 3.7-5 3.7-8.7z"/>
+                    <path fill="#FBBC05" d="M5.3 14.8c-.2-.8-.4-1.6-.4-2.5s.2-1.7.4-2.5L1.6 7C.6 9 0 11.2 0 13.5s.6 4.5 1.6 6.5l3.7-2.8z"/>
+                    <path fill="#34A853" d="M12 24c3.2 0 6-1.1 8-3l-3.7-2.9c-1.1.7-2.5 1.2-4.3 1.2-3.1 0-5.8-2.1-6.7-5l-3.7 2.8C3.5 21.1 7.4 24 12 24z"/>
+                  </svg>
+                  <span>Continuar con Google</span>
+                </button>
+
+                <button type="button" class="social-auth-btn" id="btnAppleLogin">
+                  <svg class="social-apple-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+                  </svg>
+                  <span>Continuar con Apple</span>
+                </button>
+
+                <button type="button" class="social-auth-btn" id="btnEmailRegister">
+                  <i data-lucide="mail" class="mail-purple-icon"></i>
+                  <span>Continuar con mi correo</span>
+                </button>
+              </div>
+
+              <!-- Tarjeta inferior con birrete -->
+              <div class="plat-bottom-note">
+                <div class="cap-badge"><i data-lucide="graduation-cap"></i></div>
+                <p>Estudio más enfocado, con herramientas de apoyo académico para tu vida universitaria o de instituto.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- ==========================================
+               PANTALLA 2: CREA TU CUENTA FREEMIUM
+               ========================================== -->
+          <section class="screen" id="plat-screen-2" data-view="register">
+            <div class="reg-top-bar">
+              <button type="button" class="icon-btn" id="btnBackToWelcome" aria-label="Volver">
+                <i data-lucide="chevron-left"></i>
+              </button>
+              <div class="plat-mini-brand">
+                <svg class="brand-owl-svg" aria-hidden="true" viewBox="0 0 64 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="6" y="8" width="52" height="42" rx="20" fill="#5B21B6"/>
+                  <path d="M12 10L6 2L20 8Z" fill="#5B21B6"/>
+                  <path d="M52 10L58 2L44 8Z" fill="#5B21B6"/>
+                  <circle cx="23" cy="28" r="11" fill="#F3E8FF" stroke="#3B0764" stroke-width="2.5"/>
+                  <circle cx="41" cy="28" r="11" fill="#F3E8FF" stroke="#3B0764" stroke-width="2.5"/>
+                  <circle cx="23" cy="28" r="6" fill="#1E1B4B"/>
+                  <circle cx="41" cy="28" r="6" fill="#1E1B4B"/>
+                  <path d="M23 26.5C22.2 25.5 20.5 25.8 20.5 27.3C20.5 28.8 23 30.5 23 30.5C23 30.5 25.5 28.8 25.5 27.3C25.5 25.8 23.8 25.5 23 26.5Z" fill="#F43F5E"/>
+                  <path d="M38.5 28.5C39.8 27 42.2 27 43.5 28.5" stroke="#38BDF8" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M29 34L32 39L35 34H29Z" fill="#F59E0B"/>
+                </svg>
+                <div class="brand-text">
+                  <span class="brand-title">StudentMind</span>
+                  <span class="brand-subtitle">Connect</span>
+                </div>
+              </div>
+              <div style="width: 36px;"></div>
+            </div>
+
+            <div class="screen-body reg-form-body">
+              <!-- Cabecera con título y búho con lápiz -->
+              <div class="reg-hero-split">
+                <div class="reg-hero-text">
+                  <h1>Crea tu cuenta<br><span>Freemium</span></h1>
+                  <p>Empieza hoy a detectar tus vacíos académicos y construir un plan de estudio personalizado.</p>
+                </div>
+                <svg class="reg-owl-svg" viewBox="0 0 130 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18 32L8 24M16 44L4 42M110 24L120 16" stroke="#FACC15" stroke-width="2.8" stroke-linecap="round"/>
+                  <ellipse cx="56" cy="84" rx="34" ry="28" fill="#4C1D95"/>
+                  <ellipse cx="56" cy="88" rx="24" ry="20" fill="#EDE9FE"/>
+                  <rect x="22" y="22" width="68" height="52" rx="25" fill="#6D28D9"/>
+                  <circle cx="44" cy="48" r="14" fill="#F3E8FF" stroke="#1E1B4B" stroke-width="2.5"/>
+                  <circle cx="68" cy="48" r="14" fill="#F3E8FF" stroke="#1E1B4B" stroke-width="2.5"/>
+                  <circle cx="44" cy="48" r="9" fill="#0F172A"/>
+                  <circle cx="68" cy="48" r="9" fill="#0F172A"/>
+                  <path d="M44 46C42.8 44.5 40 45 40 47.2C40 49.4 44 52 44 52C44 52 48 49.4 48 47.2C48 45 45.2 44.5 44 46Z" fill="#F43F5E"/>
+                  <path d="M64 49C66 46.5 70 46.5 72 49" stroke="#38BDF8" stroke-width="2.2" stroke-linecap="round"/>
+                  <path d="M52 57L56 63L60 57H52Z" fill="#F59E0B"/>
+                  <!-- Libreta checklist derecha -->
+                  <rect x="84" y="54" width="38" height="48" rx="7" fill="#FFFFFF" stroke="#6D28D9" stroke-width="2.2"/>
+                  <path d="M92 68L95 71L101 65M92 79L95 82L101 76M92 90L95 93L101 87" stroke="#10B981" stroke-width="2.2" stroke-linecap="round"/>
+                </svg>
+              </div>
+
+              <!-- Formulario Freemium -->
+              <form id="freemiumRegisterForm" class="freemium-form" novalidate>
+                <div class="f-row">
+                  <div class="f-icon"><i data-lucide="user"></i></div>
+                  <div class="f-field">
+                    <label for="regFullName">Nombres y apellidos <span class="req">*</span></label>
+                    <input type="text" id="regFullName" value="María Fernanda López" placeholder="Tu nombre completo" required />
+                  </div>
+                </div>
+
+                <div class="f-row">
+                  <div class="f-icon"><i data-lucide="mail"></i></div>
+                  <div class="f-field">
+                    <label for="regEmail">Correo electrónico <span class="req">*</span></label>
+                    <input type="email" id="regEmail" value="maria.lopez@universidad.edu" placeholder="correo@universidad.edu" required />
+                  </div>
+                </div>
+
+                <div class="f-row">
+                  <div class="f-icon"><i data-lucide="lock"></i></div>
+                  <div class="f-field">
+                    <label for="regPassword">Contraseña <span class="req">*</span></label>
+                    <div class="pass-input-wrap">
+                      <input type="password" id="regPassword" value="Student2026" placeholder="Mínimo 6 caracteres" required />
+                      <button type="button" class="toggle-pass-btn" id="togglePassBtn" aria-label="Mostrar contraseña">
+                        <i data-lucide="eye"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="f-row">
+                  <div class="f-icon"><i data-lucide="graduation-cap"></i></div>
+                  <div class="f-field">
+                    <label for="regUniversity">Universidad / instituto <span class="req">*</span></label>
+                    <select id="regUniversity">
+                      <option value="Universidad Nacional del Sur">Universidad Nacional del Sur</option>
+                      <option value="Universidad Peruana de Ciencias Aplicadas (UPC)">Universidad Peruana de Ciencias Aplicadas (UPC)</option>
+                      <option value="Universidad Nacional Mayor de San Marcos">Universidad Nacional Mayor de San Marcos</option>
+                      <option value="Pontificia Universidad Católica del Perú">Pontificia Universidad Católica del Perú</option>
+                      <option value="Otra institución superior">Otra institución superior</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="f-row">
+                  <div class="f-icon"><i data-lucide="book-open"></i></div>
+                  <div class="f-field">
+                    <label for="regCareer">Carrera <span class="req">*</span></label>
+                    <select id="regCareer">
+                      <option value="Psicología">Psicología</option>
+                      <option value="Ingeniería de Sistemas de Información">Ingeniería de Sistemas de Información</option>
+                      <option value="Ingeniería de Software">Ingeniería de Software</option>
+                      <option value="Administración y Negocios">Administración y Negocios</option>
+                      <option value="Derecho">Derecho</option>
+                      <option value="Ingeniería Industrial">Ingeniería Industrial</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="f-row">
+                  <div class="f-icon"><i data-lucide="calendar"></i></div>
+                  <div class="f-field">
+                    <label for="regCycle">Ciclo / semestre <span class="req">*</span></label>
+                    <select id="regCycle">
+                      <option value="1.º - 2.º semestre">1.º - 2.º semestre</option>
+                      <option value="3.º - 4.º semestre">3.º - 4.º semestre</option>
+                      <option value="6.º semestre" selected>6.º semestre</option>
+                      <option value="7.º - 8.º semestre">7.º - 8.º semestre</option>
+                      <option value="9.º semestre o más">9.º semestre o más</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Selector Etapa Académica (3 Tarjetas) -->
+                <div class="stage-cards-section">
+                  <div class="stage-q-title">
+                    <span class="pink-mini-target"><i data-lucide="target"></i></span>
+                    <span>¿En qué etapa te encuentras? <span class="req">*</span></span>
+                  </div>
+
+                  <div class="stage-three-grid" id="academicStageCards">
+                    <button type="button" class="stage-choice-card" data-stage-level="Primeros ciclos">
+                      <span class="check-corner"><i data-lucide="check"></i></span>
+                      <div class="stage-choice-icon green"><i data-lucide="sprout"></i></div>
+                      <span>Primeros<br>ciclos</span>
+                    </button>
+
+                    <button type="button" class="stage-choice-card selected" data-stage-level="Mitad de carrera">
+                      <span class="check-corner"><i data-lucide="check"></i></span>
+                      <div class="stage-choice-icon purple"><i data-lucide="bar-chart-2"></i></div>
+                      <span>Mitad de<br>carrera</span>
+                    </button>
+
+                    <button type="button" class="stage-choice-card" data-stage-level="Últimos ciclos">
+                      <span class="check-corner"><i data-lucide="check"></i></span>
+                      <div class="stage-choice-icon lilac"><i data-lucide="graduation-cap"></i></div>
+                      <span>Últimos<br>ciclos</span>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Términos y condiciones -->
+                <label class="terms-check-row">
+                  <input type="checkbox" id="acceptTermsCheck" checked />
+                  <span class="custom-checkbox small-cb"><i data-lucide="check"></i></span>
+                  <span>Acepto los <a href="#" id="openTermsLink">Términos de uso</a> y la <a href="#" id="openPrivacyLink">Política de privacidad</a>.</span>
+                </label>
+
+                <button type="submit" class="btn-primary full-width reg-submit-btn">
+                  <span>Crear mi cuenta Freemium</span>
+                  <i data-lucide="arrow-right"></i>
+                </button>
+              </form>
+            </div>
+          </section>
+
+          <!-- ==========================================
+               PANTALLA 3: DASHBOARD HOME PRINCIPAL
+               ========================================== -->
+          <section class="screen" id="plat-screen-3" data-view="dashboard">
+            <!-- Header Dashboard -->
+            <div class="dash-header">
+              <button class="icon-btn" id="openDashMenuBtn" aria-label="Menú">
+                <i data-lucide="menu"></i>
+              </button>
+
+              <div class="plat-mini-brand">
+                <svg class="brand-owl-svg" aria-hidden="true" viewBox="0 0 64 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="6" y="8" width="52" height="42" rx="20" fill="#5B21B6"/>
+                  <path d="M12 10L6 2L20 8Z" fill="#5B21B6"/>
+                  <path d="M52 10L58 2L44 8Z" fill="#5B21B6"/>
+                  <circle cx="23" cy="28" r="11" fill="#F3E8FF" stroke="#3B0764" stroke-width="2.5"/>
+                  <circle cx="41" cy="28" r="11" fill="#F3E8FF" stroke="#3B0764" stroke-width="2.5"/>
+                  <circle cx="23" cy="28" r="6" fill="#1E1B4B"/>
+                  <circle cx="41" cy="28" r="6" fill="#1E1B4B"/>
+                  <path d="M23 26.5C22.2 25.5 20.5 25.8 20.5 27.3C20.5 28.8 23 30.5 23 30.5C23 30.5 25.5 28.8 25.5 27.3C25.5 25.8 23.8 25.5 23 26.5Z" fill="#F43F5E"/>
+                  <path d="M38.5 28.5C39.8 27 42.2 27 43.5 28.5" stroke="#38BDF8" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M29 34L32 39L35 34H29Z" fill="#F59E0B"/>
+                </svg>
+                <div class="brand-text">
+                  <span class="brand-title">StudentMind</span>
+                  <span class="brand-subtitle">Connect</span>
+                </div>
+              </div>
+
+              <div class="dash-header-icons">
+                <button class="icon-btn notif-btn" id="notifBellBtn" aria-label="Notificaciones">
+                  <i data-lucide="bell"></i>
+                  <span class="notif-dot"></span>
+                </button>
+                <button class="dash-avatar-btn" id="dashProfileBtn" aria-label="Perfil">
+                  <i data-lucide="user"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="screen-body dash-body">
+              <!-- Saludo + Búho guía con burbuja -->
+              <div class="dash-greeting-row">
+                <div class="greeting-left">
+                  <h1 id="dashGreetingTitle">¡Hola, María!</h1>
+                  <p class="greeting-sub">Hoy puedes estudiar con más enfoque.</p>
+                  <div class="owl-speech-bubble">
+                    Soy tu guía de estudio.<br>¿En qué te ayudo hoy?
+                  </div>
+                </div>
+
+                <svg class="dash-guide-owl" data-open-lumen role="button" aria-label="Abrir chat con IA Lumen" viewBox="0 0 130 135" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <ellipse cx="64" cy="96" rx="36" ry="30" fill="#4C1D95"/>
+                  <ellipse cx="64" cy="100" rx="25" ry="22" fill="#EDE9FE"/>
+                  <!-- Mochila -->
+                  <rect x="92" y="76" width="26" height="38" rx="10" fill="#2563EB" stroke="#1E3A8A" stroke-width="2"/>
+                  <!-- Ala pulgar arriba -->
+                  <path d="M28 84C14 82 12 68 22 66C28 65 32 74 34 80Z" fill="#6D28D9"/>
+                  <rect x="28" y="24" width="72" height="56" rx="27" fill="#6D28D9"/>
+                  <path d="M36 30L26 12L50 24Z" fill="#4C1D95"/>
+                  <path d="M92 30L102 12L78 24Z" fill="#4C1D95"/>
+                  <circle cx="51" cy="52" r="15" fill="#F3E8FF" stroke="#1E1B4B" stroke-width="2.5"/>
+                  <circle cx="77" cy="52" r="15" fill="#F3E8FF" stroke="#1E1B4B" stroke-width="2.5"/>
+                  <circle cx="51" cy="52" r="9.5" fill="#0F172A"/>
+                  <circle cx="77" cy="52" r="9.5" fill="#0F172A"/>
+                  <path d="M51 50C49.7 48.5 47 49 47 51.2C47 53.4 51 56 51 56C51 56 55 53.4 55 51.2C55 49 52.3 48.5 51 50Z" fill="#F43F5E"/>
+                  <path d="M73 53C75 50.5 79 50.5 81 53" stroke="#38BDF8" stroke-width="2.2" stroke-linecap="round"/>
+                  <path d="M60 61L64 68L68 61H60Z" fill="#F59E0B"/>
+                </svg>
+              </div>
+
+              <!-- Botón: Completa tu perfil -->
+              <a href="registro-perfil.html" class="complete-profile-btn">
+                <span class="cp-icon"><i data-lucide="user-round-pen"></i></span>
+                <span class="cp-text">
+                  <strong>Completa tu perfil</strong>
+                  <small>Personaliza tu ruta de estudio</small>
+                </span>
+                <i data-lucide="chevron-right" class="cp-arrow"></i>
+              </a>
+
+              <!-- Tarjeta del plan actual (cambia según el plan) -->
+              <div class="plan-hero-card" id="planHeroCard">
+                <div class="ph-top">
+                  <span class="plan-chip" id="planHeroChip"></span>
+                  <button type="button" class="ph-change-btn" data-go-plans>
+                    <i data-lucide="layers"></i> Planes
+                  </button>
+                </div>
+                <h2 id="planHeroTitle">Plan Gratis</h2>
+                <p id="planHeroDesc"></p>
+                <div class="ph-meter" aria-hidden="true">
+                  <div class="ph-meter-fill" id="planHeroMeter"></div>
+                </div>
+                <small class="ph-meter-label" id="planHeroMeterLabel"></small>
+                <button type="button" class="ph-upgrade" id="planHeroUpgrade" data-go-plans></button>
+              </div>
+
+              <!-- ELITE: Ecosistema integral IA -->
+              <div class="plan-widget pw-ecosistema" data-feature="ecosistema">
+                <div class="pw-head">
+                  <span class="pw-title"><i data-lucide="orbit"></i> Ecosistema integral IA</span>
+                  <span class="pw-live">● en línea</span>
+                </div>
+                <div class="eco-orbit">
+                  <span><i data-lucide="calendar-days"></i></span>
+                  <span><i data-lucide="route"></i></span>
+                  <span><i data-lucide="trophy"></i></span>
+                  <span class="eco-core"><i data-lucide="sparkles"></i></span>
+                  <span><i data-lucide="users"></i></span>
+                  <span><i data-lucide="calendar-check"></i></span>
+                  <span><i data-lucide="line-chart"></i></span>
+                </div>
+                <p class="pw-text" id="ecoSummary">Lumen conectó tus 16 herramientas: hoy reprogramó 2 bloques, detectó 1 alerta de fatiga y envió 3 temas a refuerzo.</p>
+              </div>
+
+              <!-- Herramientas del plan -->
+              <div class="dash-section-title">
+                <span>Tus herramientas</span>
+                <small id="dashToolsCount"></small>
+              </div>
+              <div class="modules-grid-8" id="dashModulesGrid"></div>
+
+              <!-- SMART: Refuerzo de temas débiles -->
+              <div class="plan-widget pw-refuerzo" data-feature="refuerzo">
+                <div class="pw-head">
+                  <span class="pw-title"><i data-lucide="target"></i> Refuerzo de temas débiles</span>
+                  <span class="pw-tag">IA</span>
+                </div>
+                <div class="weak-list" id="weakTopicsList"></div>
+              </div>
+
+              <!-- PRO: Radar de conocimiento -->
+              <div class="plan-widget pw-radar" data-feature="radar">
+                <div class="pw-head">
+                  <span class="pw-title"><i data-lucide="radar"></i> Radar de conocimiento</span>
+                  <span class="pw-tag" id="radarAvg">—</span>
+                </div>
+                <svg class="radar-svg" id="radarSvg" viewBox="0 0 240 200" aria-label="Radar de conocimiento"></svg>
+              </div>
+
+              <!-- ELITE: Predicción de fatiga -->
+              <div class="plan-widget pw-fatiga" data-feature="fatiga">
+                <div class="pw-head">
+                  <span class="pw-title"><i data-lucide="battery-medium"></i> Predicción de fatiga</span>
+                  <span class="pw-tag" id="fatigueLevel">Bajo</span>
+                </div>
+                <div class="fatigue-row">
+                  <svg class="fatigue-gauge" viewBox="0 0 120 70" aria-hidden="true">
+                    <path d="M10 62 A50 50 0 0 1 110 62" stroke="#F1F5F9" stroke-width="12" fill="none" stroke-linecap="round"/>
+                    <path id="fatigueArc" d="M10 62 A50 50 0 0 1 110 62" stroke="url(#fatGrad)" stroke-width="12" fill="none" stroke-linecap="round" pathLength="100" stroke-dasharray="0 100"/>
+                    <defs>
+                      <linearGradient id="fatGrad" x1="0" x2="1">
+                        <stop offset="0" stop-color="#10B981"/><stop offset=".55" stop-color="#F59E0B"/><stop offset="1" stop-color="#EF4444"/>
+                      </linearGradient>
+                    </defs>
+                    <text x="60" y="58" text-anchor="middle" class="fatigue-num" id="fatigueNum">0%</text>
+                  </svg>
+                  <div class="fatigue-text">
+                    <strong id="fatiguePeak">Pico probable: jueves 21:00</strong>
+                    <small id="fatigueTip">Mueve el repaso pesado al miércoles por la tarde.</small>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ELITE: Sincroniza tu calendario -->
+              <div class="plan-widget pw-calendario" data-feature="calendario">
+                <div class="pw-head">
+                  <span class="pw-title"><i data-lucide="calendar-check"></i> Sincroniza tu calendario</span>
+                </div>
+                <label class="cal-sync-row">
+                  <span class="cal-logo g">G</span>
+                  <span class="cal-name">Google Calendar<small data-cal-status="google">Sin conectar</small></span>
+                  <input type="checkbox" data-cal="google" />
+                  <span class="cal-switch"></span>
+                </label>
+                <label class="cal-sync-row">
+                  <span class="cal-logo o">O</span>
+                  <span class="cal-name">Outlook<small data-cal-status="outlook">Sin conectar</small></span>
+                  <input type="checkbox" data-cal="outlook" />
+                  <span class="cal-switch"></span>
+                </label>
+              </div>
+
+              <!-- ELITE: Analítica total -->
+              <div class="plan-widget pw-analitica" data-feature="analitica">
+                <div class="pw-head">
+                  <span class="pw-title"><i data-lucide="line-chart"></i> Analítica total</span>
+                  <span class="pw-tag">7 días</span>
+                </div>
+                <div class="kpi-grid">
+                  <div class="kpi"><strong>14.5 h</strong><small>Estudio</small></div>
+                  <div class="kpi"><strong>78 %</strong><small>Precisión</small></div>
+                  <div class="kpi"><strong>9</strong><small>Días racha</small></div>
+                  <div class="kpi"><strong>7.2 h</strong><small>Sueño</small></div>
+                </div>
+                <div class="spark-bars" id="sparkBars"></div>
+              </div>
+
+              <!-- Tarjeta Inferior: Mis hábitos académicos -->
+              <div class="habits-summary-card">
+                <div class="habits-card-top">
+                  <div class="habits-card-title">
+                    <i data-lucide="bar-chart-2"></i>
+                    <span>Mis hábitos académicos</span>
+                  </div>
+                  <button type="button" class="info-circle-btn" id="habitsInfoBtn" title="Ver detalle">
+                    <i data-lucide="info"></i>
+                  </button>
+                </div>
+
+                <div class="habit-bars-compact">
+                  <div class="h-compact-row">
+                    <span class="h-c-icon"><i data-lucide="calendar"></i></span>
+                    <span class="h-c-label">Organización</span>
+                    <div class="h-c-track"><div class="h-c-fill purple" id="dashBarOrg" style="width: 72%;"></div></div>
+                    <span class="h-c-val" id="dashValOrg">72 %</span>
+                  </div>
+
+                  <div class="h-compact-row">
+                    <span class="h-c-icon"><i data-lucide="book-open"></i></span>
+                    <span class="h-c-label">Comprensión</span>
+                    <div class="h-c-track"><div class="h-c-fill blue" id="dashBarComp" style="width: 68%;"></div></div>
+                    <span class="h-c-val" id="dashValComp">68 %</span>
+                  </div>
+
+                  <div class="h-compact-row">
+                    <span class="h-c-icon gold"><i data-lucide="zap"></i></span>
+                    <span class="h-c-label">Constancia</span>
+                    <div class="h-c-track"><div class="h-c-fill violet" id="dashBarConst" style="width: 60%;"></div></div>
+                    <span class="h-c-val" id="dashValConst">60 %</span>
+                  </div>
+
+                  <div class="h-compact-row">
+                    <span class="h-c-icon pink"><i data-lucide="flower-2"></i></span>
+                    <span class="h-c-label">Bienestar</span>
+                    <div class="h-c-track"><div class="h-c-fill teal" id="dashBarBien" style="width: 75%;"></div></div>
+                    <span class="h-c-val" id="dashValBien">75 %</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Vista previa del siguiente plan (se oculta en Elite) -->
+              <div class="plan-upsell" id="dashUpsell"></div>
+            </div>
+            <!-- Barra inferior (la genera navegacion.js) -->
+            <nav class="bottom-tab-bar"></nav>
+          </section>
+
+          <!-- ==========================================
+               PANTALLA 4: PLANES (Gratis · Smart · Pro · Elite)
+               ========================================== -->
+          <section class="screen" id="plat-screen-4" data-view="plans">
+            <div class="reg-top-bar">
+              <button type="button" class="icon-btn" id="btnBackFromPlans" aria-label="Volver">
+                <i data-lucide="chevron-left"></i>
+              </button>
+              <span class="plans-top-title">Planes</span>
+              <div style="width: 36px;"></div>
+            </div>
+
+            <div class="screen-body plans-body">
+              <span class="stage-pill">Elige cómo quieres estudiar</span>
+              <h1>Planes <span>StudentMind</span></h1>
+              <p class="plans-sub">Cada plan incluye todo lo del anterior. Al activarlo, la app cambia su diseño y sus herramientas.</p>
+
+              <div class="plans-tabs" id="plansTabs" role="tablist">
+                <button type="button" data-plan-tab="gratis">Gratis</button>
+                <button type="button" data-plan-tab="smart">Smart</button>
+                <button type="button" data-plan-tab="pro">Pro</button>
+                <button type="button" data-plan-tab="elite">Elite</button>
+              </div>
+
+              <div class="plans-list" id="plansList"></div>
+            </div>
+          </section>
+
+        </div>
+
+        <!-- Barra de gestos inferior -->
+        <div class="gesture-bar-container">
+          <div class="gesture-pill" id="gestureHomeBtn" title="Inicio Plataforma"></div>
+        </div>
+
+        <!-- Toast -->
+        <div class="toast-notification" id="toastNotification" role="alert">
+          <i data-lucide="check-circle-2"></i>
+          <span id="toastMessage">Mensaje</span>
+        </div>
+
+        <!-- Menú Lateral (Drawer) -->
+        <div class="drawer-overlay" id="drawerOverlay">
+          <aside class="side-drawer">
+            <div class="drawer-header">
+              <div class="drawer-brand">
+                <span class="brand-title">StudentMind</span>
+                <span class="brand-subtitle">Connect</span>
+              </div>
+              <button class="icon-btn" id="closeMenuBtn"><i data-lucide="x"></i></button>
+            </div>
+
+            <div class="drawer-section">
+              <p class="drawer-section-title">Navegación de Plataforma</p>
+              <ul class="drawer-nav-list">
+                <li><button class="drawer-nav-item" data-view-jump="1"><i data-lucide="log-in"></i> Pantalla de Acceso</button></li>
+                <li><button class="drawer-nav-item" data-view-jump="2"><i data-lucide="user-plus"></i> Registro Freemium</button></li>
+                <li><button class="drawer-nav-item" data-view-jump="3"><i data-lucide="layout-grid"></i> Dashboard Principal</button></li>
+                <li><button class="drawer-nav-item" data-view-jump="4"><i data-lucide="layers"></i> Planes</button></li>
+              </ul>
+            </div>
+
+            <div class="drawer-footer">
+              <button class="btn-outline-danger" id="logoutPlatformBtn">
+                <i data-lucide="log-out"></i>
+                <span>Cerrar Sesión</span>
+              </button>
+            </div>
+          </aside>
+        </div>
+
+        <!-- Modal Interactivo para Módulos del Dashboard (IA Lumen, Planificador, Microretos, P2P, etc.) -->
+        <div class="modal-overlay" id="modulePreviewModal">
+          <div class="modal-card summary-modal-card">
+            <div class="summary-badge-icon" id="modModalIcon">
+              <i data-lucide="sparkles"></i>
+            </div>
+            <h3 id="modModalTitle">Módulo</h3>
+            <p class="summary-subtitle" id="modModalDesc">Descripción</p>
+            <div class="summary-details-box" id="modModalBody"></div>
+            <button class="btn-primary full-width" id="modModalPlansBtn" hidden>
+              <span>Ver planes</span>
+              <i data-lucide="arrow-right"></i>
+            </button>
+            <button class="btn-secondary full-width" id="closeModuleModalBtn">
+              <span>Entendido</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <script src="../js%20aplicacion/navegacion.js"></script>
+  <script src="../js%20aplicacion/plataforma.js"></script>
+</body>
+</html>

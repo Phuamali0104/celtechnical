@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>StudentMind Connect — Planificador Semanal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="../../encuesta/css%20encuesta/etapa1.css" />
+  <link rel="stylesheet" href="../css%20aplicacion/planificador.css" />
+  <link rel="stylesheet" href="../css%20aplicacion/navegacion.css" />
+  <link rel="stylesheet" href="../css%20aplicacion/tema.css" />
+  <link rel="stylesheet" href="../css%20aplicacion/planes.css" />
+  <script src="../js%20aplicacion/planes.js"></script>
+</head>
+<body>
+
+  <main class="desktop-stage">
+    <div class="phone-frame" id="phoneFrame">
+      <div class="hardware-btn volume-up"></div>
+      <div class="hardware-btn volume-down"></div>
+      <div class="hardware-btn power-btn"></div>
+
+      <div class="app-screen" id="appScreen">
+
+        <!-- Barra de estado superior -->
+        <header class="status-bar">
+          <span class="status-time" id="statusTime">9:41</span>
+          <div class="camera-punch"></div>
+          <div class="status-icons">
+            <i data-lucide="signal" class="status-icon"></i>
+            <i data-lucide="wifi" class="status-icon"></i>
+            <i data-lucide="battery-full" class="status-icon"></i>
+          </div>
+        </header>
+
+        <!-- Header Superior Compartido -->
+        <div class="plan-top-header">
+          <button type="button" class="icon-btn" id="planBackBtn" aria-label="Volver">
+            <i data-lucide="chevron-left"></i>
+          </button>
+
+          <div class="plat-mini-brand">
+            <svg class="brand-owl-svg" viewBox="0 0 64 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="6" y="8" width="52" height="42" rx="20" fill="#5B21B6"/>
+              <path d="M12 10L6 2L20 8Z" fill="#5B21B6"/>
+              <path d="M52 10L58 2L44 8Z" fill="#5B21B6"/>
+              <circle cx="23" cy="28" r="11" fill="#F3E8FF" stroke="#3B0764" stroke-width="2.5"/>
+              <circle cx="41" cy="28" r="11" fill="#F3E8FF" stroke="#3B0764" stroke-width="2.5"/>
+              <circle cx="23" cy="28" r="6" fill="#1E1B4B"/>
+              <circle cx="41" cy="28" r="6" fill="#1E1B4B"/>
+              <path d="M23 26.5C22.2 25.5 20.5 25.8 20.5 27.3C20.5 28.8 23 30.5 23 30.5C23 30.5 25.5 28.8 25.5 27.3C25.5 25.8 23.8 25.5 23 26.5Z" fill="#F43F5E"/>
+              <path d="M38.5 28.5C39.8 27 42.2 27 43.5 28.5" stroke="#38BDF8" stroke-width="2" stroke-linecap="round"/>
+              <path d="M29 34L32 39L35 34H29Z" fill="#F59E0B"/>
+            </svg>
+            <div class="brand-text"><span class="brand-title">StudentMind</span><span class="brand-subtitle">Connect</span></div>
+          </div>
+
+          <button type="button" class="icon-btn purple-action-icon" id="headerRightActionBtn" aria-label="Compartir">
+            <i data-lucide="share-2" id="headerRightIcon"></i>
+          </button>
+        </div>
+
+        <!-- Viewport de las 3 Pantallas del Planificador -->
+        <div class="screens-viewport">
+
+          <!-- ==========================================
+               PANTALLA 1: PLANIFICADOR SEMANAL
+               ========================================== -->
+          <section class="screen active" id="plan-screen-1" data-step="1">
+            <div class="screen-body plan-body">
+              <div class="plan-hero-row">
+                <div class="plan-hero-copy">
+                  <h1>Planificador <span>Semanal</span></h1>
+                  <p>Organiza tu semana y cumple tus metas 💪</p>
+
+                  <!-- Selector Rango Semanal -->
+                  <div class="week-range-pill">
+                    <button type="button" id="prevWeekRangeBtn"><i data-lucide="chevron-left"></i></button>
+                    <span id="weekRangeLabel">27 oct – 2 nov</span>
+                    <button type="button" id="nextWeekRangeBtn"><i data-lucide="chevron-right"></i></button>
+                  </div>
+                </div>
+
+                <!-- Búho con calendario y mochila azul -->
+                <svg class="plan-owl-cal" viewBox="0 0 130 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <ellipse cx="66" cy="82" rx="34" ry="27" fill="#6D28D9"/>
+                  <ellipse cx="66" cy="86" rx="24" ry="19" fill="#EDE9FE"/>
+                  <rect x="94" y="66" width="24" height="36" rx="9" fill="#2563EB" stroke="#1E3A8A" stroke-width="2"/>
+                  <rect x="32" y="18" width="68" height="52" rx="25" fill="#7C3AED"/>
+                  <circle cx="54" cy="44" r="14" fill="#FAF5FF" stroke="#4C1D95" stroke-width="2.5"/>
+                  <circle cx="78" cy="44" r="14" fill="#FAF5FF" stroke="#4C1D95" stroke-width="2.5"/>
+                  <circle cx="54" cy="44" r="9" fill="#0F172A"/>
+                  <circle cx="78" cy="44" r="9" fill="#0F172A"/>
+                  <path d="M54 42C52.8 40.5 50 41 50 43.2C50 45.4 54 48 54 48C54 48 58 45.4 58 43.2C58 41 55.2 40.5 54 42Z" fill="#F43F5E"/>
+                  <path d="M74 45C76 42.5 80 42.5 82 45" stroke="#38BDF8" stroke-width="2.2" stroke-linecap="round"/>
+                  <path d="M62 53L66 59L70 53H62Z" fill="#F59E0B"/>
+                  <!-- Calendario morado al frente -->
+                  <rect x="44" y="64" width="44" height="38" rx="7" fill="#FFFFFF" stroke="#6D28D9" stroke-width="2.2"/>
+                  <rect x="44" y="64" width="44" height="11" rx="4" fill="#7C3AED"/>
+                </svg>
+              </div>
+
+              <!-- Tira de 7 Días (Lun 27 a Dom 2) -->
+              <div class="days-strip-grid" id="daysStripGrid">
+                <button type="button" class="day-chip active" data-day="Lunes, 27 de octubre">
+                  <span>Lun</span><strong>27</strong>
+                </button>
+                <button type="button" class="day-chip" data-day="Martes, 28 de octubre">
+                  <span>Mar</span><strong>28</strong>
+                </button>
+                <button type="button" class="day-chip" data-day="Miércoles, 29 de octubre">
+                  <span>Mié</span><strong>29</strong>
+                </button>
+                <button type="button" class="day-chip" data-day="Jueves, 30 de octubre">
+                  <span>Jue</span><strong>30</strong>
+                </button>
+                <button type="button" class="day-chip" data-day="Viernes, 31 de octubre">
+                  <span>Vie</span><strong>31</strong>
+                </button>
+                <button type="button" class="day-chip" data-day="Sábado, 1 de noviembre">
+                  <span>Sáb</span><strong>1</strong>
+                </button>
+                <button type="button" class="day-chip" data-day="Domingo, 2 de noviembre">
+                  <span>Dom</span><strong>2</strong>
+                </button>
+              </div>
+
+              <!-- Contenedor Dinámico de Tarjetas por Día -->
+              <div class="daily-groups-stack" id="dailyGroupsStack">
+                <!-- Renderizado dinámicamente por planificador.js -->
+              </div>
+
+              <!-- Tarjeta Progreso Semanal -->
+              <div class="week-status-card">
+                <div class="ws-left">
+                  <div class="ws-chart-badge"><i data-lucide="bar-chart-2"></i></div>
+                  <div>
+                    <strong>Tu progreso esta semana</strong>
+                    <span id="weekProgressHint">Completa al menos 5 tareas para mantener tu racha 🔥</span>
+                  </div>
+                </div>
+                <div class="ws-circle-pct" id="weekCirclePct">0%</div>
+              </div>
+
+              <!-- Banner Compartir mi planificación -->
+              <button type="button" class="share-plan-row" id="btnGoToShare">
+                <div class="sp-left">
+                  <i data-lucide="share-2"></i>
+                  <div>
+                    <strong>Compartir mi planificación</strong>
+                    <span>Invita a un compañero a organizar su semana</span>
+                  </div>
+                </div>
+                <i data-lucide="chevron-right" class="sp-arrow"></i>
+              </button>
+
+              <!-- Botón Principal + Añadir tarea -->
+              <button type="button" class="btn-primary full-width add-task-cta" id="btnOpenNewTask">
+                <i data-lucide="plus"></i>
+                <span>Añadir tarea</span>
+              </button>
+            </div>
+
+            <!-- Barra Inferior -->
+            <nav class="bottom-tab-bar">
+              <a href="plataforma.html" class="tab-item">
+                <i data-lucide="home"></i>
+                <span></span>
+              </a>
+              <button type="button" class="tab-item active">
+                <i data-lucide="calendar-days"></i>
+                <span>Planificador</span>
+              </button>
+              <a href="progreso.html" class="tab-item">
+                <i data-lucide="bar-chart-2"></i>
+                <span></span>
+              </a>
+              <a href="biblioteca.html" class="tab-item">
+                <i data-lucide="book-open"></i>
+                <span></span>
+              </a>
+              <a href="comunidad.html" class="tab-item">
+                <i data-lucide="users"></i>
+                <span></span>
+              </a>
+            </nav>
+          </section>
+
+          <!-- ==========================================
+               PANTALLA 2: NUEVA TAREA
+               ========================================== -->
+          <section class="screen" id="plan-screen-2" data-step="2">
+            <div class="screen-body new-task-body">
+              <div class="nt-hero-row">
+                <div>
+                  <h1>Nueva <span>tarea</span></h1>
+                  <p>Añade los detalles y organízala en tu semana.</p>
+                </div>
+                <!-- Búho con checklist -->
+                <svg class="nt-owl-svg" viewBox="0 0 120 105" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <ellipse cx="64" cy="76" rx="30" ry="24" fill="#6D28D9"/>
+                  <ellipse cx="64" cy="80" rx="21" ry="17" fill="#EDE9FE"/>
+                  <rect x="34" y="16" width="60" height="46" rx="22" fill="#7C3AED"/>
+                  <circle cx="53" cy="39" r="12" fill="#FAF5FF" stroke="#4C1D95" stroke-width="2.2"/>
+                  <circle cx="75" cy="39" r="12" fill="#FAF5FF" stroke="#4C1D95" stroke-width="2.2"/>
+                  <circle cx="53" cy="39" r="7.5" fill="#0F172A"/>
+                  <circle cx="75" cy="39" r="7.5" fill="#0F172A"/>
+                  <path d="M53 37C52 35.8 49.5 36.2 49.5 38C49.5 39.8 53 42 53 42C53 42 56.5 39.8 56.5 38C56.5 36.2 54 35.8 53 37Z" fill="#F43F5E"/>
+                  <path d="M71 40C73 37.8 77 37.8 79 40" stroke="#38BDF8" stroke-width="2" stroke-linecap="round"/>
+                  <rect x="14" y="48" width="34" height="42" rx="6" fill="#FFFFFF" stroke="#6D28D9" stroke-width="2"/>
+                  <path d="M21 60L24 63L30 57M21 71L24 74L30 68" stroke="#10B981" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+
+              <form id="newTaskForm" class="nt-form" novalidate>
+                <!-- Título -->
+                <div class="nt-group">
+                  <label for="ntTitle"><i data-lucide="pencil"></i> Título de la tarea</label>
+                  <input type="text" id="ntTitle" value="Avanzar informe de Marketing" placeholder="Ej. Resolver guía de ejercicios" required />
+                </div>
+
+                <!-- Curso -->
+                <div class="nt-group">
+                  <label for="ntCourse"><i data-lucide="graduation-cap"></i> Curso</label>
+                  <select id="ntCourse">
+                    <option value="Technical Sales and Marketing|Marketing|purple" selected>Technical Sales and Marketing</option>
+                    <option value="Matemáticas|Matemáticas|lavender">Matemáticas</option>
+                    <option value="Ingeniería de Sistemas|Sistemas|blue">Ingeniería de Sistemas</option>
+                    <option value="Redes de Computadoras|Redes|green">Redes de Computadoras</option>
+                    <option value="Base de Datos|BD|amber">Base de Datos</option>
+                    <option value="Programación|Prog.|emerald">Programación</option>
+                  </select>
+                </div>
+
+                <!-- Fecha y Hora en 2 columnas -->
+                <div class="nt-two-cols">
+                  <div class="nt-group">
+                    <label for="ntDay"><i data-lucide="calendar"></i> Fecha</label>
+                    <select id="ntDay">
+                      <option value="Lunes, 27 de octubre">Lun 27 oct</option>
+                      <option value="Martes, 28 de octubre">Mar 28 oct</option>
+                      <option value="Miércoles, 29 de octubre">Mié 29 oct</option>
+                      <option value="Jueves, 30 de octubre" selected>Jue 30 oct</option>
+                      <option value="Viernes, 31 de octubre">Vie 31 oct</option>
+                      <option value="Sábado, 1 de noviembre">Sáb 1 nov</option>
+                      <option value="Domingo, 2 de noviembre">Dom 2 nov</option>
+                    </select>
+                  </div>
+
+                  <div class="nt-group">
+                    <label for="ntTime"><i data-lucide="clock"></i> Hora</label>
+                    <select id="ntTime">
+                      <option value="9:00 AM">9:00 AM</option>
+                      <option value="11:00 AM">11:00 AM</option>
+                      <option value="2:00 PM">2:00 PM</option>
+                      <option value="4:00 PM">4:00 PM</option>
+                      <option value="6:00 PM" selected>6:00 PM</option>
+                      <option value="8:00 PM">8:00 PM</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Prioridad -->
+                <div class="nt-group">
+                  <label><i data-lucide="flag"></i> Prioridad</label>
+                  <div class="nt-pills-3" id="priorityPills">
+                    <button type="button" class="nt-pill selected" data-priority="Alta">
+                      <i data-lucide="flame"></i> Alta
+                    </button>
+                    <button type="button" class="nt-pill" data-priority="Media">
+                      <i data-lucide="bar-chart-2"></i> Media
+                    </button>
+                    <button type="button" class="nt-pill" data-priority="Baja">
+                      <i data-lucide="arrow-down"></i> Baja
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Tipo -->
+                <div class="nt-group">
+                  <label><i data-lucide="layers"></i> Tipo</label>
+                  <div class="nt-pills-4" id="typePills">
+                    <button type="button" class="nt-type-pill" data-type="Estudio">
+                      <i data-lucide="book-open"></i> Estudio
+                    </button>
+                    <button type="button" class="nt-type-pill selected" data-type="Entrega">
+                      <i data-lucide="file-up"></i> Entrega
+                    </button>
+                    <button type="button" class="nt-type-pill" data-type="Examen">
+                      <i data-lucide="graduation-cap"></i> Examen
+                    </button>
+                    <button type="button" class="nt-type-pill" data-type="Lectura">
+                      <i data-lucide="book"></i> Lectura
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Notas -->
+                <div class="nt-group">
+                  <label for="ntNotes"><i data-lucide="file-text"></i> Notas</label>
+                  <textarea id="ntNotes" rows="2" placeholder="Detalles adicionales...">Revisar feedback del laboratorio y corregir mockups</textarea>
+                </div>
+
+                <!-- Recordatorio + Repetir -->
+                <div class="nt-reminder-row">
+                  <label class="toggle-switch-label">
+                    <i data-lucide="bell"></i>
+                    <span>Recordatorio</span>
+                    <input type="checkbox" id="ntReminder" checked />
+                    <span class="switch-slider"></span>
+                  </label>
+
+                  <div class="repeat-box">
+                    <span><i data-lucide="repeat"></i> Repetir</span>
+                    <select id="ntRepeat">
+                      <option value="No repetir" selected>No repetir</option>
+                      <option value="Cada semana">Cada semana</option>
+                      <option value="Lun - Mié - Vie">Lun - Mié - Vie</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Tip inferior con búho leyendo -->
+                <div class="nt-tip-box">
+                  <div class="mini-reading-owl">🦉📖</div>
+                  <p>Divide tus metas en tareas pequeñas para avanzar sin estrés.</p>
+                </div>
+
+                <button type="submit" class="btn-primary full-width">
+                  <i data-lucide="check"></i>
+                  <span>Guardar tarea</span>
+                </button>
+              </form>
+            </div>
+          </section>
+
+          <!-- ==========================================
+               PANTALLA 3: COMPARTIR PLANIFICACIÓN
+               ========================================== -->
+          <section class="screen" id="plan-screen-3" data-step="3">
+            <div class="screen-body share-body">
+              <div class="share-hero-row">
+                <div>
+                  <h1>Compartir<br><span>planificación</span></h1>
+                  <p class="share-sub">Invita a un compañero</p>
+                </div>
+
+                <!-- Búho con avión de papel lila -->
+                <svg class="share-owl-svg" viewBox="0 0 135 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <ellipse cx="78" cy="84" rx="34" ry="27" fill="#6D28D9"/>
+                  <ellipse cx="78" cy="88" rx="24" ry="19" fill="#EDE9FE"/>
+                  <rect x="104" y="68" width="22" height="34" rx="8" fill="#2563EB" stroke="#1E3A8A" stroke-width="2"/>
+                  <rect x="44" y="20" width="68" height="52" rx="25" fill="#7C3AED"/>
+                  <circle cx="66" cy="46" r="14" fill="#FAF5FF" stroke="#4C1D95" stroke-width="2.5"/>
+                  <circle cx="90" cy="46" r="14" fill="#FAF5FF" stroke="#4C1D95" stroke-width="2.5"/>
+                  <circle cx="66" cy="46" r="9" fill="#0F172A"/>
+                  <circle cx="90" cy="46" r="9" fill="#0F172A"/>
+                  <path d="M66 44C64.8 42.5 62 43 62 45.2C62 47.4 66 50 66 50C66 50 70 47.4 70 45.2C70 43 67.2 42.5 66 44Z" fill="#F43F5E"/>
+                  <path d="M86 47C88 44.5 92 44.5 94 47" stroke="#38BDF8" stroke-width="2.2" stroke-linecap="round"/>
+                  <!-- Avión de papel morado -->
+                  <path d="M6 52L46 42L24 68L20 56L6 52Z" fill="#A78BFA" stroke="#5B21B6" stroke-width="2" stroke-linejoin="round"/>
+                </svg>
+              </div>
+
+              <p class="share-desc">
+                Comparte tu organización semanal para motivar a otro estudiante a crear su propio plan.
+              </p>
+
+              <!-- Tarjeta Resumen de Planificación -->
+              <div class="share-preview-card">
+                <div class="sp-card-top">
+                  <div class="sp-cal-icon"><i data-lucide="calendar"></i></div>
+                  <div>
+                    <strong>Mi planificación semanal</strong>
+                    <span>27 oct – 2 nov</span>
+                  </div>
+                </div>
+                <div class="sp-card-body">
+                  <div class="sp-mini-sheet"><i data-lucide="list-checks"></i></div>
+                  <p id="shareSummaryMetrics">Esta semana completaré<br><strong>8 tareas y 2 exámenes.</strong></p>
+                </div>
+              </div>
+
+              <!-- Opciones de Compartir -->
+              <div class="share-channels-section">
+                <h2>Elige cómo compartirla</h2>
+                <div class="share-channels-grid">
+                  <button type="button" class="channel-tile" data-channel="WhatsApp">
+                    <div class="ch-icon green"><i data-lucide="message-circle"></i></div>
+                    <span>WhatsApp</span>
+                  </button>
+
+                  <button type="button" class="channel-tile" id="btnCopyPlanLink">
+                    <div class="ch-icon purple"><i data-lucide="link"></i></div>
+                    <span>Copiar<br>enlace</span>
+                  </button>
+
+                  <button type="button" class="channel-tile" data-channel="Correo">
+                    <div class="ch-icon indigo"><i data-lucide="mail"></i></div>
+                    <span>Correo</span>
+                  </button>
+
+                  <button type="button" class="channel-tile" data-channel="Comunidad P2P">
+                    <div class="ch-icon violet"><i data-lucide="users"></i></div>
+                    <span>Comunidad</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Tarjeta Bonus Regalo -->
+              <div class="bonus-gift-banner">
+                <div class="gift-icon-box"><i data-lucide="gift"></i></div>
+                <p>Si tu amigo se registra, ambos desbloquean una plantilla semanal bonus. ✨</p>
+              </div>
+
+              <button type="button" class="btn-primary full-width" id="btnSendInvite">
+                <i data-lucide="send"></i>
+                <span>Enviar invitación</span>
+              </button>
+            </div>
+
+            <!-- Barra Inferior -->
+            <nav class="bottom-tab-bar">
+              <a href="plataforma.html" class="tab-item">
+                <i data-lucide="home"></i>
+                <span></span>
+              </a>
+              <button type="button" class="tab-item active" id="tabPlanBack">
+                <i data-lucide="calendar-days"></i>
+                <span>Planificador</span>
+              </button>
+              <a href="progreso.html" class="tab-item">
+                <i data-lucide="bar-chart-2"></i>
+                <span></span>
+              </a>
+              <a href="biblioteca.html" class="tab-item">
+                <i data-lucide="book-open"></i>
+                <span></span>
+              </a>
+              <a href="comunidad.html" class="tab-item">
+                <i data-lucide="users"></i>
+                <span></span>
+              </a>
+            </nav>
+          </section>
+
+        </div>
+
+        <!-- Barra de gestos inferior -->
+        <div class="gesture-bar-container">
+          <div class="gesture-pill" id="gestureHomeBtn" title="Inicio Planificador"></div>
+        </div>
+
+        <!-- Toast -->
+        <div class="toast-notification" id="toastNotification" role="alert">
+          <i data-lucide="check-circle-2"></i>
+          <span id="toastMessage">Mensaje</span>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <script src="../js%20aplicacion/navegacion.js"></script>
+  <script src="../js%20aplicacion/planificador.js"></script>
+</body>
+</html>

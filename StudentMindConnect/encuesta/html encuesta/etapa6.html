@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>StudentMind Connect — Etapa 6: Aprendizaje Colaborativo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="../css%20encuesta/etapa1.css" />
+  <link rel="stylesheet" href="../css%20encuesta/etapa6.css" />
+  <link rel="stylesheet" href="../../aplicacion/css%20aplicacion/tema.css" />
+  <link rel="stylesheet" href="../../aplicacion/css%20aplicacion/planes.css" />
+  <script src="../../aplicacion/js%20aplicacion/planes.js"></script>
+</head>
+<body>
+
+  <main class="desktop-stage">
+    <div class="phone-frame" id="phoneFrame">
+      <div class="hardware-btn volume-up"></div>
+      <div class="hardware-btn volume-down"></div>
+      <div class="hardware-btn power-btn"></div>
+
+      <div class="app-screen" id="appScreen">
+
+        <!-- Barra de estado superior -->
+        <header class="status-bar">
+          <span class="status-time" id="statusTime">9:41</span>
+          <div class="camera-punch"></div>
+          <div class="status-icons">
+            <i data-lucide="signal" class="status-icon"></i>
+            <i data-lucide="wifi" class="status-icon"></i>
+            <i data-lucide="battery-full" class="status-icon"></i>
+          </div>
+        </header>
+
+        <!-- Encabezado estándar con Stepper 1 al 6 activos -->
+        <div class="app-header">
+          <div class="header-top-row">
+            <button class="icon-btn" id="openMenuBtn" aria-label="Abrir menú">
+              <i data-lucide="menu"></i>
+            </button>
+
+            <div class="brand-logo" id="brandHomeBtn" title="Ir al inicio">
+              <svg class="brand-owl-svg" viewBox="0 0 64 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="6" y="8" width="52" height="42" rx="20" fill="#5B21B6"/>
+                <path d="M12 10L6 2L20 8Z" fill="#5B21B6"/>
+                <path d="M52 10L58 2L44 8Z" fill="#5B21B6"/>
+                <circle cx="23" cy="28" r="11" fill="#F3E8FF" stroke="#3B0764" stroke-width="2.5"/>
+                <circle cx="41" cy="28" r="11" fill="#F3E8FF" stroke="#3B0764" stroke-width="2.5"/>
+                <circle cx="23" cy="28" r="6" fill="#1E1B4B"/>
+                <circle cx="41" cy="28" r="6" fill="#1E1B4B"/>
+                <path d="M23 26.5C22.2 25.5 20.5 25.8 20.5 27.3C20.5 28.8 23 30.5 23 30.5C23 30.5 25.5 28.8 25.5 27.3C25.5 25.8 23.8 25.5 23 26.5Z" fill="#F43F5E"/>
+                <path d="M38.5 28.5C39.8 27 42.2 27 43.5 28.5" stroke="#38BDF8" stroke-width="2" stroke-linecap="round"/>
+                <path d="M29 34L32 39L35 34H29Z" fill="#F59E0B"/>
+              </svg>
+              <div class="brand-text">
+                <span class="brand-title">StudentMind</span>
+                <span class="brand-subtitle">Connect</span>
+              </div>
+            </div>
+
+            <div style="width: 36px;"></div>
+          </div>
+
+          <p class="test-header-label">Test de Diagnóstico Académico</p>
+
+          <!-- Stepper de 7 Etapas (1 al 6 morados) -->
+          <nav class="stepper-container" aria-label="Progreso de etapas">
+            <div class="stepper-track">
+              <div class="step-node active nav-stage" data-href="etapa1.html" title="Ir a Etapa 1">1</div>
+              <div class="step-line active-line"></div>
+              <div class="step-node active nav-stage" data-href="etapa2.html" title="Ir a Etapa 2">2</div>
+              <div class="step-line active-line"></div>
+              <div class="step-node active nav-stage" data-href="etapa3.html" title="Ir a Etapa 3">3</div>
+              <div class="step-line active-line"></div>
+              <div class="step-node active nav-stage" data-href="etapa4.html" title="Ir a Etapa 4">4</div>
+              <div class="step-line active-line"></div>
+              <div class="step-node active nav-stage" data-href="etapa5.html" title="Ir a Etapa 5">5</div>
+              <div class="step-line active-line"></div>
+              <div class="step-node active" data-stage="6">6</div>
+              <div class="step-line"></div>
+              <div class="step-node" data-stage="7">7</div>
+            </div>
+          </nav>
+        </div>
+
+        <!-- Viewport de las 6 Pantallas de Etapa 6 -->
+        <div class="screens-viewport">
+
+          <!-- ==========================================
+               PANTALLA 1: BIENVENIDA ETAPA 6 DE 7
+               ========================================== -->
+          <section class="screen active" id="e6-screen-1" data-step="1">
+            <div class="screen-body welcome-body e6-welcome-body">
+              <span class="stage-pill">Etapa 6 de 7</span>
+
+              <h1 class="welcome-title e6-main-title">
+                Apoyo académico y<br>
+                <span>aprendizaje</span><br>
+                <span>colaborativo</span>
+              </h1>
+
+              <p class="welcome-desc">
+                Ahora queremos conocer cómo te relacionas con el aprendizaje en equipo, si sueles pedir ayuda y qué tan dispuesto(a) estás a compartir y aprender con otros estudiantes.
+              </p>
+
+              <!-- Búho con laptop -->
+              <div class="hero-mascot-wrapper e6-hero-box">
+                <div class="wave-bg"></div>
+                <svg class="owl-hero-svg" viewBox="0 0 250 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M56 46L42 38M52 58L36 56" stroke="#FBBF24" stroke-width="3.5" stroke-linecap="round"/>
+                  <ellipse cx="125" cy="122" rx="58" ry="46" fill="#6D28D9"/>
+                  <ellipse cx="125" cy="128" rx="41" ry="34" fill="#EDE9FE"/>
+                  <rect x="65" y="28" width="120" height="84" rx="42" fill="#7C3AED"/>
+                  <path d="M77 38L61 14L95 30Z" fill="#6D28D9"/>
+                  <path d="M173 38L189 14L155 30Z" fill="#6D28D9"/>
+                  <circle cx="101" cy="70" r="24" fill="#FAF5FF" stroke="#4C1D95" stroke-width="3.6"/>
+                  <circle cx="149" cy="70" r="24" fill="#FAF5FF" stroke="#4C1D95" stroke-width="3.6"/>
+                  <rect x="120" y="66" width="10" height="8" fill="#4C1D95"/>
+                  <circle cx="101" cy="70" r="14" fill="#1E1B4B"/>
+                  <circle cx="149" cy="70" r="14" fill="#1E1B4B"/>
+                  <path d="M101 67C99 64.5 94.5 65.3 94.5 69C94.5 72.7 101 77 101 77C101 77 107.5 72.7 107.5 69C107.5 65.3 103 64.5 101 67Z" fill="#F43F5E"/>
+                  <path d="M142 71C145 67 153 67 156 71" stroke="#38BDF8" stroke-width="3" stroke-linecap="round"/>
+                  <path d="M118 83L125 93L132 83H118Z" fill="#F59E0B"/>
+                  <!-- Laptop -->
+                  <path d="M84 130L91 170H159L166 130H84Z" fill="#8B5CF6" stroke="#4C1D95" stroke-width="2.8"/>
+                  <rect x="76" y="168" width="98" height="7" rx="3.5" fill="#6D28D9"/>
+                  <circle cx="125" cy="150" r="6" fill="#EDE9FE"/>
+                </svg>
+              </div>
+
+              <!-- Tarjeta inferior con ícono de comunidad -->
+              <div class="e6-collab-banner">
+                <div class="collab-pill-badge">
+                  <i data-lucide="users"></i>
+                </div>
+                <p>Tu forma de aprender con otros también puede impulsar tus resultados.</p>
+              </div>
+            </div>
+
+            <div class="screen-footer single-btn">
+              <button class="btn-primary full-width" id="btnE6Start">
+                <span>¡Continuemos!</span>
+                <i data-lucide="arrow-right"></i>
+              </button>
+            </div>
+          </section>
+
+          <!-- ==========================================
+               PANTALLA 2: FRECUENCIA AL PEDIR AYUDA
+               ========================================== -->
+          <section class="screen" id="e6-screen-2" data-step="2">
+            <div class="screen-body question-body">
+              <div class="question-header">
+                <div class="q-icon-badge">
+                  <i data-lucide="users"></i>
+                </div>
+                <h2 class="question-title">¿Con qué frecuencia sueles pedir ayuda cuando tienes dudas en un curso?</h2>
+              </div>
+
+              <div class="e6-radio-cards" id="askHelpFreqList">
+                <button type="button" class="e6-radio-card selected" data-value="Siempre, no tengo problema.">
+                  <span class="e6-radio-dot"></span>
+                  <span class="e6-card-label">Siempre, no tengo problema.</span>
+                </button>
+
+                <button type="button" class="e6-radio-card" data-value="Frecuentemente.">
+                  <span class="e6-radio-dot"></span>
+                  <span class="e6-card-label">Frecuentemente.</span>
+                </button>
+
+                <button type="button" class="e6-radio-card" data-value="A veces.">
+                  <span class="e6-radio-dot"></span>
+                  <span class="e6-card-label">A veces.</span>
+                </button>
+
+                <button type="button" class="e6-radio-card" data-value="Rara vez.">
+                  <span class="e6-radio-dot"></span>
+                  <span class="e6-card-label">Rara vez.</span>
+                </button>
+
+                <button type="button" class="e6-radio-card" data-value="Nunca, prefiero resolverlo solo(a).">
+                  <span class="e6-radio-dot"></span>
+                  <span class="e6-card-label">Nunca, prefiero resolverlo solo(a).</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="screen-footer dual-btns">
+              <button class="btn-secondary" data-prev="1">
+                <i data-lucide="arrow-left"></i>
+                <span>Anterior</span>
+              </button>
+              <button class="btn-primary" data-next="3">
+                <span>Siguiente</span>
+                <i data-lucide="arrow-right"></i>
+              </button>
+            </div>
+          </section>
+
+          <!-- ==========================================
+               PANTALLA 3: CÓMO SUELES RESOLVER TUS DUDAS
+               ========================================== -->
+          <section class="screen" id="e6-screen-3" data-step="3">
+            <div class="screen-body question-body">
+              <div class="question-header">
+                <div class="q-icon-badge">
+                  <i data-lucide="book-open"></i>
+                </div>
+                <h2 class="question-title">¿Cómo sueles resolver tus dudas actualmente?</h2>
+              </div>
+
+              <div class="e6-radio-cards compact-cards" id="solveDoubtsList">
+                <button type="button" class="e6-radio-card selected" data-value="Pregunto a mis compañeros.">
+                  <span class="e6-radio-dot"></span>
+                  <span class="e6-card-label">Pregunto a mis compañeros.</span>
+                </button>
+
+                <button type="button" class="e6-radio-card" data-value="Consulto con el profesor(a).">
+                  <span class="e6-radio-dot"></span>
+                  <span class="e6-card-label">Consulto con el profesor(a).</span>
+                </button>
+
+                <button type="button" class="e6-radio-card" data-value="Busco en internet (videos, foros, etc.).">
+                  <span class="e6-radio-dot"></span>
+                  <span class="e6-card-label">Busco en internet<br><small>(videos, foros, etc.).</small></span>
+                </button>
+
+                <button type="button" class="e6-radio-card" data-value="Uso apuntes o materiales del curso.">
+                  <span class="e6-radio-dot"></span>
+                  <span class="e6-card-label">Uso apuntes o materiales del curso.</span>
+                </button>
+
+                <button type="button" class="e6-radio-card" data-value="Otras.">
+                  <span class="e6-radio-dot"></span>
+                  <span class="e6-card-label">Otras.</span>
+                </button>
+              </div>
+
+              <div class="other-input-box hidden" id="otherDoubtInputBox">
+                <input type="text" id="otherDoubtText" placeholder="¿Cómo más resuelves tus dudas?" maxlength="60" />
+              </div>
+
+              <!-- Búho con laptop + libros apilados abajo -->
+              <div class="bottom-owl-box small-owl-margin">
+                <svg class="study-owl-svg" viewBox="0 0 230 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M52 38L38 30M48 50L34 48" stroke="#FBBF24" stroke-width="3" stroke-linecap="round"/>
+                  <rect x="64" y="16" width="84" height="62" rx="30" fill="#7C3AED"/>
+                  <path d="M73 23L62 7L88 18Z" fill="#6D28D9"/>
+                  <path d="M139 23L150 7L124 18Z" fill="#6D28D9"/>
+                  <circle cx="89" cy="47" r="17" fill="#FAF5FF" stroke="#4C1D95" stroke-width="2.8"/>
+                  <circle cx="123" cy="47" r="17" fill="#FAF5FF" stroke="#4C1D95" stroke-width="2.8"/>
+                  <circle cx="89" cy="47" r="10" fill="#1E1B4B"/>
+                  <circle cx="123" cy="47" r="10" fill="#1E1B4B"/>
+                  <path d="M89 44.5C87.5 42.5 84 43.2 84 46C84 48.8 89 52 89 52C89 52 94 48.8 94 46C94 43.2 90.5 42.5 89 44.5Z" fill="#F43F5E"/>
+                  <path d="M117 48C119.5 44.5 126.5 44.5 129 48" stroke="#38BDF8" stroke-width="2.5" stroke-linecap="round"/>
+                  <path d="M101 56L106 64L111 56H101Z" fill="#F59E0B"/>
+                  <!-- Laptop -->
+                  <path d="M68 74L74 106H130L136 74H68Z" fill="#8B5CF6" stroke="#4C1D95" stroke-width="2.5"/>
+                  <rect x="60" y="105" width="84" height="6" rx="3" fill="#6D28D9"/>
+                  <!-- Libros apilados derecha -->
+                  <rect x="148" y="82" width="46" height="10" rx="3" fill="#F472B6" stroke="#831843" stroke-width="1.8"/>
+                  <rect x="144" y="92" width="52" height="10" rx="3" fill="#FBBF24" stroke="#92400E" stroke-width="1.8"/>
+                  <rect x="146" y="102" width="50" height="9" rx="3" fill="#A78BFA" stroke="#4C1D95" stroke-width="1.8"/>
+                </svg>
+              </div>
+            </div>
+
+            <div class="screen-footer dual-btns">
+              <button class="btn-secondary" data-prev="2">
+                <i data-lucide="arrow-left"></i>
+                <span>Anterior</span>
+              </button>
+              <button class="btn-primary" id="btnNextE6_3">
+                <span>Siguiente</span>
+                <i data-lucide="arrow-right"></i>
+              </button>
+            </div>
+          </section>
+
+          <!-- ==========================================
+               PANTALLA 4: DISPOSICIÓN A COLABORAR (1 A 5)
+               ========================================== -->
+          <section class="screen" id="e6-screen-4" data-step="4">
+            <div class="screen-body question-body">
+              <div class="question-header">
+                <div class="q-icon-badge">
+                  <i data-lucide="users"></i>
+                </div>
+                <h2 class="question-title">¿Qué tan dispuesto(a) estás a aprender y colaborar con otros estudiantes?</h2>
+              </div>
+
+              <div class="likert-scale-wrapper">
+                <div class="likert-buttons-row" id="collabScale">
+                  <button type="button" class="likert-btn" data-score="1">1</button>
+                  <button type="button" class="likert-btn" data-score="2">2</button>
+                  <button type="button" class="likert-btn" data-score="3">3</button>
+                  <button type="button" class="likert-btn selected" data-score="4">4</button>
+                  <button type="button" class="likert-btn" data-score="5">5</button>
+                </div>
+                <div class="likert-labels-row">
+                  <span>Nada<br>dispuesto(a)</span>
+                  <span style="text-align: right;">Muy<br>dispuesto(a)</span>
+                </div>
+              </div>
+
+              <!-- Búho celebrando con alas levantadas -->
+              <div class="bottom-owl-box">
+                <svg class="cheer-owl-svg" viewBox="0 0 210 165" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M52 44L38 36M48 56L34 54M158 44L172 36M162 56L176 54" stroke="#FBBF24" stroke-width="3.2" stroke-linecap="round"/>
+                  <ellipse cx="105" cy="116" rx="48" ry="40" fill="#6D28D9"/>
+                  <ellipse cx="105" cy="122" rx="34" ry="30" fill="#EDE9FE"/>
+                  <path d="M58 98C36 86 30 68 42 64C50 62 58 76 62 88Z" fill="#5B21B6"/>
+                  <path d="M152 98C174 86 180 68 168 64C160 62 152 76 148 88Z" fill="#5B21B6"/>
+                  <rect x="53" y="28" width="104" height="76" rx="38" fill="#7C3AED"/>
+                  <path d="M64 36L50 14L80 29Z" fill="#6D28D9"/>
+                  <path d="M146 36L160 14L130 29Z" fill="#6D28D9"/>
+                  <circle cx="85" cy="66" r="22" fill="#FAF5FF" stroke="#4C1D95" stroke-width="3.2"/>
+                  <circle cx="125" cy="66" r="22" fill="#FAF5FF" stroke="#4C1D95" stroke-width="3.2"/>
+                  <rect x="101" y="62" width="8" height="7" fill="#4C1D95"/>
+                  <circle cx="85" cy="66" r="13" fill="#1E1B4B"/>
+                  <circle cx="125" cy="66" r="13" fill="#1E1B4B"/>
+                  <path d="M85 63.5C83.3 61.2 79 61.8 79 65.3C79 68.8 85 72.5 85 72.5C85 72.5 91 68.8 91 65.3C91 61.8 86.7 61.2 85 63.5Z" fill="#F43F5E"/>
+                  <path d="M118 67C121 63 129 63 132 67" stroke="#38BDF8" stroke-width="2.8" stroke-linecap="round"/>
+                  <path d="M99 78L105 87L111 78H99Z" fill="#F59E0B"/>
+                  <path d="M84 154L80 162M88 154L88 162M92 154L96 162" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
+                  <path d="M118 154L114 162M122 154L122 162M126 154L130 162" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+              </div>
+            </div>
+
+            <div class="screen-footer dual-btns">
+              <button class="btn-secondary" data-prev="3">
+                <i data-lucide="arrow-left"></i>
+                <span>Anterior</span>
+              </button>
+              <button class="btn-primary" data-next="5">
+                <span>Siguiente</span>
+                <i data-lucide="arrow-right"></i>
+              </button>
+            </div>
+          </section>
+
+          <!-- ==========================================
+               PANTALLA 5: APOYO A RECIBIR (MÁX. 3)
+               ========================================== -->
+          <section class="screen" id="e6-screen-5" data-step="5">
+            <div class="screen-body question-body">
+              <div class="question-header">
+                <div class="q-icon-badge">
+                  <i data-lucide="share"></i>
+                </div>
+                <div class="question-title-group">
+                  <h2 class="question-title">¿Qué tipo de apoyo te gustaría recibir de otros estudiantes?</h2>
+                  <p class="question-subtitle">Puedes seleccionar hasta 3. <span class="counter-badge" id="receiveCounter">3/3</span></p>
+                </div>
+              </div>
+
+              <div class="checkbox-list" id="receiveSupportList">
+                <label class="checkbox-row checked">
+                  <input type="checkbox" value="Resolución de dudas." checked />
+                  <span class="custom-checkbox"><i data-lucide="check"></i></span>
+                  <span class="checkbox-label">Resolución de dudas.</span>
+                </label>
+
+                <label class="checkbox-row checked">
+                  <input type="checkbox" value="Intercambio de apuntes y resúmenes." checked />
+                  <span class="custom-checkbox"><i data-lucide="check"></i></span>
+                  <span class="checkbox-label">Intercambio de apuntes y resúmenes.</span>
+                </label>
+
+                <label class="checkbox-row">
+                  <input type="checkbox" value="Estudio en grupo virtual." />
+                  <span class="custom-checkbox"><i data-lucide="check"></i></span>
+                  <span class="checkbox-label">Estudio en grupo virtual.</span>
+                </label>
+
+                <label class="checkbox-row checked">
+                  <input type="checkbox" value="Explicaciones de temas difíciles." checked />
+                  <span class="custom-checkbox"><i data-lucide="check"></i></span>
+                  <span class="checkbox-label">Explicaciones de temas difíciles.</span>
+                </label>
+
+                <label class="checkbox-row">
+                  <input type="checkbox" value="Preparación para exámenes." />
+                  <span class="custom-checkbox"><i data-lucide="check"></i></span>
+                  <span class="checkbox-label">Preparación para exámenes.</span>
+                </label>
+
+                <label class="checkbox-row">
+                  <input type="checkbox" value="Otros." id="otherReceiveCheck" />
+                  <span class="custom-checkbox"><i data-lucide="check"></i></span>
+                  <span class="checkbox-label">Otros.</span>
+                </label>
+              </div>
+
+              <div class="other-input-box hidden" id="otherReceiveInputBox">
+                <input type="text" id="otherReceiveText" placeholder="¿Qué otro apoyo te gustaría recibir?" maxlength="60" />
+              </div>
+            </div>
+
+            <div class="screen-footer dual-btns">
+              <button class="btn-secondary" data-prev="4">
+                <i data-lucide="arrow-left"></i>
+                <span>Anterior</span>
+              </button>
+              <button class="btn-primary" id="btnNextE6_5">
+                <span>Siguiente</span>
+                <i data-lucide="arrow-right"></i>
+              </button>
+            </div>
+          </section>
+
+          <!-- ==========================================
+               PANTALLA 6: APORTE A LA COMUNIDAD (MÁX. 3)
+               ========================================== -->
+          <section class="screen" id="e6-screen-6" data-step="6">
+            <div class="screen-body question-body">
+              <div class="question-header">
+                <div class="q-icon-badge">
+                  <i data-lucide="handshake"></i>
+                </div>
+                <div class="question-title-group">
+                  <h2 class="question-title">¿Y qué te gustaría aportar tú a la comunidad estudiantil?</h2>
+                  <p class="question-subtitle">Puedes seleccionar hasta 3. <span class="counter-badge" id="contributeCounter">2/3</span></p>
+                </div>
+              </div>
+
+              <div class="checkbox-list" id="contributeList">
+                <label class="checkbox-row checked">
+                  <input type="checkbox" value="Compartir mis apuntes o resúmenes." checked />
+                  <span class="custom-checkbox"><i data-lucide="check"></i></span>
+                  <span class="checkbox-label">Compartir mis apuntes o resúmenes.</span>
+                </label>
+
+                <label class="checkbox-row">
+                  <input type="checkbox" value="Explicar temas que domino." />
+                  <span class="custom-checkbox"><i data-lucide="check"></i></span>
+                  <span class="checkbox-label">Explicar temas que domino.</span>
+                </label>
+
+                <label class="checkbox-row checked">
+                  <input type="checkbox" value="Resolver dudas de otros." checked />
+                  <span class="custom-checkbox"><i data-lucide="check"></i></span>
+                  <span class="checkbox-label">Resolver dudas de otros.</span>
+                </label>
+
+                <label class="checkbox-row">
+                  <input type="checkbox" value="Participar en grupos de estudio." />
+                  <span class="custom-checkbox"><i data-lucide="check"></i></span>
+                  <span class="checkbox-label">Participar en grupos de estudio.</span>
+                </label>
+
+                <label class="checkbox-row">
+                  <input type="checkbox" value="Motivar y apoyar a otros estudiantes." />
+                  <span class="custom-checkbox"><i data-lucide="check"></i></span>
+                  <span class="checkbox-label">Motivar y apoyar a otros estudiantes.</span>
+                </label>
+
+                <label class="checkbox-row">
+                  <input type="checkbox" value="Otros." id="otherContributeCheck" />
+                  <span class="custom-checkbox"><i data-lucide="check"></i></span>
+                  <span class="checkbox-label">Otros.</span>
+                </label>
+              </div>
+
+              <div class="other-input-box hidden" id="otherContributeInputBox">
+                <input type="text" id="otherContributeText" placeholder="¿De qué otra forma te gustaría aportar?" maxlength="60" />
+              </div>
+            </div>
+
+            <div class="screen-footer dual-btns compact-footer">
+              <button class="btn-secondary" data-prev="5">
+                <i data-lucide="arrow-left"></i>
+                <span>Anterior</span>
+              </button>
+              <button class="btn-primary btn-finish" id="btnFinishStage6">
+                <span>Continuar a la Etapa 7</span>
+                <i data-lucide="arrow-right"></i>
+              </button>
+            </div>
+          </section>
+
+        </div>
+
+        <!-- Barra de gestos inferior -->
+        <div class="gesture-bar-container">
+          <div class="gesture-pill" id="gestureHomeBtn" title="Inicio Etapa 6"></div>
+        </div>
+
+        <!-- Toast de notificaciones -->
+        <div class="toast-notification" id="toastNotification" role="alert">
+          <i data-lucide="alert-circle"></i>
+          <span id="toastMessage">Mensaje</span>
+        </div>
+
+        <!-- Menú Lateral (Drawer) -->
+        <div class="drawer-overlay" id="drawerOverlay">
+          <aside class="side-drawer">
+            <div class="drawer-header">
+              <div class="drawer-brand">
+                <span class="brand-title">StudentMind</span>
+                <span class="brand-subtitle">Connect</span>
+              </div>
+              <button class="icon-btn" id="closeMenuBtn"><i data-lucide="x"></i></button>
+            </div>
+
+            <div class="drawer-section">
+              <p class="drawer-section-title">Etapas del Diagnóstico</p>
+              <ul class="drawer-nav-list">
+                <li><a href="etapa1.html" class="drawer-nav-link"><i data-lucide="check-circle-2"></i> Etapa 1: Perfil Académico</a></li>
+                <li><a href="etapa2.html" class="drawer-nav-link"><i data-lucide="check-circle-2"></i> Etapa 2: Hábitos Semanales</a></li>
+                <li><a href="etapa3.html" class="drawer-nav-link"><i data-lucide="check-circle-2"></i> Etapa 3: Métodos de Estudio</a></li>
+                <li><a href="etapa4.html" class="drawer-nav-link"><i data-lucide="check-circle-2"></i> Etapa 4: Vacíos de Conocimiento</a></li>
+                <li><a href="etapa5.html" class="drawer-nav-link"><i data-lucide="check-circle-2"></i> Etapa 5: Bienestar Académico</a></li>
+                <li><button class="drawer-nav-item" data-jump="1"><i data-lucide="users"></i> Etapa 6: Aprendizaje Colaborativo</button></li>
+              </ul>
+            </div>
+
+            <div class="drawer-footer">
+              <button class="btn-outline-danger" id="resetE6Btn">
+                <i data-lucide="rotate-ccw"></i>
+                <span>Reiniciar Etapa 6</span>
+              </button>
+            </div>
+          </aside>
+        </div>
+
+        <!-- Modal Resumen Etapa 6 Completada -->
+        <div class="modal-overlay" id="summaryModalE6">
+          <div class="modal-card summary-modal-card">
+            <div class="summary-badge-icon">
+              <i data-lucide="users"></i>
+            </div>
+            <h3>¡Etapa 6 Completada!</h3>
+            <p class="summary-subtitle">Tu perfil colaborativo ya está listo para conectarte con la comunidad.</p>
+
+            <div class="summary-details-box" id="summaryDetailsE6"></div>
+
+            <div class="summary-actions">
+              <button class="btn-primary full-width" id="proceedStage7Btn">
+                <span>Avanzar a Etapa 7 (Final)</span>
+                <i data-lucide="arrow-right"></i>
+              </button>
+              <button class="btn-secondary full-width" id="editStage6Btn">
+                <span>Editar mis respuestas</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <script src="../js%20encuesta/etapa6.js"></script>
+</body>
+</html>
